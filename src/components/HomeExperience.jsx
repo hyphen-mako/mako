@@ -10,7 +10,6 @@ const s={motion},l={AnimatePresence},X={useRouter:()=>({push:(path)=>{window.loc
 import {useVisualValue,useEntranceFade} from '../lib/useVisualValue';
 import FloatingQuestion from './FloatingQuestion';
 import er from './ServiceCard';
-import ee from './WelcomeTutorial';
 import eo from './QuestionInput';
 import eb,{CardHoverContext as ew} from './GuideCard';
 const GUIDE_CARDS = [
@@ -600,8 +599,6 @@ const QUESTION_PLACEHOLDERS = [
         }, [J, ev, eN, ek, eT, eR, eD]),
         (0, t.jsxs)(t.Fragment, {
           children: [
-            (0, t.jsx)(ee, {}),
-            
             (0, t.jsxs)("main", {
               className: "relative w-full",
               children: [
