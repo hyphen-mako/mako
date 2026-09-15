@@ -45,7 +45,7 @@ jobs:
       url: https://mako.hyphen.it.com
     env:
       MINI_VERCEL_API_TOKEN: ${{ secrets.MINI_VERCEL_API_TOKEN }}
-      PROJECT_ID: project_cc11404ec44149d5b9dd4c16e5571721
+      PROJECT_ID: project_4bcdf7ca6fb44ad1a67c639a01b4be7d
       PUBLIC_URL: https://mako.hyphen.it.com
     steps:
       - name: Create and verify production release
