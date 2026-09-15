@@ -946,7 +946,7 @@ const GUIDE_CARDS = [
                                     (0, t.jsx)("h2", {
                                       className:
                                         "mako-hero-heading tablet:text-[36px] font-semibold text-gray-900 dark:text-white leading-tight whitespace-nowrap",
-                                      children: "콘텐츠의 새로운 시작,",
+                                      children: "MAKO 오픈 이벤트,",
                                     }),
                                     (0, t.jsxs)("div", {
                                       className:
@@ -976,12 +976,12 @@ const GUIDE_CARDS = [
                                         (0, t.jsx)("span", {
                                           className:
                                             "mako-hero-heading bg-[#3B82F6] text-white px-2 py-0.5 rounded-lg tablet:text-[36px] font-semibold leading-tight shadow-lg",
-                                          children: "MAKO",
+                                          children: "카드뉴스",
                                         }),
                                         (0, t.jsx)("span", {
                                           className:
                                             "mako-hero-heading tablet:text-[36px] font-semibold text-gray-900 dark:text-white leading-tight whitespace-nowrap",
-                                          children: "를 먼저 만나보세요",
+                                          children: "무한 생성",
                                         }),
                                       ],
                                     }),
@@ -994,7 +994,7 @@ const GUIDE_CARDS = [
                                     (0, t.jsx)("h2", {
                                       className:
                                         "text-[28px] font-semibold text-gray-900 dark:text-white leading-tight tracking-tight",
-                                      children: "콘텐츠의 새로운 시작,",
+                                      children: "MAKO 오픈 이벤트,",
                                     }),
                                     (0, t.jsxs)("div", {
                                       className: "flex items-center gap-2 mt-1",
@@ -1002,12 +1002,12 @@ const GUIDE_CARDS = [
                                         (0, t.jsx)("span", {
                                           className:
                                             "bg-[#3B82F6] text-white px-2 py-0.5 rounded-lg text-[28px] font-semibold leading-tight shadow-lg",
-                                          children: "MAKO",
+                                          children: "카드뉴스",
                                         }),
                                         (0, t.jsx)("span", {
                                           className:
                                             "text-[28px] font-semibold text-gray-900 dark:text-white leading-tight tracking-tight",
-                                          children: "를 먼저 만나보세요",
+                                          children: "무한 생성",
                                         }),
                                       ],
                                     }),
@@ -1026,7 +1026,7 @@ const GUIDE_CARDS = [
                                 delay: 0.6,
                               },
                               children:
-                                "출시 소식과 얼리 액세스를 가장 먼저 받아보세요",
+                                "오픈 이벤트 기간 동안 카드뉴스를 제한 없이 만들어보세요",
                             }),
                             (0, t.jsx)("div", {
                               className:
@@ -1471,8 +1471,8 @@ const GUIDE_CARDS = [
                                 (0, t.jsx)("h3", {
                                   className:
                                     "text-[20px] font-semibold text-white leading-tight whitespace-pre-line",
-                                  children: `브랜드다운 카드뉴스가
-몇 분 만에 완성되는 순간`,
+                                  children: `오픈 이벤트로 카드뉴스를
+제한 없이 만드는 순간`,
                                 }),
                               ],
                             }),
@@ -1501,7 +1501,7 @@ const GUIDE_CARDS = [
                                       className: "text-blue-600 font-semibold",
                                       children: "브랜드다운 카드뉴스",
                                     }),
-                                    "의 구성과 카피, 이미지까지 한 번에 만들 수 있어요.",
+                                    "의 구성과 카피, 이미지까지 한 번에 만들 수 있어요. 오픈 이벤트 기간에는 카드뉴스를 제한 없이 생성할 수 있습니다.",
                                     (0, t.jsxs)("span", {
                                       className: "text-blue-600 font-semibold",
                                       children: [" ", "MAKO"],
@@ -1513,7 +1513,7 @@ const GUIDE_CARDS = [
                                   href: "#waitlist-bottom",
                                   className:
                                     "block w-full py-3 text-white text-center font-bold rounded-xl bg-[#2563EB] shadow-[0_3px_0_#1E4ACC] active:translate-y-[2px] active:shadow-[0_1px_0_#1E4ACC]",
-                                  children: "카드뉴스 얼리 액세스",
+                                  children: "무한 생성 혜택 신청",
                                 }),
                               ],
                             }),
@@ -1673,8 +1673,8 @@ const GUIDE_CARDS = [
                             },
                             children: (0, t.jsx)(er, {
                               title: "카드뉴스",
-                              headline: `브랜드다운 카드뉴스가
-몇 분 만에 완성되는 순간`,
+                              headline: `오픈 이벤트로 카드뉴스를
+제한 없이 만드는 순간`,
                               iconType: "pick",
                               bgColor: "bg-[#2563EB]",
                               badgeColor: "bg-white",
@@ -1871,17 +1871,15 @@ const GUIDE_CARDS = [
                                               "가 브랜드 맥락을 기억합니다.",
                                               (0, t.jsx)("br", {}),
                                               (0, t.jsx)("br", {}),
-                                              "매번 처음부터 설명하지 않아도",
+                                              "오픈 이벤트 기간에는",
                                               (0, t.jsx)("br", {}),
                                               (0, t.jsx)("span", {
                                                 className:
                                                   "inline-block bg-blue-50 text-blue-600 font-semibold px-1 py-0.5 rounded",
                                                 children:
-                                                  "우리 브랜드에 맞는 콘텐츠",
+                                                  "카드뉴스를 제한 없이",
                                               }),
-                                              "를",
-                                              (0, t.jsx)("br", {}),
-                                              "를 더 빠르게 만들 수 있어요.",
+                                              " 만들 수 있어요.",
                                             ],
                                           }),
                                         }),
@@ -1891,7 +1889,7 @@ const GUIDE_CARDS = [
                                             " w-full py-4 text-white text-lg font-bold  rounded-xl relative overflow-hidden bg-[#2563EB] transition-all duration-150 shadow-[0_4px_0_#1E4ACC] active:translate-y-[3px] active:shadow-[0_1px_0_#1E4ACC] mt-auto flex items-center justify-center no-underline ",
                                           children: (0, t.jsx)("span", {
                                             className: "relative z-10",
-                                            children: "카드뉴스 얼리 액세스",
+                                            children: "무한 생성 혜택 신청",
                                           }),
                                         }),
                                       ],

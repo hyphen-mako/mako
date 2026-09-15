@@ -64,8 +64,8 @@ function QuestionInput({
       setStatus("success");
       setMessage(
         result.duplicate
-          ? "이미 신청된 이메일이에요. 출시 소식을 기다려주세요."
-          : "신청이 완료됐어요. MAKO 소식을 가장 먼저 보내드릴게요.",
+          ? "이미 신청된 이메일이에요. 오픈 이벤트 초대를 기다려주세요."
+          : "신청이 완료됐어요. 카드뉴스 무한 생성 이벤트 초대를 가장 먼저 보내드릴게요.",
       );
     } catch (error) {
       setStatus("error");

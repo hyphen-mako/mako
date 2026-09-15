@@ -9,14 +9,14 @@ export default function SiteFooter() {
               <span className="text-[24px] font-black leading-none text-[#0F7DFF]">MAKO</span>
             </a>
             <p className="mt-4 max-w-[360px] text-[14px] leading-relaxed text-[#617083]">
-              브랜드를 이해하고 카드뉴스와 AI 영상을 함께 만드는 마케팅 스튜디오.
+              브랜드를 이해하고 카드뉴스와 AI 영상을 함께 만드는 마케팅 스튜디오. 오픈 이벤트로 카드뉴스 무한 생성을 제공합니다.
             </p>
           </div>
 
           <nav aria-label="푸터 메뉴" className="grid grid-cols-2 gap-x-8 gap-y-4 text-[14px] font-semibold text-[#23344A] tablet:flex tablet:gap-8 desktop:flex desktop:gap-8">
             <a href="#guide" className="transition-colors hover:text-[#0F7DFF]">사용 방법</a>
             <a href="#services" className="transition-colors hover:text-[#0F7DFF]">제작 기능</a>
-            <a href="#waitlist-bottom" className="transition-colors hover:text-[#0F7DFF]">웨잇리스트</a>
+            <a href="#waitlist-bottom" className="transition-colors hover:text-[#0F7DFF]">오픈 이벤트</a>
             <a href="/privacy" className="transition-colors hover:text-[#0F7DFF]">개인정보처리방침</a>
           </nav>
         </div>

@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 const NAV_ITEMS = [
   { label: "사용 방법", href: "#guide" },
   { label: "제작 기능", href: "#services" },
-  { label: "출시 소식", href: "#waitlist-bottom" },
+  { label: "오픈 이벤트", href: "#waitlist-bottom" },
 ];
 
 export default function SiteHeader() {
@@ -58,7 +58,7 @@ export default function SiteHeader() {
           href="#waitlist-bottom"
           className="hidden h-[52px] items-center gap-2 rounded-lg bg-white/95 px-5 text-[15px] font-bold text-[#0B63CE] shadow-md backdrop-blur-md transition-all hover:-translate-y-0.5 hover:shadow-lg tablet:flex desktop:flex"
         >
-          웨잇리스트
+          이벤트 신청
           <i className="ri-arrow-right-line text-[18px]" aria-hidden="true" />
         </a>
 
@@ -89,7 +89,7 @@ export default function SiteHeader() {
               </a>
             ))}
             <a href="#waitlist-bottom" onClick={closeMenu} className="mako-header-mobile-cta mt-1 flex min-h-12 items-center justify-between rounded-md px-4 text-[16px] font-bold">
-              웨잇리스트 신청
+              이벤트 신청
               <i className="ri-arrow-right-line text-[20px]" aria-hidden="true" />
             </a>
           </motion.nav>

@@ -5,11 +5,11 @@ import './globals.css';
 const pretendard=localFont({src:'../../public/fonts/PretendardVariable.woff2',variable:'--font-pretendard-local',weight:'100 900',display:'swap'});
 export const metadata: Metadata={
   metadataBase: new URL('https://mako-landing.hyphen.it.com'),
-  title:'MAKO - 브랜드를 아는 AI 마케팅 스튜디오',
-  description:'브랜드와 제품 정보를 바탕으로 카드뉴스와 영상을 만드는 AI 마케팅 스튜디오 MAKO',
+  title:'MAKO - 오픈 이벤트로 카드뉴스 무한 생성',
+  description:'브랜드를 이해하는 AI 마케팅 스튜디오 MAKO에서 오픈 이벤트 기간 동안 카드뉴스를 제한 없이 만들어보세요.',
   openGraph:{
-    title:'MAKO - 브랜드를 아는 AI 마케팅 스튜디오',
-    description:'브랜드와 제품 정보를 바탕으로 카드뉴스와 영상을 만드는 AI 마케팅 스튜디오',
+    title:'MAKO - 오픈 이벤트로 카드뉴스 무한 생성',
+    description:'MAKO 오픈 이벤트 기간 동안 브랜드다운 카드뉴스를 제한 없이 만들어보세요.',
     url:'https://mako-landing.hyphen.it.com',
     siteName:'MAKO',
     images:[{url:'/mako/card-news-showcase.png',width:1672,height:941,alt:'MAKO AI Marketing Studio'}],
