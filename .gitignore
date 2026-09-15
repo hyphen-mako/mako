@@ -5,4 +5,3 @@ work/
 outputs/
 *.tsbuildinfo
 .DS_Store
-data/waitlist.jsonl

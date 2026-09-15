@@ -1,0 +1,84 @@
+name: MAKO Waitlist CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mako-waitlist-${{ github.event_name == 'pull_request' && github.ref || 'production' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  validate:
+    name: Validate and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      MAKO_API_BASE_URL: https://mako-server.hyphen.it.com
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build
+
+  deploy:
+    name: Deploy to mako.hyphen.it.com
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: [self-hosted, macOS, ARM64, mako-frontend]
+    timeout-minutes: 35
+    environment:
+      name: production
+      url: https://mako.hyphen.it.com
+    env:
+      MINI_VERCEL_API_TOKEN: ${{ secrets.MINI_VERCEL_API_TOKEN }}
+      PROJECT_ID: project_cc11404ec44149d5b9dd4c16e5571721
+      PUBLIC_URL: https://mako.hyphen.it.com
+    steps:
+      - name: Create and verify production release
+        shell: bash
+        run: |
+          set -euo pipefail
+          api_base="http://127.0.0.1:8765"
+          payload="$(jq -cn --arg revision "$GITHUB_SHA" --arg key "github-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" '{source_revision:$revision,idempotency_key:$key,config:{}}')"
+          response="$(curl -fsS \
+            -H "Authorization: Bearer $MINI_VERCEL_API_TOKEN" \
+            -H 'Content-Type: application/json' \
+            --data "$payload" \
+            "$api_base/api/projects/$PROJECT_ID/releases")"
+          release_id="$(jq -er '.release.id' <<< "$response")"
+
+          for attempt in {1..180}; do
+            release="$(curl -fsS -H "Authorization: Bearer $MINI_VERCEL_API_TOKEN" "$api_base/api/releases/$release_id")"
+            status="$(jq -r '.release.status' <<< "$release")"
+            case "$status" in
+              promoted) break ;;
+              failed|cancelled)
+                jq -r '.release.error' <<< "$release" >&2
+                exit 1
+                ;;
+            esac
+            if [[ "$attempt" == "180" ]]; then
+              echo "Timed out waiting for release $release_id" >&2
+              exit 1
+            fi
+            sleep 10
+          done
+
+          curl -fsS --retry 5 --retry-delay 3 -o /dev/null "$PUBLIC_URL"
+          curl -fsS --retry 5 --retry-delay 3 "$PUBLIC_URL" | grep -q "MAKO EARLY ACCESS"
+          echo "release_id=$release_id" >> "$GITHUB_STEP_SUMMARY"
+          echo "revision=$GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"

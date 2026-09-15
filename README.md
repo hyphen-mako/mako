@@ -26,13 +26,12 @@ http://localhost:3000 에서 확인합니다. 수정 중에는 `npm run dev`를 
 
 ## 웨잇리스트 저장
 
-기본 개발 환경에서는 신청 이메일을 `data/waitlist.jsonl`에 저장합니다. 배포 환경에서는 영구 저장소나 자동화 도구의 수신 URL을 `WAITLIST_WEBHOOK_URL`로 지정합니다.
+신청 이메일은 MAKO 백엔드의 `WaitlistEntry` 테이블에 직접 저장됩니다. 랜딩 서버는 브라우저 요청을 MAKO API로 전달하며, 운영에서는 기본적으로 `https://mako-server.hyphen.it.com`을 사용합니다.
 
 ```sh
-WAITLIST_WEBHOOK_URL=https://example.com/hooks/mako-waitlist
-WAITLIST_WEBHOOK_SECRET=optional-bearer-token
+MAKO_API_BASE_URL=https://mako-server.hyphen.it.com
 ```
 
-웹훅에는 `email`, `source`, `createdAt` 필드가 JSON으로 전달됩니다.
+로컬에서 별도 백엔드를 사용할 때만 `MAKO_API_BASE_URL`을 변경합니다. 이메일은 정규화되어 중복 없이 저장되고 재신청 횟수와 최근 신청 시각이 갱신됩니다.
 
 디자인 기준과 카피 원칙은 루트의 `DESIGN.md`에서 관리합니다.
