@@ -78,7 +78,7 @@ jobs:
             sleep 10
           done
 
-          curl -fsS --retry 5 --retry-delay 3 -o /dev/null "$PUBLIC_URL"
-          curl -fsS --retry 5 --retry-delay 3 "$PUBLIC_URL" | grep -q "MAKO EARLY ACCESS"
+          curl -fsS --retry 5 --retry-delay 3 -o landing.html "$PUBLIC_URL"
+          grep -q "MAKO EARLY ACCESS" landing.html
           echo "release_id=$release_id" >> "$GITHUB_STEP_SUMMARY"
           echo "revision=$GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
