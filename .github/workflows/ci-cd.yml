@@ -38,7 +38,7 @@ jobs:
     name: Deploy to mako.hyphen.it.com
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     needs: validate
-    runs-on: [self-hosted, macOS, ARM64, mako-frontend]
+    runs-on: ubuntu-latest
     timeout-minutes: 35
     environment:
       name: production
@@ -52,7 +52,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          api_base="http://127.0.0.1:8765"
+          api_base="https://deploy.hyphen.it.com"
           payload="$(jq -cn --arg revision "$GITHUB_SHA" --arg key "github-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" '{source_revision:$revision,idempotency_key:$key,config:{}}')"
           response="$(curl -fsS \
             -H "Authorization: Bearer $MINI_VERCEL_API_TOKEN" \
