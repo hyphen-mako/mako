@@ -35,18 +35,18 @@ jobs:
       - run: npm run build
 
   deploy:
-    name: Deploy to mako.hyphen.it.com
+    name: Deploy to mako-landing.hyphen.it.com
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     needs: validate
     runs-on: ubuntu-latest
     timeout-minutes: 35
     environment:
       name: production
-      url: https://mako.hyphen.it.com
+      url: https://mako-landing.hyphen.it.com
     env:
       MINI_VERCEL_API_TOKEN: ${{ secrets.MINI_VERCEL_API_TOKEN }}
       PROJECT_ID: project_4bcdf7ca6fb44ad1a67c639a01b4be7d
-      PUBLIC_URL: https://mako.hyphen.it.com
+      PUBLIC_URL: https://mako-landing.hyphen.it.com
     steps:
       - name: Create and verify production release
         shell: bash

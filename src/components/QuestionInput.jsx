@@ -118,7 +118,7 @@ function QuestionInput({
           </span>
         ) : !compact ? (
           <span>
-            신청 시 <a href="https://mako.hyphen.it.com/privacy">개인정보처리방침</a>에 동의하게 됩니다.
+            신청 시 <a href="/privacy">개인정보처리방침</a>에 동의하게 됩니다.
           </span>
         ) : null}
       </div>

@@ -17,13 +17,13 @@ export default function SiteFooter() {
             <a href="#guide" className="transition-colors hover:text-[#0F7DFF]">사용 방법</a>
             <a href="#services" className="transition-colors hover:text-[#0F7DFF]">제작 기능</a>
             <a href="#waitlist-bottom" className="transition-colors hover:text-[#0F7DFF]">웨잇리스트</a>
-            <a href="https://mako.hyphen.it.com/privacy" className="transition-colors hover:text-[#0F7DFF]">개인정보처리방침</a>
+            <a href="/privacy" className="transition-colors hover:text-[#0F7DFF]">개인정보처리방침</a>
           </nav>
         </div>
 
         <div className="mt-10 flex flex-col gap-2 border-t border-[#D9E3EE] pt-6 text-[12px] text-[#7A899B] tablet:flex-row tablet:items-center tablet:justify-between desktop:flex-row desktop:items-center desktop:justify-between">
           <p>© 2026 Hyphen Inc. All Rights Reserved.</p>
-          <p>mako.hyphen.it.com</p>
+          <p>mako-landing.hyphen.it.com</p>
         </div>
       </div>
     </footer>
