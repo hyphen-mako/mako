@@ -79,6 +79,6 @@ jobs:
           done
 
           curl -fsS --retry 5 --retry-delay 3 -o landing.html "$PUBLIC_URL"
-          grep -q "MAKO EARLY ACCESS" landing.html
+          grep -q "MAKO OPEN EVENT" landing.html
           echo "release_id=$release_id" >> "$GITHUB_STEP_SUMMARY"
           echo "revision=$GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
