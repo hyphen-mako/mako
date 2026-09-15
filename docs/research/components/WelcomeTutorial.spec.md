@@ -1,0 +1,17 @@
+# WelcomeTutorial Specification
+- Target src/components/WelcomeTutorial.jsx
+- Screenshot docs/design-references/desktop-full.png, includes initial tutorial.
+- Model: time-triggered then click-driven; exact text/assets below.
+- Overlay fixed inset0, z100, bg black40%, horizontal padding16px vertical24px. Opacity 220ms.
+- Dialog white, radius20px, shadow 0 12px 32px rgba(15,125,255,.14); desktop width560px min-height360px, tablet480px min-height340px, mobile92vw min-height420px.
+- Desktop/tablet two columns45%/55%; mobile stacked; image pane linear gradient sub2→white→#FFE7DD min-height160px.
+- Image192px desktop/160px tablet/112px mobile, object-fit contain; shadow 0 8px 20px rgba(15,125,255,.15).
+- Dialog spring duration.4 bounce.2 scale.95→1,y10→0. Image/content crossfade300ms, text y8→0.
+- Breakpoints mobile<768, tablet768–1079, desktop>=1080. Exact class declarations and original content available in public home module.
+- First visit show300ms after home-scroll-unlocked; fallback5000ms. Dismissal key pcf_welcome_tutorial_seen_v1=1 only if checkbox checked(defaulttrue).
+- Next/previous/progress tabs, Escape, overlay, close X, skip; final CTA points original /chat since backend outside scope.
+- Step1 title 안녕! 나는 Picky야; body 반려 생활의 모든 순간,\nPicky가 네 곁에서 함께할게.; image /images/Character_Official_Source/01.main_motion.001.webp.
+- Step2 title 궁금한 건 바로 물어봐!; body 홈 화면의 질문창에 편하게 말해봐.\n"우리 아이 사료 추천해줘"처럼 자유롭게!; image /images/main/sec2_picky_computer.svg.
+- Step3 title 그럼 첫 질문 해볼까?; body 반려 생활의 어떤 고민이든\nPicky가 답해줄게.; image /images/Character_Official_Source/03.set_motion.005.webp.
+- Controls: 이전, 다음, Picky에게 물어보기, 다시 보지 않기, 건너뛰기. Close aria 튜토리얼 닫기. Progress aria 스텝 N / 3.
+- Use extracted original classes already supplied in reference.css, not approximate Tailwind regenerated values.

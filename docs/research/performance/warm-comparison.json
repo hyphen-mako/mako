@@ -1,0 +1,54 @@
+{
+  "before": {
+    "elapsed": 4107.9000000059605,
+    "commits": 46,
+    "scrollEvents": 90,
+    "frames": {
+      "count": 245,
+      "p50": 16.69999999999709,
+      "p95": 17.600000000002183,
+      "over25ms": 2,
+      "over50ms": 0
+    },
+    "scrollFrames": {
+      "count": 107,
+      "p50": 16.69999999999709,
+      "p95": 17.69999999999709,
+      "over25ms": 1,
+      "over50ms": 0
+    },
+    "longTasks": [],
+    "scrollY": 2930,
+    "viewport": [
+      1440,
+      900
+    ],
+    "visibility": "visible"
+  },
+  "after": {
+    "elapsed": 4128.299999982119,
+    "commits": 19,
+    "scrollEvents": 89,
+    "frames": {
+      "count": 245,
+      "p50": 16.700000000000728,
+      "p95": 17.600000000002183,
+      "over25ms": 2,
+      "over50ms": 0
+    },
+    "scrollFrames": {
+      "count": 107,
+      "p50": 16.700000000000728,
+      "p95": 17.599999999998545,
+      "over25ms": 1,
+      "over50ms": 0
+    },
+    "longTasks": [],
+    "scrollY": 2931.5,
+    "viewport": [
+      1440,
+      900
+    ],
+    "visibility": "visible"
+  }
+}

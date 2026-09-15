@@ -1,0 +1,1 @@
+Fresh desktop captures include timed watermark animation. In selected hero regions743000 pixels,486 differ at intensity mean0.000697 per RGB channel, all within watermark edges. Do not interpret the4 exact fixed-region samples as a whole-page100% score.

@@ -1,0 +1,7 @@
+node_modules/
+.next/
+.next-perf-*/
+work/
+outputs/
+*.tsbuildinfo
+.DS_Store

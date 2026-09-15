@@ -1,0 +1,64 @@
+[
+  {
+    "name": "mobile-hero",
+    "regions": [
+      [
+        0,
+        0,
+        360,
+        350
+      ],
+      [
+        0,
+        470,
+        360,
+        340
+      ]
+    ],
+    "totalPixels": 248400,
+    "differentPixels": 0,
+    "meanChannelDifference": 0
+  },
+  {
+    "name": "mobile-services",
+    "regions": [
+      [
+        0,
+        90,
+        360,
+        720
+      ]
+    ],
+    "totalPixels": 259200,
+    "differentPixels": 0,
+    "meanChannelDifference": 0
+  },
+  {
+    "name": "mobile-bottom",
+    "regions": [
+      [
+        0,
+        90,
+        360,
+        720
+      ]
+    ],
+    "totalPixels": 259200,
+    "differentPixels": 0,
+    "meanChannelDifference": 0
+  },
+  {
+    "name": "service",
+    "regions": [
+      [
+        0,
+        0,
+        1416,
+        701
+      ]
+    ],
+    "totalPixels": 992616,
+    "differentPixels": 0,
+    "meanChannelDifference": 0
+  }
+]

@@ -1,0 +1,128 @@
+{
+  "source": {
+    "els": [
+      {
+        "box": "{\"bottom\":228.078125,\"height\":108.078125,\"left\":24,\"right\":729,\"top\":120,\"width\":705,\"x\":24,\"y\":120}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", system-ui, Roboto, \"Helvetica Neue\", \"Segoe UI\", \"Apple SD Gothic Neo\", \"Noto Sans KR\", \"Malgun Gothic\", sans-serif",
+        "src": "/images/main/watermark.svg",
+        "tag": "IMG",
+        "text": ""
+      },
+      {
+        "box": "{\"bottom\":0,\"height\":0,\"left\":0,\"right\":0,\"top\":0,\"width\":0,\"x\":0,\"y\":0}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", system-ui, Roboto, \"Helvetica Neue\", \"Segoe UI\", \"Apple SD Gothic Neo\", \"Noto Sans KR\", \"Malgun Gothic\", sans-serif",
+        "src": "/images/main/picky_3d_face_lookup.webp",
+        "tag": "IMG",
+        "text": ""
+      },
+      {
+        "box": "{\"bottom\":0,\"height\":0,\"left\":0,\"right\":0,\"top\":0,\"width\":0,\"x\":0,\"y\":0}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", system-ui, Roboto, \"Helvetica Neue\", \"Segoe UI\", \"Apple SD Gothic Neo\", \"Noto Sans KR\", \"Malgun Gothic\", sans-serif",
+        "src": "/images/main/picky_3d_face1.webp",
+        "tag": "IMG",
+        "text": ""
+      },
+      {
+        "box": "{\"bottom\":598.3984375,\"height\":45,\"left\":342.0546875,\"right\":668.59375,\"top\":553.3984375,\"width\":326.5390625,\"x\":342.0546875,\"y\":553.3984375}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", system-ui, Roboto, \"Helvetica Neue\", \"Segoe UI\", \"Apple SD Gothic Neo\", \"Noto Sans KR\", \"Malgun Gothic\", sans-serif",
+        "src": null,
+        "tag": "H2",
+        "text": "반려생활의 모든 궁금증,"
+      },
+      {
+        "box": "{\"bottom\":649.3984375,\"height\":48,\"left\":278.0546875,\"right\":350.0546875,\"top\":601.3984375,\"width\":72,\"x\":278.0546875,\"y\":601.3984375}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", system-ui, Roboto, \"Helvetica Neue\", \"Segoe UI\", \"Apple SD Gothic Neo\", \"Noto Sans KR\", \"Malgun Gothic\", sans-serif",
+        "src": "/images/main/picky_3d_arrow.svg",
+        "tag": "IMG",
+        "text": ""
+      },
+      {
+        "box": "{\"bottom\":0,\"height\":0,\"left\":0,\"right\":0,\"top\":0,\"width\":0,\"x\":0,\"y\":0}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", system-ui, Roboto, \"Helvetica Neue\", \"Segoe UI\", \"Apple SD Gothic Neo\", \"Noto Sans KR\", \"Malgun Gothic\", sans-serif",
+        "src": null,
+        "tag": "H2",
+        "text": "반려생활의"
+      },
+      {
+        "box": "{\"bottom\":0,\"height\":0,\"left\":0,\"right\":0,\"top\":0,\"width\":0,\"x\":0,\"y\":0}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", system-ui, Roboto, \"Helvetica Neue\", \"Segoe UI\", \"Apple SD Gothic Neo\", \"Noto Sans KR\", \"Malgun Gothic\", sans-serif",
+        "src": null,
+        "tag": "H2",
+        "text": "모든 궁금증,"
+      },
+      {
+        "box": "{\"bottom\":777.796875,\"height\":62,\"left\":342.0546875,\"right\":721,\"top\":715.796875,\"width\":378.9453125,\"x\":342.0546875,\"y\":715.796875}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", system-ui, Roboto, \"Helvetica Neue\", \"Segoe UI\", \"Apple SD Gothic Neo\", \"Noto Sans KR\", \"Malgun Gothic\", sans-serif",
+        "src": null,
+        "tag": "FORM",
+        "text": "사료를 안 먹고 간식만 찾아요질문하러가기"
+      }
+    ],
+    "height": 1024,
+    "scroll": 0,
+    "width": 768
+  },
+  "clone": {
+    "els": [
+      {
+        "box": "{\"bottom\":228.078125,\"height\":108.078125,\"left\":24,\"right\":729,\"top\":120,\"width\":705,\"x\":24,\"y\":120}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "src": "/images/main/watermark.svg",
+        "tag": "IMG",
+        "text": ""
+      },
+      {
+        "box": "{\"bottom\":0,\"height\":0,\"left\":0,\"right\":0,\"top\":0,\"width\":0,\"x\":0,\"y\":0}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "src": "/images/main/picky_3d_face_lookup.webp",
+        "tag": "IMG",
+        "text": ""
+      },
+      {
+        "box": "{\"bottom\":0,\"height\":0,\"left\":0,\"right\":0,\"top\":0,\"width\":0,\"x\":0,\"y\":0}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "src": "/images/main/picky_3d_face1.webp",
+        "tag": "IMG",
+        "text": ""
+      },
+      {
+        "box": "{\"bottom\":598.3984375,\"height\":45,\"left\":342.0546875,\"right\":668.59375,\"top\":553.3984375,\"width\":326.5390625,\"x\":342.0546875,\"y\":553.3984375}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "src": null,
+        "tag": "H2",
+        "text": "반려생활의 모든 궁금증,"
+      },
+      {
+        "box": "{\"bottom\":649.3984375,\"height\":48,\"left\":278.0546875,\"right\":350.0546875,\"top\":601.3984375,\"width\":72,\"x\":278.0546875,\"y\":601.3984375}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "src": "/images/main/picky_3d_arrow.svg",
+        "tag": "IMG",
+        "text": ""
+      },
+      {
+        "box": "{\"bottom\":0,\"height\":0,\"left\":0,\"right\":0,\"top\":0,\"width\":0,\"x\":0,\"y\":0}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "src": null,
+        "tag": "H2",
+        "text": "반려생활의"
+      },
+      {
+        "box": "{\"bottom\":0,\"height\":0,\"left\":0,\"right\":0,\"top\":0,\"width\":0,\"x\":0,\"y\":0}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "src": null,
+        "tag": "H2",
+        "text": "모든 궁금증,"
+      },
+      {
+        "box": "{\"bottom\":777.796875,\"height\":62,\"left\":342.0546875,\"right\":721,\"top\":715.796875,\"width\":378.9453125,\"x\":342.0546875,\"y\":715.796875}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "src": null,
+        "tag": "FORM",
+        "text": "노령견 건강검진 주기 공금해요질문하러가기"
+      }
+    ],
+    "height": 1024,
+    "scroll": 0,
+    "width": 768
+  }
+}

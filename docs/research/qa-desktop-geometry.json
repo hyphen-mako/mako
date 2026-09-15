@@ -1,0 +1,128 @@
+{
+  "source": {
+    "els": [
+      {
+        "box": "{\"bottom\":331.109375,\"height\":211.109375,\"left\":24,\"right\":1401,\"top\":120,\"width\":1377,\"x\":24,\"y\":120}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", system-ui, Roboto, \"Helvetica Neue\", \"Segoe UI\", \"Apple SD Gothic Neo\", \"Noto Sans KR\", \"Malgun Gothic\", sans-serif",
+        "src": "/images/main/watermark.svg",
+        "tag": "IMG",
+        "text": ""
+      },
+      {
+        "box": "{\"bottom\":0,\"height\":0,\"left\":0,\"right\":0,\"top\":0,\"width\":0,\"x\":0,\"y\":0}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", system-ui, Roboto, \"Helvetica Neue\", \"Segoe UI\", \"Apple SD Gothic Neo\", \"Noto Sans KR\", \"Malgun Gothic\", sans-serif",
+        "src": "/images/main/picky_3d_face_lookup.webp",
+        "tag": "IMG",
+        "text": ""
+      },
+      {
+        "box": "{\"bottom\":1278,\"height\":1395,\"left\":-378,\"right\":1017,\"top\":-117,\"width\":1395,\"x\":-378,\"y\":-117}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", system-ui, Roboto, \"Helvetica Neue\", \"Segoe UI\", \"Apple SD Gothic Neo\", \"Noto Sans KR\", \"Malgun Gothic\", sans-serif",
+        "src": "/images/main/picky_3d_face1.webp",
+        "tag": "IMG",
+        "text": ""
+      },
+      {
+        "box": "{\"bottom\":507,\"height\":65,\"left\":775.3046875,\"right\":1246.9765625,\"top\":442,\"width\":471.671875,\"x\":775.3046875,\"y\":442}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", system-ui, Roboto, \"Helvetica Neue\", \"Segoe UI\", \"Apple SD Gothic Neo\", \"Noto Sans KR\", \"Malgun Gothic\", sans-serif",
+        "src": null,
+        "tag": "H2",
+        "text": "반려생활의 모든 궁금증,"
+      },
+      {
+        "box": "{\"bottom\":566,\"height\":60,\"left\":695.3046875,\"right\":785.3046875,\"top\":506,\"width\":90,\"x\":695.3046875,\"y\":506}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", system-ui, Roboto, \"Helvetica Neue\", \"Segoe UI\", \"Apple SD Gothic Neo\", \"Noto Sans KR\", \"Malgun Gothic\", sans-serif",
+        "src": "/images/main/picky_3d_arrow.svg",
+        "tag": "IMG",
+        "text": ""
+      },
+      {
+        "box": "{\"bottom\":0,\"height\":0,\"left\":0,\"right\":0,\"top\":0,\"width\":0,\"x\":0,\"y\":0}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", system-ui, Roboto, \"Helvetica Neue\", \"Segoe UI\", \"Apple SD Gothic Neo\", \"Noto Sans KR\", \"Malgun Gothic\", sans-serif",
+        "src": null,
+        "tag": "H2",
+        "text": "반려생활의"
+      },
+      {
+        "box": "{\"bottom\":0,\"height\":0,\"left\":0,\"right\":0,\"top\":0,\"width\":0,\"x\":0,\"y\":0}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", system-ui, Roboto, \"Helvetica Neue\", \"Segoe UI\", \"Apple SD Gothic Neo\", \"Noto Sans KR\", \"Malgun Gothic\", sans-serif",
+        "src": null,
+        "tag": "H2",
+        "text": "모든 궁금증,"
+      },
+      {
+        "box": "{\"bottom\":728,\"height\":72,\"left\":775.3046875,\"right\":1340.5,\"top\":656,\"width\":565.1953125,\"x\":775.3046875,\"y\":656}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", system-ui, Roboto, \"Helvetica Neue\", \"Segoe UI\", \"Apple SD Gothic Neo\", \"Noto Sans KR\", \"Malgun Gothic\", sans-serif",
+        "src": null,
+        "tag": "FORM",
+        "text": "강아지가 자꾸 발을 핥아요질문하러가기"
+      }
+    ],
+    "height": 900,
+    "scroll": 0,
+    "width": 1440
+  },
+  "clone": {
+    "els": [
+      {
+        "box": "{\"bottom\":331.109375,\"height\":211.109375,\"left\":24,\"right\":1401,\"top\":120,\"width\":1377,\"x\":24,\"y\":120}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "src": "/images/main/watermark.svg",
+        "tag": "IMG",
+        "text": ""
+      },
+      {
+        "box": "{\"bottom\":0,\"height\":0,\"left\":0,\"right\":0,\"top\":0,\"width\":0,\"x\":0,\"y\":0}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "src": "/images/main/picky_3d_face_lookup.webp",
+        "tag": "IMG",
+        "text": ""
+      },
+      {
+        "box": "{\"bottom\":1278,\"height\":1395,\"left\":-378,\"right\":1017,\"top\":-117,\"width\":1395,\"x\":-378,\"y\":-117}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "src": "/images/main/picky_3d_face1.webp",
+        "tag": "IMG",
+        "text": ""
+      },
+      {
+        "box": "{\"bottom\":507,\"height\":65,\"left\":775.3046875,\"right\":1246.9765625,\"top\":442,\"width\":471.671875,\"x\":775.3046875,\"y\":442}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "src": null,
+        "tag": "H2",
+        "text": "반려생활의 모든 궁금증,"
+      },
+      {
+        "box": "{\"bottom\":566,\"height\":60,\"left\":695.3046875,\"right\":785.3046875,\"top\":506,\"width\":90,\"x\":695.3046875,\"y\":506}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "src": "/images/main/picky_3d_arrow.svg",
+        "tag": "IMG",
+        "text": ""
+      },
+      {
+        "box": "{\"bottom\":0,\"height\":0,\"left\":0,\"right\":0,\"top\":0,\"width\":0,\"x\":0,\"y\":0}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "src": null,
+        "tag": "H2",
+        "text": "반려생활의"
+      },
+      {
+        "box": "{\"bottom\":0,\"height\":0,\"left\":0,\"right\":0,\"top\":0,\"width\":0,\"x\":0,\"y\":0}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "src": null,
+        "tag": "H2",
+        "text": "모든 궁금증,"
+      },
+      {
+        "box": "{\"bottom\":728,\"height\":72,\"left\":775.3046875,\"right\":1340.5,\"top\":656,\"width\":565.1953125,\"x\":775.3046875,\"y\":656}",
+        "font": "pretendard, \"pretendard Fallback\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "src": null,
+        "tag": "FORM",
+        "text": "강아지가 자꾸 발을 핥아요질문하러가기"
+      }
+    ],
+    "height": 900,
+    "scroll": 0,
+    "width": 1440
+  }
+}

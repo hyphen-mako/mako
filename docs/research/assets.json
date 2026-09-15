@@ -1,0 +1,177 @@
+[
+  {
+    "url": "/images/main/sec2_profile.webp",
+    "path": "public/images/main/sec2_profile.webp",
+    "status": "ok"
+  },
+  {
+    "url": "/images/Character_Official_Source/03.set_motion.005.webp",
+    "path": "public/images/Character_Official_Source/03.set_motion.005.webp",
+    "status": "ok"
+  },
+  {
+    "url": "/images/Character_Official_Source/01.main_motion.001.webp",
+    "path": "public/images/Character_Official_Source/01.main_motion.001.webp",
+    "status": "ok"
+  },
+  {
+    "url": "/images/main/sec2_picky_computer.svg",
+    "path": "public/images/main/sec2_picky_computer.svg",
+    "status": "ok"
+  },
+  {
+    "url": "/images/main/watermark.svg",
+    "path": "public/images/main/watermark.svg",
+    "status": "ok"
+  },
+  {
+    "url": "/images/main/picky_hover_face.webp",
+    "path": "public/images/main/picky_hover_face.webp",
+    "status": "ok"
+  },
+  {
+    "url": "/images/main/sec2_service_cloud.webp",
+    "path": "public/images/main/sec2_service_cloud.webp",
+    "status": "ok"
+  },
+  {
+    "url": "/images/main/sec2_multi_family.webp",
+    "path": "public/images/main/sec2_multi_family.webp",
+    "status": "ok"
+  },
+  {
+    "url": "/images/main/picky_3d_arrow.svg",
+    "path": "public/images/main/picky_3d_arrow.svg",
+    "status": "ok"
+  },
+  {
+    "url": "/images/main/adobestock.webp",
+    "path": "public/images/main/adobestock.webp",
+    "status": "ok"
+  },
+  {
+    "url": "/images/main/picky_3d_face_lookup.webp",
+    "path": "public/images/main/picky_3d_face_lookup.webp",
+    "status": "ok"
+  },
+  {
+    "url": "/images/main/picky_3d_face1.webp",
+    "path": "public/images/main/picky_3d_face1.webp",
+    "status": "ok"
+  },
+  {
+    "url": "/images/Character_Official_Source/community-hero.webp",
+    "path": "public/images/Character_Official_Source/community-hero.webp",
+    "status": "ok"
+  },
+  {
+    "url": "/images/Character_Official_Source/01.main_motion.004.webp",
+    "path": "public/images/Character_Official_Source/01.main_motion.004.webp",
+    "status": "ok"
+  },
+  {
+    "url": "/images/Character_Official_Source/03.set_motion.002.webp",
+    "path": "public/images/Character_Official_Source/03.set_motion.002.webp",
+    "status": "ok"
+  },
+  {
+    "url": "/images/Character_Official_Source/01.main_motion.002.webp",
+    "path": "public/images/Character_Official_Source/01.main_motion.002.webp",
+    "status": "ok"
+  },
+  {
+    "url": "/logo.svg",
+    "path": "public/logo.svg",
+    "status": "ok"
+  },
+  {
+    "url": "/icons/pwa/apple-touch-icon.png",
+    "path": "public/icons/pwa/apple-touch-icon.png",
+    "status": "ok"
+  },
+  {
+    "url": "/images/main/footer_3dface_picky.webp",
+    "path": "public/images/main/footer_3dface_picky.webp",
+    "status": "ok"
+  },
+  {
+    "url": "/_next/static/media/PretendardVariable-s.p.77d5d991.woff2",
+    "path": "public/assets/reference/media/PretendardVariable-s.p.77d5d991.woff2",
+    "status": "ok"
+  },
+  {
+    "url": "/op-image.svg",
+    "path": "public/op-image.svg",
+    "status": "ok"
+  },
+  {
+    "url": "/manifest.webmanifest",
+    "path": "public/manifest.webmanifest",
+    "status": "ok"
+  },
+  {
+    "url": "/favicon.ico",
+    "path": "public/favicon.ico",
+    "status": "ok"
+  },
+  {
+    "url": "/pickcareOG.png",
+    "path": "public/pickcareOG.png",
+    "status": "ok"
+  },
+  {
+    "url": "/_next/static/media/remixicon.709e64c2.woff",
+    "path": "public/assets/reference/media/remixicon.709e64c2.woff",
+    "status": "ok"
+  },
+  {
+    "url": "/_next/static/media/remixicon.f5184e52.woff2",
+    "path": "public/assets/reference/media/remixicon.f5184e52.woff2",
+    "status": "ok"
+  },
+  {
+    "url": "/_next/static/media/remixicon.ea443ca1.ttf",
+    "path": "public/assets/reference/media/remixicon.ea443ca1.ttf",
+    "status": "ok"
+  },
+  {
+    "url": "/characters/[2D]set_motion_01.webp",
+    "path": "public/characters/[2D]set_motion_01.webp",
+    "status": "ok"
+  },
+  {
+    "url": "/characters/[2D]set_motion_02.webp",
+    "path": "public/characters/[2D]set_motion_02.webp",
+    "status": "ok",
+    "bytes": 108744
+  },
+  {
+    "url": "/characters/[2D]set_motion_03.webp",
+    "path": "public/characters/[2D]set_motion_03.webp",
+    "status": "ok",
+    "bytes": 70862
+  },
+  {
+    "url": "/characters/[2D]set_motion_04.webp",
+    "path": "public/characters/[2D]set_motion_04.webp",
+    "status": "ok",
+    "bytes": 78928
+  },
+  {
+    "url": "/characters/[2D]set_motion_05.webp",
+    "path": "public/characters/[2D]set_motion_05.webp",
+    "status": "ok",
+    "bytes": 98568
+  },
+  {
+    "url": "/characters/[2D]set_motion_06.webp",
+    "path": "public/characters/[2D]set_motion_06.webp",
+    "status": "ok",
+    "bytes": 87182
+  },
+  {
+    "url": "/_next/static/media/loading-crop.91c4276b.gif",
+    "path": "public/assets/reference/media/loading-crop.91c4276b.gif",
+    "status": "ok"
+  }
+]
