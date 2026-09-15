@@ -1,130 +1,129 @@
 "use client";
-import * as t from 'react/jsx-runtime';
-import * as i from 'react';
-import {motion,AnimatePresence,useScroll} from 'framer-motion';
-import {useRouter} from 'next/navigation';
-import Image from 'next/image';
-import Lenis from 'lenis';
-const s={motion},l={AnimatePresence},X={useRouter},q={default:(props)=>t.jsx(Image,{...props,unoptimized:true})};
-const ea={default:({name,size,className})=>t.jsx('i',{className:`${name} ${className||''} inline-block`,style:{fontSize:size,display:'inline-flex',alignItems:'center',justifyContent:'center'},'aria-hidden':true})};
-    function QuestionInput({
-      onSubmit: e,
-      placeholder: n = "신제품 인스타 카드뉴스를 만들어줘",
-      placeholders: a,
-      inputValue: o,
-      onInputChange: r,
-      maxWidth: c = "700px",
-      borderColor: d = "#3B82F6",
-      buttonColor: h = "#1E3A8A",
-      buttonHoverColor: p = "#3B82F6",
-      disableInitialAnimation: u = !1,
-    }) {
-      let [m, x] = (0, i.useState)(!1),
-        [f, g] = (0, i.useState)(0),
-        [w, b] = (0, i.useState)(""),
-        [y, v] = (0, i.useState)(!1);
-      (0, i.useEffect)(() => {
-        let e = () => {
-          v(window.matchMedia("(min-width: 1080px)").matches);
-        };
-        return (
-          e(),
-          window.addEventListener("resize", e),
-          () => window.removeEventListener("resize", e)
-        );
-      }, []);
-      let j = void 0 !== o,
-        N = j ? o : w;
-      (0, i.useEffect)(() => {
-        if (a && a.length > 0) {
-          let e = setInterval(() => {
-            g((e) => (e + 1) % a.length);
-          }, 3e3);
-          return () => clearInterval(e);
-        }
-      }, [a]);
-      let S = a ? a[f] : n;
-      return (0, t.jsx)(s.motion.form, {
-        onSubmit: e,
-        className: "w-full",
-        style: { maxWidth: c },
-        initial: u ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 },
-        animate: { opacity: 1, y: 0 },
-        transition: u
-          ? { duration: 0 }
-          : { duration: 0.7, ease: "easeOut", delay: 0.9 },
-        children: (0, t.jsxs)("div", {
-          className: "relative flex items-center",
-          onMouseEnter: () => y && x(!0),
-          onMouseLeave: () => y && x(!1),
-          children: [
-            (0, t.jsxs)("div", {
-              className:
-                "w-full h-[52px] tablet:h-[62px] desktop:h-[72px] bg-white dark:bg-dark-bg-secondary border-2 rounded-full pl-5 tablet:pl-6 desktop:pl-8 pr-[100px] tablet:pr-[130px] desktop:pr-[160px] flex items-center overflow-hidden shadow-lg transition-all [@media(hover:hover)]:hover:shadow-xl [@media(hover:hover)]:hover:border-blue-400",
-              style: { borderColor: d },
-              children: [
-                !N &&
-                  a &&
-                  (0, t.jsx)(l.AnimatePresence, {
-                    mode: "wait",
-                    children: (0, t.jsx)(
-                      s.motion.span,
-                      {
-                        initial: { y: 20, opacity: 0 },
-                        animate: { y: 0, opacity: 1 },
-                        exit: { y: -20, opacity: 0 },
-                        transition: { duration: 0.3 },
-                        className:
-                          "text-[14px] tablet:text-[17px] desktop:text-[20px] text-gray-400 dark:text-gray-500 w-full truncate pointer-events-none",
-                        children: S,
-                      },
-                      f,
-                    ),
-                  }),
-                (0, t.jsx)("input", {
-                  type: "text",
-                  name: "query",
-                  "aria-label": "만들고 싶은 마케팅 콘텐츠 입력",
-                  value: N,
-                  onChange: (e) => {
-                    var t;
-                    return ((t = e.target.value), void (j && r ? r(t) : b(t)));
-                  },
-                  placeholder: a ? "" : S,
-                  className:
-                    "absolute inset-0 w-full h-full bg-transparent pl-5 tablet:pl-6 desktop:pl-8 pr-[100px] tablet:pr-[130px] desktop:pr-[160px] text-[14px] tablet:text-[17px] desktop:text-[20px] text-gray-800 dark:text-gray-200 focus:outline-none z-10",
-                }),
-              ],
-            }),
-            (0, t.jsx)(s.motion.button, {
-              type: "submit",
-              className:
-                "absolute right-1.5 tablet:right-2 desktop:right-2 h-[40px] tablet:h-[48px] desktop:h-[56px] rounded-full flex items-center justify-center text-white shadow-md overflow-hidden z-20",
-              animate: { width: m ? 180 : 56, backgroundColor: m ? p : h },
-              transition: { duration: 0.3, ease: "easeInOut" },
-              children: (0, t.jsxs)("div", {
-                className:
-                  "flex items-center justify-center gap-0.5 px-3 tablet:px-4 desktop:px-5 whitespace-nowrap",
-                children: [
-                  (0, t.jsx)(ea.default, {
-                    name: "ri-chat-ai-line",
-                    size: 20,
-                    className:
-                      "shrink-0 tablet:w-[22px] tablet:h-[22px] desktop:w-6 desktop:h-6",
-                  }),
-                  (0, t.jsx)(s.motion.span, {
-                    className:
-                      "text-[14px] tablet:text-[16px] desktop:text-[18px] font-bold whitespace-nowrap",
-                    animate: { opacity: +!!m, width: m ? "auto" : 0 },
-                    transition: { duration: 0.3 },
-                    children: "MAKO로 만들기",
-                  }),
-                ],
-              }),
-            }),
-          ],
-        }),
-      });
+
+import { memo, useState } from "react";
+import { motion } from "framer-motion";
+
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function QuestionInput({
+  inputValue,
+  onInputChange,
+  maxWidth = "700px",
+  borderColor = "#3B82F6",
+  buttonColor = "#1E3A8A",
+  disableInitialAnimation = false,
+  compact = false,
+  source = "landing",
+  inverted = false,
+}) {
+  const [internalValue, setInternalValue] = useState("");
+  const [status, setStatus] = useState("idle");
+  const [message, setMessage] = useState("");
+  const controlled = inputValue !== undefined;
+  const email = controlled ? inputValue : internalValue;
+
+  const updateEmail = (value) => {
+    if (controlled && onInputChange) onInputChange(value);
+    else setInternalValue(value);
+    if (status !== "idle") {
+      setStatus("idle");
+      setMessage("");
+    }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const normalizedEmail = email.trim().toLowerCase();
+
+    if (!EMAIL_PATTERN.test(normalizedEmail)) {
+      setStatus("error");
+      setMessage("이메일 주소를 다시 확인해주세요.");
+      return;
     }
 
-export default i.memo(QuestionInput);
+    setStatus("submitting");
+    setMessage("");
+
+    try {
+      const formData = new FormData(event.currentTarget);
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: normalizedEmail,
+          source,
+          website: formData.get("website"),
+        }),
+      });
+      const result = await response.json();
+
+      if (!response.ok) throw new Error(result.message || "신청을 완료하지 못했어요.");
+
+      if (controlled && onInputChange) onInputChange("");
+      else setInternalValue("");
+      setStatus("success");
+      setMessage(
+        result.duplicate
+          ? "이미 신청된 이메일이에요. 출시 소식을 기다려주세요."
+          : "신청이 완료됐어요. MAKO 소식을 가장 먼저 보내드릴게요.",
+      );
+    } catch (error) {
+      setStatus("error");
+      setMessage(error instanceof Error ? error.message : "잠시 후 다시 시도해주세요.");
+    }
+  };
+
+  return (
+    <motion.form
+      onSubmit={handleSubmit}
+      className={`waitlist-form ${compact ? "waitlist-form--compact" : ""} ${inverted ? "waitlist-form--inverted" : ""}`}
+      style={{ maxWidth }}
+      initial={disableInitialAnimation ? { opacity: 1, y: 0 } : { opacity: 0, y: 32 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={disableInitialAnimation ? { duration: 0 } : { duration: 0.6, ease: "easeOut", delay: 0.65 }}
+    >
+      <div className="waitlist-control" style={{ borderColor }}>
+        <i className="ri-mail-line waitlist-mail-icon" aria-hidden="true" />
+        <input
+          type="email"
+          name="email"
+          value={email}
+          onChange={(event) => updateEmail(event.target.value)}
+          autoComplete="email"
+          inputMode="email"
+          required
+          aria-label="웨잇리스트 이메일"
+          aria-describedby={`${source}-waitlist-feedback`}
+          placeholder="이메일 주소를 입력하세요"
+          className="waitlist-input"
+        />
+        <input type="hidden" name="website" value="" />
+        <motion.button
+          type="submit"
+          disabled={status === "submitting"}
+          className="waitlist-submit"
+          style={{ backgroundColor: buttonColor }}
+          whileHover={{ y: -1 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          <span>{status === "submitting" ? "신청 중" : "웨잇리스트"}</span>
+          <i className={status === "submitting" ? "ri-loader-4-line waitlist-spinner" : "ri-arrow-right-line"} aria-hidden="true" />
+        </motion.button>
+      </div>
+      <div id={`${source}-waitlist-feedback`} className="waitlist-feedback" aria-live="polite">
+        {message ? (
+          <span className={status === "error" ? "waitlist-feedback--error" : "waitlist-feedback--success"}>
+            <i className={status === "error" ? "ri-error-warning-line" : "ri-checkbox-circle-line"} aria-hidden="true" />
+            {message}
+          </span>
+        ) : !compact ? (
+          <span>
+            신청 시 <a href="https://mako.hyphen.it.com/privacy">개인정보처리방침</a>에 동의하게 됩니다.
+          </span>
+        ) : null}
+      </div>
+    </motion.form>
+  );
+}
+
+export default memo(QuestionInput);

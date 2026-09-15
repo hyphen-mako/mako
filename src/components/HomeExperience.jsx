@@ -2,11 +2,10 @@
 import * as t from 'react/jsx-runtime';
 import * as i from 'react';
 import {motion,AnimatePresence,useTransform,useMotionTemplate} from 'framer-motion';
-import {useRouter} from 'next/navigation';
 import Image from 'next/image';
 import Lenis from 'lenis';
 import {recordHomeCommit} from './PerformanceProbe';
-const s={motion},l={AnimatePresence},X={useRouter:()=>({push:(path)=>{window.location.href='https://mako.hyphen.it.com'+path}})},q={default:(props)=>t.jsx(Image,{...props,unoptimized:true})};
+const s={motion},l={AnimatePresence},q={default:(props)=>t.jsx(Image,{...props,unoptimized:true})};
 import {useVisualValue,useEntranceFade} from '../lib/useVisualValue';
 import FloatingQuestion from './FloatingQuestion';
 import er from './ServiceCard';
@@ -62,19 +61,11 @@ const GUIDE_CARDS = [
                                     zIndex: 4,
                                   },
                                 ];
-const QUESTION_PLACEHOLDERS = [
-          "신제품 인스타 카드뉴스를 만들어줘",
-          "이번 주 프로모션 숏폼 영상을 기획해줘",
-          "우리 브랜드 말투로 광고 카피를 써줘",
-          "제품 사진으로 카드뉴스 5장을 만들어줘",
-          "여름 캠페인 콘텐츠 아이디어를 제안해줘",
-        ];
 // Scroll thresholds, timing sequences, and responsive markup preserve the
 // source landing experience. Backend, auth, and analytics remain isolated.
     export default function HomeExperience() {
       i.useEffect(recordHomeCommit);
-      let e = (0, X.useRouter)(),
-        [a, r] = (0, i.useState)(!1),
+      let [a, r] = (0, i.useState)(!1),
         [c, d] = (0, i.useState)(!1),
         [h, p] = (0, i.useState)(!1),
         [u, m] = (0, i.useState)(!1),
@@ -269,6 +260,26 @@ const QUESTION_PLACEHOLDERS = [
           return () => { window.history.scrollRestoration = restoration; };
         }, []),
         (0, i.useEffect)(() => {
+          const handleSectionLink = (event) => {
+            if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            const anchor = event.target.closest?.('a[href^="#"]');
+            const href = anchor?.getAttribute("href");
+            const target = href && href.length > 1 ? document.querySelector(href) : null;
+            if (!target) return;
+
+            event.preventDefault();
+            window.history.pushState(null, "", href);
+            if (v.current) {
+              v.current.scrollTo(target, { duration: 1.2, force: true });
+            } else {
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          };
+
+          document.addEventListener("click", handleSectionLink);
+          return () => document.removeEventListener("click", handleSectionLink);
+        }, []),
+        (0, i.useEffect)(() => {
           if (!h) return;
           let e = () => {
               let e = F.current,
@@ -365,7 +376,7 @@ const QUESTION_PLACEHOLDERS = [
             p(!0);
           }, 1200),
           i = setTimeout(() => {
-            (v.current && v.current.scrollTo(0, { immediate: true, force: true }),
+            (v.current && v.current.scrollTo(window.location.hash ? document.querySelector(window.location.hash) || 0 : 0, { immediate: true, force: true }),
               y(!1),
               v.current && v.current.start(),
               window.dispatchEvent(new CustomEvent("home-scroll-unlocked")));
@@ -435,15 +446,6 @@ const QUESTION_PLACEHOLDERS = [
                                             v.current.start());
                                         }
                                       }, [eR]);
-      let tw = i.useCallback((t) => {
-          t.preventDefault();
-          let i = new FormData(t.currentTarget).get("query");
-          (i?.trim()
-            ? e.push(`/chat?message=${encodeURIComponent(i.trim())}`)
-            : e.push("/chat"),
-            _(""));
-        }, []),
-        tb = QUESTION_PLACEHOLDERS;
       return (
         (0, i.useEffect)(() => {
           if (window.innerWidth < 1080) return;
@@ -608,8 +610,9 @@ const QUESTION_PLACEHOLDERS = [
                 }),
                 (0, t.jsxs)("section", {
                   ref: F,
+                  id: "waitlist",
                   className:
-                    "sticky top-0 h-screen mobile:min-h-[120svh] w-full flex items-center justify-center overflow-hidden z-0 relative",
+                    "sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden z-0 relative",
                   children: [
                     (0, t.jsx)("div", {
                       className:
@@ -942,8 +945,8 @@ const QUESTION_PLACEHOLDERS = [
                                   children: [
                                     (0, t.jsx)("h2", {
                                       className:
-                                        "tablet:text-[36px] text-[52px] font-semibold text-gray-900 dark:text-white leading-tight tracking-tight",
-                                      children: "마케팅 콘텐츠의 모든 시작,",
+                                        "mako-hero-heading tablet:text-[36px] font-semibold text-gray-900 dark:text-white leading-tight whitespace-nowrap",
+                                      children: "콘텐츠의 새로운 시작,",
                                     }),
                                     (0, t.jsxs)("div", {
                                       className:
@@ -972,13 +975,13 @@ const QUESTION_PLACEHOLDERS = [
                                         }),
                                         (0, t.jsx)("span", {
                                           className:
-                                            "bg-[#3B82F6] text-white px-2 py-0.5 rounded-xl tablet:text-[36px] text-[52px] font-semibold leading-tight shadow-lg",
+                                            "mako-hero-heading bg-[#3B82F6] text-white px-2 py-0.5 rounded-lg tablet:text-[36px] font-semibold leading-tight shadow-lg",
                                           children: "MAKO",
                                         }),
                                         (0, t.jsx)("span", {
                                           className:
-                                            "tablet:text-[36px] text-[52px] font-semibold text-gray-900 dark:text-white leading-tight tracking-tight",
-                                          children: "에게 물어보세요",
+                                            "mako-hero-heading tablet:text-[36px] font-semibold text-gray-900 dark:text-white leading-tight whitespace-nowrap",
+                                          children: "를 먼저 만나보세요",
                                         }),
                                       ],
                                     }),
@@ -991,12 +994,7 @@ const QUESTION_PLACEHOLDERS = [
                                     (0, t.jsx)("h2", {
                                       className:
                                         "text-[28px] font-semibold text-gray-900 dark:text-white leading-tight tracking-tight",
-                                      children: "마케팅 콘텐츠의",
-                                    }),
-                                    (0, t.jsx)("h2", {
-                                      className:
-                                        "text-[28px] font-semibold text-gray-900 dark:text-white leading-tight tracking-tight",
-                                      children: "모든 시작,",
+                                      children: "콘텐츠의 새로운 시작,",
                                     }),
                                     (0, t.jsxs)("div", {
                                       className: "flex items-center gap-2 mt-1",
@@ -1009,7 +1007,7 @@ const QUESTION_PLACEHOLDERS = [
                                         (0, t.jsx)("span", {
                                           className:
                                             "text-[28px] font-semibold text-gray-900 dark:text-white leading-tight tracking-tight",
-                                          children: "에게 물어보세요",
+                                          children: "를 먼저 만나보세요",
                                         }),
                                       ],
                                     }),
@@ -1028,16 +1026,15 @@ const QUESTION_PLACEHOLDERS = [
                                 delay: 0.6,
                               },
                               children:
-                                "한 문장으로 완성되는 우리 브랜드의 콘텐츠",
+                                "출시 소식과 얼리 액세스를 가장 먼저 받아보세요",
                             }),
                             (0, t.jsx)("div", {
                               className:
                                 "w-full mobile:max-w-none max-w-[700px] desktop:scale-100 origin-left",
                               children: (0, t.jsx)(eo, {
-                                onSubmit: tw,
-                                placeholders: tb,
                                 inputValue: C,
                                 onInputChange: _,
+                                source: "hero",
                                 maxWidth: "100%",
                                 borderColor: "#3B82F6",
                                 buttonColor: "#1E3A8A",
@@ -1075,6 +1072,7 @@ const QUESTION_PLACEHOLDERS = [
                   }),
                 eD &&
                   (0, t.jsx)("section", {
+                    id: "guide",
                     ref: e1,
                     className:
                       "relative w-full bg-white dark:bg-dark-bg-primary z-30 pt-12 pb-8 cloud-wave-top min-h-[500px]",
@@ -1293,6 +1291,7 @@ const QUESTION_PLACEHOLDERS = [
                     }),
                   }),
                 (0, t.jsx)("section", {
+                  id: eD ? void 0 : "guide",
                   ref: e2,
                   className: `relative w-full h-[400vh] z-30 ${eD ? "hidden" : ""}`,
                   children: (0, t.jsxs)(s.motion.div, {
@@ -1450,6 +1449,7 @@ const QUESTION_PLACEHOLDERS = [
                 }),
                 eD &&
                   (0, t.jsx)("section", {
+                    id: "services",
                     className:
                       "relative w-full bg-[#FAFAFA] dark:bg-dark-bg-secondary py-12 z-10",
                     children: (0, t.jsxs)("div", {
@@ -1510,10 +1510,10 @@ const QUESTION_PLACEHOLDERS = [
                                   ],
                                 }),
                                 (0, t.jsx)("a", {
-                                  href: "https://mako.hyphen.it.com/card-news",
+                                  href: "#waitlist-bottom",
                                   className:
                                     "block w-full py-3 text-white text-center font-bold rounded-xl bg-[#2563EB] shadow-[0_3px_0_#1E4ACC] active:translate-y-[2px] active:shadow-[0_1px_0_#1E4ACC]",
-                                  children: "카드뉴스 만들기",
+                                  children: "카드뉴스 얼리 액세스",
                                 }),
                               ],
                             }),
@@ -1568,10 +1568,10 @@ const QUESTION_PLACEHOLDERS = [
                                   ],
                                 }),
                                 (0, t.jsx)("a", {
-                                  href: "https://mako.hyphen.it.com/ai-video",
+                                  href: "#waitlist-bottom",
                                   className:
                                     "block w-full py-3 text-white text-center font-bold rounded-xl bg-[#2563EB] shadow-[0_3px_0_#1E4ACC] active:translate-y-[2px] active:shadow-[0_1px_0_#1E4ACC]",
-                                  children: "AI 영상 만들기",
+                                  children: "AI 영상 얼리 액세스",
                                 }),
                               ],
                             }),
@@ -1632,10 +1632,10 @@ const QUESTION_PLACEHOLDERS = [
                                   ],
                                 }),
                                 (0, t.jsx)("a", {
-                                  href: "https://mako.hyphen.it.com/my",
+                                  href: "#waitlist-bottom",
                                   className:
                                     "block w-full py-3 text-white text-center font-bold rounded-xl bg-[#2563EB] shadow-[0_3px_0_#1E4ACC] active:translate-y-[2px] active:shadow-[0_1px_0_#1E4ACC]",
-                                  children: "내 작업 바로가기",
+                                  children: "출시 알림 신청",
                                 }),
                               ],
                             }),
@@ -1645,7 +1645,7 @@ const QUESTION_PLACEHOLDERS = [
                     }),
                   }),
                 (0, t.jsx)("section", {
-                  id: "section3",
+                  id: eD ? void 0 : "services",
                   ref: e6,
                   className: `relative w-full h-[500vh] bg-[#FAFAFA] dark:bg-dark-bg-secondary flex items-start justify-center pt-0 z-10 ${eD ? "hidden" : ""}`,
                   children: (0, t.jsxs)("div", {
@@ -1886,12 +1886,12 @@ const QUESTION_PLACEHOLDERS = [
                                           }),
                                         }),
                                         (0, t.jsx)("a", {
-                                          href: "https://mako.hyphen.it.com/card-news",
+                                          href: "#waitlist-bottom",
                                           className:
                                             " w-full py-4 text-white text-lg font-bold  rounded-xl relative overflow-hidden bg-[#2563EB] transition-all duration-150 shadow-[0_4px_0_#1E4ACC] active:translate-y-[3px] active:shadow-[0_1px_0_#1E4ACC] mt-auto flex items-center justify-center no-underline ",
                                           children: (0, t.jsx)("span", {
                                             className: "relative z-10",
-                                            children: "카드뉴스 만들기",
+                                            children: "카드뉴스 얼리 액세스",
                                           }),
                                         }),
                                       ],
@@ -1945,12 +1945,12 @@ const QUESTION_PLACEHOLDERS = [
                                           ],
                                         }),
                                         (0, t.jsx)("a", {
-                                          href: "https://mako.hyphen.it.com/ai-video",
+                                          href: "#waitlist-bottom",
                                           className:
                                             " w-full py-4 text-white text-lg font-bold  rounded-xl relative overflow-hidden bg-[#2563EB] transition-all duration-150 shadow-[0_4px_0_#1E4ACC] active:translate-y-[3px] active:shadow-[0_1px_0_#1E4ACC] mt-auto flex items-center justify-center no-underline ",
                                           children: (0, t.jsx)("span", {
                                             className: "relative z-10",
-                                            children: "AI 영상 만들기",
+                                            children: "AI 영상 얼리 액세스",
                                           }),
                                         }),
                                       ],
@@ -2010,12 +2010,12 @@ const QUESTION_PLACEHOLDERS = [
                                           ],
                                         }),
                                         (0, t.jsx)("a", {
-                                          href: "https://mako.hyphen.it.com/my",
+                                          href: "#waitlist-bottom",
                                           className:
                                             " w-full py-4 text-white text-lg font-bold  rounded-xl relative overflow-hidden bg-[#2563EB] transition-all duration-150 shadow-[0_4px_0_#1E4ACC] active:translate-y-[3px] active:shadow-[0_1px_0_#1E4ACC] mt-auto flex items-center justify-center no-underline ",
                                           children: (0, t.jsx)("span", {
                                             className: "relative z-10",
-                                            children: "내 작업 바로가기",
+                                            children: "출시 알림 신청",
                                           }),
                                         }),
                                       ],
@@ -2048,10 +2048,10 @@ const QUESTION_PLACEHOLDERS = [
                 }),
                 ef && (0, t.jsx)(FloatingQuestion, {
                   targetOpacity: tr,
-                      onSubmit: tw,
-                      placeholders: tb,
                       inputValue: C,
                       onInputChange: _,
+                      compact: !0,
+                      source: "floating",
                       maxWidth: "700px",
                       borderColor: "#1E3A8A",
                       buttonColor: "#1E3A8A",

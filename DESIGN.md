@@ -12,9 +12,9 @@
 - Avoid: pet-care language, speculative performance claims, decorative complexity, fake testimonials or customer counts
 
 ## Product goals
-- Goals: explain MAKO in one screen, show the two core creation products, and move qualified visitors into the product
+- Goals: explain MAKO in one screen, show the two core creation products, and convert qualified visitors into waitlist sign-ups
 - Non-goals: reproduce the authenticated application or claim unverified automation outcomes
-- Success signals: visitors understand the product category, core workflow, and next action without opening a menu
+- Success signals: visitors understand the product category, core workflow, and waitlist action without opening a menu
 
 ## Personas and jobs
 - Primary personas: small brand operators, marketers, creators, and agency teams
@@ -22,9 +22,9 @@
 - Key contexts of use: desktop evaluation and mobile discovery
 
 ## Information architecture
-- Primary navigation: 카드뉴스, AI 영상, 템플릿, 시작하기
-- Core routes/screens: single public landing page with links to the production card-news and video tools
-- Content hierarchy: MAKO question prompt, four-step guide, creation services, final action
+- Primary navigation: 사용 방법, 제작 기능, 출시 소식, 웨잇리스트
+- Core routes/screens: single public landing page with hero and closing waitlist forms
+- Content hierarchy: MAKO launch promise, waitlist form, four-step guide, creation services, final waitlist action
 
 ## Design principles
 - Show the real product: product and mascot imagery must be MAKO-owned assets rather than generic stock visuals.
@@ -43,7 +43,7 @@
 ## Components
 - Existing components to reuse: `HomeExperience`, `GuideCard`, `ServiceCard`, `QuestionInput`, Next.js Image, local Pretendard font
 - Changed components: `SiteHeader`, `SiteFooter`, `GlobalMascotEffects`, `HomeExperience`, `GuideCard`, `QuestionInput`
-- Variants and states: default, hover, focus-visible, mobile navigation, scroll-driven card states
+- Variants and states: default, hover, focus-visible, mobile navigation, scroll-driven card states, waitlist loading/success/error/duplicate
 - Token/component ownership: shared tokens in `globals.css`; source layout rules in `public/assets/reference.css`; component behavior in JSX
 
 ## Accessibility
@@ -62,7 +62,7 @@
 - Loading: local optimized images reserve aspect ratio to avoid layout shift
 - Empty: not applicable to the static landing page
 - Error: core value proposition remains readable if imagery fails
-- Success: primary links navigate directly to the corresponding MAKO creation surface
+- Success: waitlist forms confirm a saved or previously registered email without navigating away
 - Disabled: no disabled controls
 - Offline/slow network, if applicable: local imagery and font avoid third-party runtime dependencies
 
