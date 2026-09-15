@@ -4,7 +4,7 @@ import * as t from "react/jsx-runtime";
 import * as c from "react";
 import {motion, AnimatePresence} from "framer-motion";
 const h={motion}, u={AnimatePresence};
-const r={default:({href,children,...props})=> <a {...props} href={href==='/'?'/':`https://pickcare.co.kr${href}`}>{children}</a>};
+const r={default:({href,children,...props})=> <a {...props} href={href==='/'?'/':`https://mako.hyphen.it.com${href}`}>{children}</a>};
 const s={default:({src,...props})=><img src={src} {...props}/>};
 const E={default:({name,size,className})=><i className={`${name} ${className||''} inline-block`} style={{display:'inline-flex',alignItems:'center',justifyContent:'center',fontSize:size}}/>};
 const providerData=[
@@ -15,7 +15,7 @@ function SocialButtons({size='md',grouped=false,elevated=false,iconLayout='pinne
  const small=size==='sm';
  return <div className="w-full"><div className={grouped?'w-full overflow-hidden rounded-xl shadow-[0_12px_28px_-10px_rgba(16,24,40,0.4)]':'space-y-2'}>{providerData.map(provider=>{
  const icon=<svg className={small?'w-[18px] h-[18px]':'w-5 h-5'} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={provider.path}/></svg>;
- return <motion.button key={provider.id} type="button" aria-label={provider.label} onClick={()=>{onBeforeNavigate?.(); window.location.assign('https://pickcare.co.kr/login');}} className={`relative w-full flex items-center justify-center whitespace-nowrap font-semibold transition-colors disabled:opacity-60 disabled:cursor-not-allowed ${grouped?'':'rounded-xl shadow-sm'} ${small?'h-11 text-[14px] px-3.5':'h-[52px] text-[15px] px-4'} ${provider.color}`} whileHover={grouped?undefined:{scale:1.01}} whileTap={grouped?undefined:{scale:.99}}>{iconLayout==='inline'?<span className="flex items-center gap-2">{icon}{provider.label}</span>:<><span className={`absolute ${small?'left-3.5':'left-4'} flex items-center justify-center`}>{icon}</span>{provider.label}</>}</motion.button>;
+ return <motion.button key={provider.id} type="button" aria-label={provider.label} onClick={()=>{onBeforeNavigate?.(); window.location.assign('https://mako.hyphen.it.com/login');}} className={`relative w-full flex items-center justify-center whitespace-nowrap font-semibold transition-colors disabled:opacity-60 disabled:cursor-not-allowed ${grouped?'':'rounded-xl shadow-sm'} ${small?'h-11 text-[14px] px-3.5':'h-[52px] text-[15px] px-4'} ${provider.color}`} whileHover={grouped?undefined:{scale:1.01}} whileTap={grouped?undefined:{scale:.99}}>{iconLayout==='inline'?<span className="flex items-center gap-2">{icon}{provider.label}</span>:<><span className={`absolute ${small?'left-3.5':'left-4'} flex items-center justify-center`}>{icon}</span>{provider.label}</>}</motion.button>;
  })}</div></div>
 }
 const m={default:SocialButtons};
@@ -118,7 +118,7 @@ export default function SiteHeader(){
  },[]);
  c.useEffect(()=>{const previous=document.body.style.overflow; if(X)document.body.style.overflow='hidden';const escape=ev=>{if(ev.key==='Escape')ee(false)};document.addEventListener('keydown',escape);return()=>{document.body.style.overflow=previous;document.removeEventListener('keydown',escape)};},[X]);
  const M=ev=>{if(ev.metaKey||ev.ctrlKey||ev.altKey||ev.shiftKey)return;ev.preventDefault();v.current+=1;clearTimeout(j.current);if(v.current>=5){v.current=0;O(true);clearTimeout(k.current);k.current=setTimeout(()=>O(false),3000);return;}j.current=setTimeout(()=>{v.current=0;window.scrollTo({top:0,behavior:'smooth'});},400);};
- const eh=[{text:'대화하기',href:'/chat',isButton:true},{text:'픽라운지',href:'/lounge'},{text:'커뮤니티',href:'/community'}];
+ const eh=[{text:'카드뉴스',href:'/card-news',isButton:true},{text:'AI 영상',href:'/ai-video'},{text:'템플릿',href:'/templates'}];
  const ex=`fixed top-0 left-0 right-0 z-[200] px-6 mobile:pt-4 mobile:pb-3 flex items-center justify-center mobile:gap-3 tablet:gap-[10px] desktop:gap-[13px] w-full desktop:h-20 tablet:h-[72px] mobile:h-auto mobile:min-h-[68px] transition-all duration-300 ease-in-out bg-transparent ${V?'-translate-y-full':'translate-y-0'}`;
  const ep={initial:{y:-100,opacity:0},animate:J&&!V?{y:0,opacity:1}:{y:-100,opacity:0},transition:J?{duration:.4,ease:'easeOut',delay:.05*!V}:{duration:0}};
       return (0, t.jsxs)(t.Fragment, {
@@ -157,18 +157,15 @@ export default function SiteHeader(){
                           style: { pointerEvents: "auto" },
                           children: [
                             (0, t.jsx)(s.default, {
-                              src: "/logo.svg",
-                              alt: "PiCKCARE icon",
+                              src: "/mako/mako-mascot.png",
+                              alt: "MAKO mascot",
                               width: 48,
                               height: 48,
-                              className: "w-12 h-12 rounded-xl",
+                              className: "w-12 h-12 rounded-xl object-contain bg-white",
                             }),
-                            (0, t.jsx)(s.default, {
-                              src: "/op-image.svg",
-                              alt: "PiCKCARE",
-                              width: 140,
-                              height: 26,
-                              className: "w-[140px] h-auto",
+                            (0, t.jsx)("span", {
+                              className: "pr-4 text-[27px] leading-none font-black text-[#0F7DFF]",
+                              children: "MAKO",
                             }),
                           ],
                         }),
@@ -193,12 +190,12 @@ export default function SiteHeader(){
                                   children: (0, t.jsx)("p", {
                                     className:
                                       "text-[13px] font-semibold text-gray-800",
-                                    children: "반가워요! 🐾 저는 픽케어예요!",
+                                    children: "반가워요! 저는 마코예요!",
                                   }),
                                 }),
                                 (0, t.jsx)(s.default, {
-                                  src: "/characters/[2D]set_motion_01.webp",
-                                  alt: "픽케어 캐릭터",
+                                  src: "/mako/poses/mako-celebrate.png",
+                                  alt: "마코 캐릭터",
                                   width: 56,
                                   height: 56,
                                   className:
@@ -274,38 +271,38 @@ export default function SiteHeader(){
                                           "bg-black/60 backdrop-blur-xl rounded-b-xl shadow-xl py-2 w-[110px]",
                                         children: [
                                           (0, t.jsx)(r.default, {
-                                            href: "/lounge/magazine",
+                                            href: "/card-news",
                                             className:
                                               "flex items-center justify-center h-11 text-[15px] font-medium text-white/80 hover:text-white hover:bg-white/10 transition-colors no-underline",
-                                            children: "매거진",
+                                            children: "카드뉴스",
                                           }),
                                           (0, t.jsx)(r.default, {
-                                            href: "/lounge/pickspot",
+                                            href: "/ai-video",
                                             className:
                                               "flex items-center justify-center h-11 text-[15px] font-medium text-white/80 hover:text-white hover:bg-white/10 transition-colors no-underline",
-                                            children: "픽스팟",
+                                            children: "AI 영상",
                                           }),
                                           (0, t.jsx)(r.default, {
-                                            href: "/lounge/market",
+                                            href: "/templates",
                                             className:
                                               "flex items-center justify-center h-11 text-[15px] font-medium text-white/80 hover:text-white hover:bg-white/10 transition-colors no-underline",
-                                            children: "픽마켓",
+                                            children: "템플릿",
                                           }),
                                           (0, t.jsx)(r.default, {
-                                            href: "/peteventhub",
+                                            href: "/my",
                                             className:
                                               "flex items-center justify-center h-11 text-[15px] font-medium text-white/80 hover:text-white hover:bg-white/10 transition-colors no-underline",
-                                            children: "픽페어",
+                                            children: "내 작업",
                                           }),
                                           (0, t.jsx)("div", {
                                             className:
                                               "mx-4 my-1.5 border-t border-white/10",
                                           }),
                                           (0, t.jsx)(r.default, {
-                                            href: "/picky-lab",
+                                            href: "/card-news",
                                             className:
                                               "flex items-center justify-center h-11 text-[15px] font-medium text-blue-400 hover:text-blue-300 hover:bg-white/10 transition-colors no-underline whitespace-nowrap",
-                                            children: "픽키랩",
+                                            children: "MAKO AI",
                                           }),
                                         ],
                                       }),
@@ -391,7 +388,7 @@ export default function SiteHeader(){
                 }),
                 (0, t.jsxs)(h.motion.div, {
                   className:
-                    "desktop:hidden tablet:hidden flex items-center justify-between w-full",
+                    "desktop:hidden tablet:hidden flex items-center justify-between w-full bg-white/95 backdrop-blur-md rounded-lg shadow-md px-2 py-2",
                   initial: { y: -20, opacity: 0 },
                   animate: { y: 0, opacity: 1 },
                   transition: { duration: 0.5, delay: 0.2, ease: "easeOut" },
@@ -405,11 +402,11 @@ export default function SiteHeader(){
                           className: "flex items-center",
                           style: { pointerEvents: "auto" },
                           children: (0, t.jsx)(s.default, {
-                            src: "/logo.svg",
-                            alt: "PiCKCARE icon",
+                            src: "/mako/mako-mascot.png",
+                            alt: "MAKO mascot",
                             width: 40,
                             height: 40,
-                            className: "rounded-lg",
+                            className: "rounded-lg object-contain bg-white",
                           }),
                         }),
                         (0, t.jsx)(u.AnimatePresence, {
@@ -433,12 +430,12 @@ export default function SiteHeader(){
                                   children: (0, t.jsx)("p", {
                                     className:
                                       "text-[13px] font-semibold text-gray-800",
-                                    children: "반가워요! 🐾 저는 픽케어예요!",
+                                    children: "반가워요! 저는 마코예요!",
                                   }),
                                 }),
                                 (0, t.jsx)(s.default, {
-                                  src: "/characters/[2D]set_motion_01.webp",
-                                  alt: "픽케어 캐릭터",
+                                  src: "/mako/poses/mako-celebrate.png",
+                                  alt: "마코 캐릭터",
                                   width: 56,
                                   height: 56,
                                   className:
@@ -554,28 +551,28 @@ export default function SiteHeader(){
                                           transition: { duration: 0.2 },
                                           children: [
                                             {
-                                              text: "픽라운지 홈",
-                                              href: "/lounge",
+                                              text: "카드뉴스",
+                                              href: "/card-news",
                                             },
                                             {
-                                              text: "매거진",
-                                              href: "/lounge/magazine",
+                                              text: "AI 영상",
+                                              href: "/ai-video",
                                             },
                                             {
-                                              text: "픽스팟",
-                                              href: "/lounge/pickspot",
+                                              text: "템플릿",
+                                              href: "/templates",
                                             },
                                             {
-                                              text: "픽마켓",
-                                              href: "/lounge/market",
+                                              text: "내 작업",
+                                              href: "/my",
                                             },
                                             {
-                                              text: "픽페어",
-                                              href: "/peteventhub",
+                                              text: "브랜드 설정",
+                                              href: "/brand",
                                             },
                                             {
-                                              text: "픽키랩",
-                                              href: "/picky-lab",
+                                              text: "MAKO AI",
+                                              href: "/card-news",
                                               highlight: !0,
                                             },
                                           ].map((e) =>

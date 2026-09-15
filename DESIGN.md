@@ -4,7 +4,7 @@
 - Status: Active
 - Last refreshed: 2026-09-15
 - Primary product surfaces: public MAKO marketing landing page
-- Evidence reviewed: sibling MAKO product `frontend/DESIGN.md`, `frontend/components/Home.tsx`, `frontend/app/globals.css`, official MAKO mascot and product showcase assets, existing Pickcare clone layout
+- Evidence reviewed: sibling MAKO product `frontend/DESIGN.md`, `frontend/components/Home.tsx`, `frontend/app/globals.css`, official MAKO mascot assets, source landing layout and motion
 
 ## Brand
 - Personality: clear, capable, production-focused, friendly
@@ -22,29 +22,29 @@
 - Key contexts of use: desktop evaluation and mobile discovery
 
 ## Information architecture
-- Primary navigation: Product, How it works, MAKO AI, Start
+- Primary navigation: 카드뉴스, AI 영상, 템플릿, 시작하기
 - Core routes/screens: single public landing page with links to the production card-news and video tools
-- Content hierarchy: brand promise, product proof, workflow, platform advantages, final action
+- Content hierarchy: MAKO question prompt, four-step guide, creation services, final action
 
 ## Design principles
 - Show the real product: product and mascot imagery must be MAKO-owned assets rather than generic stock visuals.
 - Specific over inflated: copy describes what MAKO does without invented metrics, customers, or outcomes.
 - Product first: the first viewport names MAKO, shows the mascot, and exposes the primary action.
-- Tradeoffs: preserve the source clone's motion energy while replacing its pet-care information architecture.
+- Preserve the familiar experience: keep the source section order, card geometry, and scroll choreography while replacing its identity and content with MAKO.
 
 ## Visual language
-- Color: near-black and white foundations, MAKO blue action color, yellow utility accent
-- Typography: Pretendard/system stack with compact, high-contrast display hierarchy
-- Spacing/layout rhythm: generous full-width bands with constrained 1180px content columns
-- Shape/radius/elevation: 8px controls, 6px media frames, restrained shadows
-- Motion: subtle entrance and floating mascot motion; reduced-motion disables animation
-- Imagery/iconography: official MAKO mascot and real card-news/video product scenes
+- Color: white foundation, MAKO blue action color, navy contrast panels, yellow accent
+- Typography: Pretendard/system stack with the source layout's bold, friendly hierarchy
+- Spacing/layout rhythm: full-width animated sections and stacked cards with responsive constraints
+- Shape/radius/elevation: source card geometry and shadows preserved
+- Motion: source scroll transitions, card stacking, and mascot movement; reduced-motion disables nonessential animation
+- Imagery/iconography: one consistent MAKO character rendered in six scene-specific poses
 
 ## Components
-- Existing components to reuse: Next.js Image, local Pretendard font
-- New/changed components: `MakoLanding`, responsive header, hero, product showcase, workflow, capability strip, final CTA, footer
-- Variants and states: default, hover, focus-visible, mobile collapsed navigation
-- Token/component ownership: global resets and shared tokens in `globals.css`; landing layout in its CSS module
+- Existing components to reuse: `HomeExperience`, `GuideCard`, `ServiceCard`, `QuestionInput`, Next.js Image, local Pretendard font
+- Changed components: `SiteHeader`, `SiteFooter`, `GlobalMascotEffects`, `HomeExperience`, `GuideCard`, `QuestionInput`
+- Variants and states: default, hover, focus-visible, mobile navigation, scroll-driven card states
+- Token/component ownership: shared tokens in `globals.css`; source layout rules in `public/assets/reference.css`; component behavior in JSX
 
 ## Accessibility
 - Target standard: WCAG 2.1 AA
@@ -55,7 +55,7 @@
 
 ## Responsive behavior
 - Supported breakpoints/devices: 360px mobile through wide desktop
-- Layout adaptations: hero and product rows stack; navigation reduces to the primary action; media retains stable aspect ratios
+- Layout adaptations: source desktop card stacks switch to mobile sequential cards; navigation condenses; mascot art retains stable dimensions
 - Touch/hover differences: controls remain at least 44px high and hover decoration is nonessential
 
 ## Interaction states
@@ -72,7 +72,7 @@
 - Microcopy rules: prefer concrete verbs; do not invent market leadership, customer, or speed claims
 
 ## Implementation constraints
-- Framework/styling system: Next.js, React, TypeScript, CSS Modules
+- Framework/styling system: Next.js, React, TypeScript, source utility classes, global CSS
 - Design-token constraints: extend existing local tokens without adding a second UI framework
 - Performance constraints: local images, no autoplay video, minimal client JavaScript
 - Compatibility constraints: current Next.js 16 and React 19 project
@@ -80,4 +80,3 @@
 
 ## Open questions
 - [ ] Confirm the permanent production destination for the primary CTA if the application later moves away from `mako.hyphen.it.com`.
-

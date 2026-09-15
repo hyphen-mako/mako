@@ -18,26 +18,26 @@ const s={motion},l={AnimatePresence},X={useRouter},q={default:(props)=>t.jsx(Ima
       let p =
           0 === l
             ? {
-                src: "/images/Character_Official_Source/01.main_motion.001.webp",
+                src: "/mako/poses/mako-analytics.png",
                 className:
                   "absolute -top-14 right-6 w-[220px] desktop:w-[250px] h-auto",
               }
             : 1 === l
               ? {
-                  src: "/images/main/sec2_profile.webp",
+                  src: "/mako/poses/mako-create.png",
                   className:
-                    "absolute top-6 right-6 w-[220px] desktop:w-[250px] h-auto",
+                    "absolute -top-8 right-5 w-[220px] desktop:w-[250px] h-auto",
                 }
               : 2 === l
                 ? {
-                    src: "/images/main/sec2_multi_family.webp",
+                    src: "/mako/poses/mako-celebrate.png",
                     className:
-                      "absolute top-6 right-6 w-[240px] desktop:w-[270px] h-auto",
+                      "absolute -top-8 right-5 w-[220px] desktop:w-[250px] h-auto",
                   }
                 : {
-                    src: "/images/main/sec2_service_cloud.webp",
+                    src: "/mako/poses/mako-sad.png",
                     className:
-                      "absolute top-6 right-6 w-[240px] desktop:w-[270px] h-auto",
+                      "absolute -top-8 right-5 w-[220px] desktop:w-[250px] h-auto",
                   },
         u = 0;
       return (

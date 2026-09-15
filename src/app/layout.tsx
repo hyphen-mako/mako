@@ -18,4 +18,4 @@ export const metadata: Metadata={
   },
   icons:{icon:'/mako/mako-mascot.png',apple:'/mako/mako-mascot.png'},
 };
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="ko" className={pretendard.variable}><body>{children}</body></html>}
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="ko" className={`light ${pretendard.variable}`}><head><link rel="stylesheet" href="/assets/reference.css"/></head><body>{children}</body></html>}

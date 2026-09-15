@@ -1,7 +1,77 @@
 "use client";
-import * as t from 'react/jsx-runtime';
-import * as n from 'react';
-import {AnimatePresence,motion} from 'framer-motion';
-import Image from 'next/image';
-const a={AnimatePresence},i={motion},r={default:(props)=>t.jsx(Image,{...props,unoptimized:true})};
-let o=["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","KeyB","KeyA"],s=["/characters/[2D]set_motion_01.webp","/characters/[2D]set_motion_02.webp","/characters/[2D]set_motion_03.webp","/characters/[2D]set_motion_04.webp","/characters/[2D]set_motion_05.webp","/characters/[2D]set_motion_06.webp"],c={"01-01":"새해 복 많이 받으세요! 🎉","10-04":"세계 동물의 날을 축하합니다! 🐾","12-25":"메리 크리스마스! 🎄"};export default function GlobalMascotEffects(){let[e,l]=(0,n.useState)(!1),d=(0,n.useRef)(0),[m,p]=(0,n.useState)(!1),u=(0,n.useRef)(null),h=(0,n.useRef)(!1),[x,w]=(0,n.useState)(null),[f,y]=(0,n.useState)(!1);(0,n.useEffect)(()=>{let e=e=>{b(),e.code===o[d.current]?(d.current+=1,d.current===o.length&&(d.current=0,l(!0),setTimeout(()=>l(!1),6e3))):d.current=0};return window.addEventListener("keydown",e),()=>window.removeEventListener("keydown",e)},[]);let b=(0,n.useCallback)(()=>{u.current&&clearTimeout(u.current),p(!1),h.current=!1,u.current=setTimeout(()=>{h.current||(h.current=!0,p(!0),setTimeout(()=>p(!1),4e3))},18e4)},[]);return(0,n.useEffect)(()=>{let e=["mousemove","mousedown","touchstart","scroll"];return e.forEach(e=>window.addEventListener(e,b)),b(),()=>{e.forEach(e=>window.removeEventListener(e,b)),u.current&&clearTimeout(u.current)}},[b]),(0,n.useEffect)(()=>{let e=new Date,t=`${String(e.getMonth()+1).padStart(2,"0")}-${String(e.getDate()).padStart(2,"0")}`;if(c[t]){let e=`pickcare-confetti-${t}`;sessionStorage.getItem(e)||(sessionStorage.setItem(e,"shown"),w(c[t]),y(!0),setTimeout(()=>{y(!1),w(null)},5e3))}},[]),(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)(a.AnimatePresence,{children:e&&(0,t.jsxs)("div",{className:"fixed inset-0 pointer-events-none z-[9999] overflow-hidden",children:[s.map((e,r)=>(0,t.jsx)(i.motion.img,{src:e,alt:"픽케어 캐릭터",className:"absolute w-16 h-16 object-contain",initial:{x:-80,y:100+70*r},animate:{x:[-80,window.innerWidth+80],y:[100+70*r,100+70*r-20,100+70*r]},transition:{duration:4,delay:.3*r,ease:"linear",y:{duration:.6,repeat:6,repeatType:"reverse",ease:"easeInOut"}}},e)),(0,t.jsx)(i.motion.div,{className:"absolute top-8 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl px-6 py-3 border border-gray-100",initial:{opacity:0,y:-20},animate:{opacity:1,y:0},exit:{opacity:0},children:(0,t.jsx)("p",{className:"text-[15px] font-bold text-gray-800",children:"🎮 코나미 코드 발동! 픽케어 퍼레이드! 🐾"})})]})}),(0,t.jsx)(a.AnimatePresence,{children:m&&(0,t.jsxs)(i.motion.div,{className:"fixed bottom-6 right-6 z-[9998] pointer-events-none flex flex-col items-center",initial:{x:80,opacity:0},animate:{x:0,opacity:1},exit:{x:80,opacity:0},transition:{type:"spring",stiffness:200,damping:20},children:[(0,t.jsx)("div",{className:"bg-white rounded-xl shadow-lg px-4 py-2 mb-2 border border-gray-100",children:(0,t.jsx)("p",{className:"text-[12px] text-gray-600 whitespace-nowrap",children:"뭐 하고 있어요? 👀"})}),(0,t.jsx)(r.default,{src:"/characters/[2D]set_motion_04.webp",alt:"궁금한 픽케어",width:64,height:64,className:"w-16 h-16 object-contain"})]})}),(0,t.jsx)(a.AnimatePresence,{children:f&&x&&(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)("div",{className:"fixed inset-0 pointer-events-none z-[9999] overflow-hidden",children:Array.from({length:30}).map((e,r)=>(0,t.jsx)("span",{className:"absolute animate-confetti-fall",style:{left:`${100*Math.random()}%`,animationDelay:`${2*Math.random()}s`,animationDuration:`${2+2*Math.random()}s`,fontSize:`${12+12*Math.random()}px`,color:["#FF6B6B","#4ECDC4","#FFE66D","#95E1D3","#F38181","#0066FF"][Math.floor(6*Math.random())]},children:"●"},r))}),(0,t.jsx)(i.motion.div,{className:"fixed top-20 left-1/2 -translate-x-1/2 z-[10000] pointer-events-none",initial:{opacity:0,y:-30,scale:.8},animate:{opacity:1,y:0,scale:1},exit:{opacity:0,y:-20},transition:{type:"spring",stiffness:200,damping:15},children:(0,t.jsx)("div",{className:"bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl px-8 py-4 border border-gray-100",children:(0,t.jsx)("p",{className:"text-[16px] font-bold text-gray-800 text-center",children:x})})})]})})]})}
+
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+
+const KONAMI_CODE = [
+  "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown",
+  "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "KeyB", "KeyA",
+];
+
+const MAKO_POSES = [
+  "/mako/poses/mako-analytics.png",
+  "/mako/poses/mako-create.png",
+  "/mako/poses/mako-sad.png",
+  "/mako/poses/mako-curious.png",
+  "/mako/poses/mako-celebrate.png",
+  "/mako/poses/mako-sleep.png",
+];
+
+export default function GlobalMascotEffects() {
+  const [showParade, setShowParade] = useState(false);
+  const codeIndex = useRef(0);
+
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.code === KONAMI_CODE[codeIndex.current]) {
+        codeIndex.current += 1;
+        if (codeIndex.current === KONAMI_CODE.length) {
+          codeIndex.current = 0;
+          setShowParade(true);
+          window.setTimeout(() => setShowParade(false), 6000);
+        }
+        return;
+      }
+      codeIndex.current = 0;
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
+  return (
+    <AnimatePresence>
+      {showParade && (
+        <div className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden">
+          {MAKO_POSES.map((src, index) => (
+            <motion.img
+              key={src}
+              src={src}
+              alt="마코 캐릭터"
+              className="absolute w-16 h-16 object-contain"
+              initial={{ x: -80, y: 100 + 70 * index }}
+              animate={{
+                x: [-80, window.innerWidth + 80],
+                y: [100 + 70 * index, 80 + 70 * index, 100 + 70 * index],
+              }}
+              transition={{
+                duration: 4,
+                delay: 0.3 * index,
+                ease: "linear",
+                y: { duration: 0.6, repeat: 6, repeatType: "reverse", ease: "easeInOut" },
+              }}
+            />
+          ))}
+          <motion.div
+            className="absolute top-8 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl px-6 py-3 border border-gray-100"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+          >
+            <p className="text-[15px] font-bold text-gray-800">MAKO 크리에이티브 퍼레이드</p>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
+  );
+}

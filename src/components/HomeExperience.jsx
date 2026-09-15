@@ -6,7 +6,7 @@ import {useRouter} from 'next/navigation';
 import Image from 'next/image';
 import Lenis from 'lenis';
 import {recordHomeCommit} from './PerformanceProbe';
-const s={motion},l={AnimatePresence},X={useRouter:()=>({push:(path)=>{window.location.href='https://pickcare.co.kr'+path}})},q={default:(props)=>t.jsx(Image,{...props,unoptimized:true})};
+const s={motion},l={AnimatePresence},X={useRouter:()=>({push:(path)=>{window.location.href='https://mako.hyphen.it.com'+path}})},q={default:(props)=>t.jsx(Image,{...props,unoptimized:true})};
 import {useVisualValue,useEntranceFade} from '../lib/useVisualValue';
 import FloatingQuestion from './FloatingQuestion';
 import er from './ServiceCard';
@@ -16,8 +16,8 @@ const GUIDE_CARDS = [
                                   {
                                     step: "STEP 1",
                                     title:
-                                      "반려동물에 대해\n궁금한 걸 물어보세요",
-                                    desc: "질환, 행동, 식습관, 산책, 제품 추천까지\n물어보면 바로 답변드려요.",
+                                      "만들고 싶은 콘텐츠를\n한 문장으로 알려주세요",
+                                    desc: "주제, 채널, 목적, 톤앤매너까지\n말하면 바로 초안을 만들어요.",
                                     bg: "bg-[#0F7DFF]",
                                     badgeTextClass: "text-[#0F7DFF]",
                                     titleTextClass: "text-white",
@@ -28,8 +28,8 @@ const GUIDE_CARDS = [
                                   {
                                     step: "STEP 2",
                                     title:
-                                      "반려견 프로필 기반으로\n더 정확한 정보를 제공해요",
-                                    desc: "품종, 나이, 질환, 환경에 따라\n완전히 다른 맞춤 답변을 드려요.",
+                                      "브랜드 정보를 바탕으로\n더 정확하게 제작해요",
+                                    desc: "제품, 타깃, 말투, 핵심 메시지를 반영해\n브랜드다운 결과를 만들어요.",
                                     bg: "bg-[#295BB7]",
                                     badgeTextClass: "text-[#295BB7]",
                                     titleTextClass: "text-white",
@@ -40,8 +40,8 @@ const GUIDE_CARDS = [
                                   {
                                     step: "STEP 3",
                                     title:
-                                      "반려견이 여러 마리라면\n쉽게 변경하면서 대화하세요",
-                                    desc: "아이별로 각각 다른\n정보 기록 추천을 받을 수 있어요.",
+                                      "카드뉴스와 숏폼을\n한 번에 제작하세요",
+                                    desc: "채널에 맞는 구성과 비율로\n여러 포맷을 빠르게 만들어요.",
                                     bg: "bg-[#DDEDFF]",
                                     badgeTextClass: "text-[#00316B]",
                                     titleTextClass: "text-[#00316B]",
@@ -52,8 +52,8 @@ const GUIDE_CARDS = [
                                   {
                                     step: "STEP 4",
                                     title:
-                                      "제품 서비스와\n매장 정보까지 확인해보세요",
-                                    desc: "브랜드 컨텐츠, 커뮤니티, 근처 매장,\n병원 정보까지 자동 연결돼요.",
+                                      "마음에 들 때까지\n수정하고 관리하세요",
+                                    desc: "아쉬운 초안은 바로 수정하고\n캠페인별로 이어서 관리해요.",
                                     bg: "bg-[#00316B]",
                                     badgeTextClass: "text-[#00316B]",
                                     titleTextClass: "text-white",
@@ -63,14 +63,14 @@ const GUIDE_CARDS = [
                                   },
                                 ];
 const QUESTION_PLACEHOLDERS = [
-          "사료를 안 먹고 간식만 찾아요",
-          "강아지가 자꾸 발을 핥아요",
-          "고양이 화장실 모래 추천해주세요",
-          "반려견 분리불안 훈련법 알려줘",
-          "노령견 건강검진 주기 공금해요",
+          "신제품 인스타 카드뉴스를 만들어줘",
+          "이번 주 프로모션 숏폼 영상을 기획해줘",
+          "우리 브랜드 말투로 광고 카피를 써줘",
+          "제품 사진으로 카드뉴스 5장을 만들어줘",
+          "여름 캠페인 콘텐츠 아이디어를 제안해줘",
         ];
-// Scroll thresholds, timing sequences, responsive markup and content extracted
-// from the public Pickcare home page. Backend/auth/analytics intentionally isolated.
+// Scroll thresholds, timing sequences, and responsive markup preserve the
+// source landing experience. Backend, auth, and analytics remain isolated.
     export default function HomeExperience() {
       i.useEffect(recordHomeCommit);
       let e = (0, X.useRouter)(),
@@ -604,7 +604,7 @@ const QUESTION_PLACEHOLDERS = [
               children: [
                 (0, t.jsx)("h1", {
                   className: "sr-only",
-                  children: "픽케어(PiCKCARE) - 반려동물 맞춤형 AI 케어 서비스",
+                  children: "MAKO - 브랜드를 아는 AI 마케팅 스튜디오",
                 }),
                 (0, t.jsxs)("section", {
                   ref: F,
@@ -653,7 +653,7 @@ const QUESTION_PLACEHOLDERS = [
                           ref: A,
                           className: "w-full desktop:max-w-none mobile:mt-10",
                           children: (0, t.jsx)("img", {
-                            src: "/images/main/watermark.svg",
+                            src: "/mako/mako-wordmark.svg",
                             alt: "",
                             "aria-hidden": "true",
                             draggable: !1,
@@ -741,8 +741,8 @@ const QUESTION_PLACEHOLDERS = [
                                                 children: (0, t.jsx)(
                                                   q.default,
                                                   {
-                                                    src: "/images/main/picky_hover_face.webp",
-                                                    alt: "픽키",
+                                                    src: "/mako/poses/mako-curious.png",
+                                                    alt: "마코",
                                                     width: 32,
                                                     height: 32,
                                                     draggable: !1,
@@ -761,7 +761,7 @@ const QUESTION_PLACEHOLDERS = [
                                                   },
                                                 },
                                                 children:
-                                                  "안녕하세요! 저는 픽키에요.",
+                                                  "안녕하세요! 저는 마코예요.",
                                               }),
                                             ],
                                           },
@@ -796,14 +796,14 @@ const QUESTION_PLACEHOLDERS = [
                                                     className:
                                                       "whitespace-nowrap",
                                                     children:
-                                                      "다양한 정보를 바탕으로 우리 아이에게 딱 맞는 정보를",
+                                                      "브랜드와 제품 정보를 바탕으로 딱 맞는 콘텐츠를",
                                                   }),
                                                   (0, t.jsx)("br", {}),
                                                   (0, t.jsx)("span", {
                                                     className:
                                                       "whitespace-nowrap",
                                                     children:
-                                                      "쉽고 빠르게 알려드릴게요.",
+                                                      "쉽고 빠르게 만들어드릴게요.",
                                                   }),
                                                 ],
                                               },
@@ -835,7 +835,7 @@ const QUESTION_PLACEHOLDERS = [
                                                 },
                                               },
                                               children:
-                                                "반려견에 대해 궁금한 걸 물어보세요!",
+                                                "만들고 싶은 콘텐츠를 말해보세요!",
                                             }),
                                           },
                                           "bubble-row-3",
@@ -861,8 +861,8 @@ const QUESTION_PLACEHOLDERS = [
                         delay: 1.2,
                       },
                       children: (0, t.jsx)("img", {
-                        src: "/images/main/picky_3d_face_lookup.webp",
-                        alt: "픽키",
+                        src: "/mako/mako-mascot.png",
+                        alt: "마코",
                         draggable: !1,
                         className: "w-full h-auto object-contain",
                       }),
@@ -887,8 +887,8 @@ const QUESTION_PLACEHOLDERS = [
                             : { x: "-42vh", y: "42vh" },
                           transition: { duration: 0.55, ease: "easeOut" },
                           children: (0, t.jsx)("img", {
-                            src: "/images/main/picky_3d_face1.webp",
-                            alt: "픽키 캐릭터",
+                            src: "/mako/mako-mascot.png",
+                            alt: "마코 캐릭터",
                             draggable: !1,
                             className:
                               "h-[155vh] w-auto object-contain object-left-bottom",
@@ -943,7 +943,7 @@ const QUESTION_PLACEHOLDERS = [
                                     (0, t.jsx)("h2", {
                                       className:
                                         "tablet:text-[36px] text-[52px] font-semibold text-gray-900 dark:text-white leading-tight tracking-tight",
-                                      children: "반려생활의 모든 궁금증,",
+                                      children: "마케팅 콘텐츠의 모든 시작,",
                                     }),
                                     (0, t.jsxs)("div", {
                                       className:
@@ -962,7 +962,7 @@ const QUESTION_PLACEHOLDERS = [
                                             delay: 4.8,
                                           },
                                           children: (0, t.jsx)("img", {
-                                            src: "/images/main/picky_3d_arrow.svg",
+                                            src: "/mako/mako-arrow.svg",
                                             alt: "",
                                             width: "90",
                                             height: "60",
@@ -973,7 +973,7 @@ const QUESTION_PLACEHOLDERS = [
                                         (0, t.jsx)("span", {
                                           className:
                                             "bg-[#3B82F6] text-white px-2 py-0.5 rounded-xl tablet:text-[36px] text-[52px] font-semibold leading-tight shadow-lg",
-                                          children: "픽키",
+                                          children: "MAKO",
                                         }),
                                         (0, t.jsx)("span", {
                                           className:
@@ -991,12 +991,12 @@ const QUESTION_PLACEHOLDERS = [
                                     (0, t.jsx)("h2", {
                                       className:
                                         "text-[28px] font-semibold text-gray-900 dark:text-white leading-tight tracking-tight",
-                                      children: "반려생활의",
+                                      children: "마케팅 콘텐츠의",
                                     }),
                                     (0, t.jsx)("h2", {
                                       className:
                                         "text-[28px] font-semibold text-gray-900 dark:text-white leading-tight tracking-tight",
-                                      children: "모든 궁금증,",
+                                      children: "모든 시작,",
                                     }),
                                     (0, t.jsxs)("div", {
                                       className: "flex items-center gap-2 mt-1",
@@ -1004,7 +1004,7 @@ const QUESTION_PLACEHOLDERS = [
                                         (0, t.jsx)("span", {
                                           className:
                                             "bg-[#3B82F6] text-white px-2 py-0.5 rounded-lg text-[28px] font-semibold leading-tight shadow-lg",
-                                          children: "픽키",
+                                          children: "MAKO",
                                         }),
                                         (0, t.jsx)("span", {
                                           className:
@@ -1028,7 +1028,7 @@ const QUESTION_PLACEHOLDERS = [
                                 delay: 0.6,
                               },
                               children:
-                                "대화로 완성되는 나만의 반려 생활 가이드",
+                                "한 문장으로 완성되는 우리 브랜드의 콘텐츠",
                             }),
                             (0, t.jsx)("div", {
                               className:
@@ -1095,10 +1095,10 @@ const QUESTION_PLACEHOLDERS = [
                               (0, t.jsx)("h2", {
                                 className:
                                   "text-[28px] font-semibold text-gray-900 dark:text-white leading-[1.15] whitespace-nowrap",
-                                children: "픽키와 함께하는",
+                                children: "마코와 함께하는",
                               }),
                               (0, t.jsx)("img", {
-                                src: "/images/main/adobestock.webp",
+                                src: "/mako/poses/mako-celebrate.png",
                                 alt: "",
                                 "aria-hidden": "true",
                                 draggable: !1,
@@ -1120,8 +1120,8 @@ const QUESTION_PLACEHOLDERS = [
                                   : { opacity: 0, scale: 0.8 },
                                 transition: { duration: 0.8, ease: "easeOut" },
                                 children: (0, t.jsx)("img", {
-                                  src: "/images/Character_Official_Source/03.set_motion.002.webp",
-                                  alt: "픽키 캐릭터",
+                                  src: "/mako/poses/mako-create.png",
+                                  alt: "마코 캐릭터",
                                   draggable: !1,
                                   className: "w-full h-full object-contain",
                                 }),
@@ -1143,7 +1143,7 @@ const QUESTION_PLACEHOLDERS = [
                                       children: (0, t.jsx)("h2", {
                                         className:
                                           "text-[24px] font-semibold leading-[1.1] whitespace-nowrap",
-                                        children: "스마트 반려생활",
+                                        children: "스마트 콘텐츠 제작",
                                       }),
                                     }),
                                     (0, t.jsx)("h2", {
@@ -1184,56 +1184,56 @@ const QUESTION_PLACEHOLDERS = [
                                           {
                                             step: "STEP 1",
                                             title:
-                                              "반려동물에 대해\n궁금한 걸 물어보세요",
-                                            desc: "질환, 행동, 식습관, 산책, 제품 추천까지\n물어보면 바로 답변드려요.",
+                                              "만들고 싶은 콘텐츠를\n한 문장으로 알려주세요",
+                                            desc: "주제, 채널, 목적, 톤앤매너까지\n말하면 바로 초안을 만들어요.",
                                             bg: "bg-[#0F7DFF]",
                                             badgeTextClass: "text-[#0F7DFF]",
                                             titleTextClass: "text-white",
                                             descTextClass: "text-white/90",
                                             iconSrc:
-                                              "/images/Character_Official_Source/01.main_motion.001.webp",
+                                              "/mako/poses/mako-analytics.png",
                                             iconClass:
                                               "absolute -top-8 right-3 w-[140px] h-auto",
                                           },
                                           {
                                             step: "STEP 2",
                                             title:
-                                              "반려견 프로필 기반으로\n더 정확한 정보를 제공해요",
-                                            desc: "품종, 나이, 질환, 환경에 따라\n완전히 다른 맞춤 답변을 드려요.",
+                                              "브랜드 정보를 바탕으로\n더 정확하게 제작해요",
+                                            desc: "제품, 타깃, 말투, 핵심 메시지를 반영해\n브랜드다운 결과를 만들어요.",
                                             bg: "bg-[#295BB7]",
                                             badgeTextClass: "text-[#295BB7]",
                                             titleTextClass: "text-white",
                                             descTextClass: "text-white/90",
                                             iconSrc:
-                                              "/images/main/sec2_profile.webp",
+                                              "/mako/poses/mako-create.png",
                                             iconClass:
                                               "absolute top-3 right-3 w-[140px] h-auto",
                                           },
                                           {
                                             step: "STEP 3",
                                             title:
-                                              "반려견이 여러 마리라면\n쉽게 변경하면서 대화하세요",
-                                            desc: "아이별로 각각 다른\n정보 기록 추천을 받을 수 있어요.",
+                                              "카드뉴스와 숏폼을\n한 번에 제작하세요",
+                                            desc: "채널에 맞는 구성과 비율로\n여러 포맷을 빠르게 만들어요.",
                                             bg: "bg-[#DDEDFF]",
                                             badgeTextClass: "text-[#00316B]",
                                             titleTextClass: "text-[#00316B]",
                                             descTextClass: "text-[#00316B]",
                                             iconSrc:
-                                              "/images/main/sec2_multi_family.webp",
+                                              "/mako/poses/mako-celebrate.png",
                                             iconClass:
                                               "absolute top-3 right-3 w-[150px] h-auto",
                                           },
                                           {
                                             step: "STEP 4",
                                             title:
-                                              "제품 서비스와\n매장 정보까지 확인해보세요",
-                                            desc: "브랜드 컨텐츠, 커뮤니티, 근처 매장,\n병원 정보까지 자동 연결돼요.",
+                                              "마음에 들 때까지\n수정하고 관리하세요",
+                                            desc: "아쉬운 초안은 바로 수정하고\n캠페인별로 이어서 관리해요.",
                                             bg: "bg-[#00316B]",
                                             badgeTextClass: "text-[#00316B]",
                                             titleTextClass: "text-white",
                                             descTextClass: "text-white/90",
                                             iconSrc:
-                                              "/images/main/sec2_service_cloud.webp",
+                                              "/mako/poses/mako-sad.png",
                                             iconClass:
                                               "absolute top-3 right-3 w-[150px] h-auto",
                                           },
@@ -1348,7 +1348,7 @@ const QUESTION_PLACEHOLDERS = [
                                       (0, t.jsx)("h2", {
                                         className:
                                           "text-[58px] font-semibold text-gray-900 dark:text-white leading-[1.15] whitespace-nowrap",
-                                        children: "픽키와",
+                                        children: "마코와",
                                       }),
                                       (0, t.jsx)("h2", {
                                         className:
@@ -1361,8 +1361,8 @@ const QUESTION_PLACEHOLDERS = [
                                     className:
                                       "relative flex-shrink-0 w-[450px] h-[450px]",
                                     children: (0, t.jsx)(s.motion.img, {
-                                      src: "/images/Character_Official_Source/03.set_motion.002.webp",
-                                      alt: "픽키 캐릭터",
+                                      src: "/mako/poses/mako-create.png",
+                                      alt: "마코 캐릭터",
                                       draggable: !1,
                                       className: "w-full h-full object-contain",
                                       initial: { opacity: 0, y: 48 },
@@ -1407,7 +1407,7 @@ const QUESTION_PLACEHOLDERS = [
                                         children: (0, t.jsx)("h2", {
                                           className:
                                             "text-[58px] font-semibold leading-[1.1] whitespace-nowrap",
-                                          children: "스마트 반려생활",
+                                          children: "스마트 콘텐츠 제작",
                                         }),
                                       }),
                                       (0, t.jsx)("h2", {
@@ -1466,21 +1466,21 @@ const QUESTION_PLACEHOLDERS = [
                                 (0, t.jsx)("span", {
                                   className:
                                     "inline-block px-3 py-1 bg-white text-blue-600 rounded-full text-[12px] font-bold mb-3",
-                                  children: "픽라운지",
+                                  children: "카드뉴스",
                                 }),
                                 (0, t.jsx)("h3", {
                                   className:
                                     "text-[20px] font-semibold text-white leading-tight whitespace-pre-line",
-                                  children: `반려생활 콘텐츠가
-한 곳에 모이는 순간`,
+                                  children: `브랜드다운 카드뉴스가
+몇 분 만에 완성되는 순간`,
                                 }),
                               ],
                             }),
                             (0, t.jsx)("div", {
                               className: "w-[180px] h-[180px]",
                               children: (0, t.jsx)("img", {
-                                src: "/images/Character_Official_Source/01.main_motion.002.webp",
-                                alt: "픽라운지",
+                                src: "/mako/poses/mako-analytics.png",
+                                alt: "카드뉴스를 분석하는 마코",
                                 draggable: !1,
                                 loading: "lazy",
                                 decoding: "async",
@@ -1495,25 +1495,25 @@ const QUESTION_PLACEHOLDERS = [
                                   className:
                                     "text-[14px] text-gray-700 leading-relaxed mb-4",
                                   children: [
-                                    "전문 에디터가 정리한",
+                                    "제품 정보와 한 줄 아이디어만 입력하면",
                                     " ",
                                     (0, t.jsx)("span", {
                                       className: "text-blue-600 font-semibold",
-                                      children: "반려생활 팁",
+                                      children: "브랜드다운 카드뉴스",
                                     }),
-                                    "부터 반려인들이 많이 찾는 산책 코스, 여행지, 오프라인 매장 추천까지",
+                                    "의 구성과 카피, 이미지까지 한 번에 만들 수 있어요.",
                                     (0, t.jsxs)("span", {
                                       className: "text-blue-600 font-semibold",
-                                      children: [" ", "픽라운지"],
+                                      children: [" ", "MAKO"],
                                     }),
-                                    "에서 모두 확인해요.",
+                                    "가 채널에 맞는 비율로 정리해드려요.",
                                   ],
                                 }),
                                 (0, t.jsx)("a", {
-                                  href: "https://pickcare.co.kr/lounge",
+                                  href: "https://mako.hyphen.it.com/card-news",
                                   className:
                                     "block w-full py-3 text-white text-center font-bold rounded-xl bg-[#2563EB] shadow-[0_3px_0_#1E4ACC] active:translate-y-[2px] active:shadow-[0_1px_0_#1E4ACC]",
-                                  children: "픽라운지 둘러보기",
+                                  children: "카드뉴스 만들기",
                                 }),
                               ],
                             }),
@@ -1529,21 +1529,21 @@ const QUESTION_PLACEHOLDERS = [
                                 (0, t.jsx)("span", {
                                   className:
                                     "inline-block px-3 py-1 bg-white text-blue-600 rounded-full text-[12px] font-bold mb-3",
-                                  children: "커뮤니티",
+                                  children: "AI 영상",
                                 }),
                                 (0, t.jsx)("h3", {
                                   className:
                                     "text-[20px] font-semibold text-blue-900 leading-tight whitespace-pre-line",
-                                  children: `반려인들의 생생한
-경험이 모이는 곳`,
+                                  children: `스크립트와 장면이
+한 번에 영상이 되는 곳`,
                                 }),
                               ],
                             }),
                             (0, t.jsx)("div", {
                               className: "w-[180px] h-[180px]",
                               children: (0, t.jsx)("img", {
-                                src: "/images/Character_Official_Source/community-hero.webp",
-                                alt: "커뮤니티",
+                                src: "/mako/poses/mako-create.png",
+                                alt: "영상을 만드는 마코",
                                 draggable: !1,
                                 loading: "lazy",
                                 decoding: "async",
@@ -1558,20 +1558,20 @@ const QUESTION_PLACEHOLDERS = [
                                   className:
                                     "text-[14px] text-gray-700 leading-relaxed mb-4",
                                   children: [
-                                    "반려생활에 대해 궁금한 점, 자랑하고 싶은 순간, 정보가 필요한 문제 상황까지 다른",
+                                    "전달하고 싶은 메시지와 제품 이미지를 바탕으로",
                                     " ",
                                     (0, t.jsx)("span", {
                                       className: "text-blue-600 font-semibold",
-                                      children: "반려인들의 이야기와 경험",
+                                      children: "숏폼 영상의 장면과 흐름",
                                     }),
-                                    "을 공유할 수 있어요.",
+                                    "을 자동으로 설계하고 제작해요.",
                                   ],
                                 }),
                                 (0, t.jsx)("a", {
-                                  href: "https://pickcare.co.kr/community",
+                                  href: "https://mako.hyphen.it.com/ai-video",
                                   className:
                                     "block w-full py-3 text-white text-center font-bold rounded-xl bg-[#2563EB] shadow-[0_3px_0_#1E4ACC] active:translate-y-[2px] active:shadow-[0_1px_0_#1E4ACC]",
-                                  children: "커뮤니티 구경하기",
+                                  children: "AI 영상 만들기",
                                 }),
                               ],
                             }),
@@ -1587,21 +1587,21 @@ const QUESTION_PLACEHOLDERS = [
                                 (0, t.jsx)("span", {
                                   className:
                                     "inline-block px-3 py-1 bg-white text-[#172554] rounded-full text-[12px] font-bold mb-3",
-                                  children: "마이페이지",
+                                  children: "내 작업",
                                 }),
                                 (0, t.jsx)("h3", {
                                   className:
                                     "text-[20px] font-semibold text-white leading-tight whitespace-pre-line",
-                                  children: `나와 반려동물의
-기록을 담는 곳`,
+                                  children: `브랜드의 모든 콘텐츠를
+한곳에 담는 곳`,
                                 }),
                               ],
                             }),
                             (0, t.jsx)("div", {
                               className: "w-[180px] h-[180px]",
                               children: (0, t.jsx)("img", {
-                                src: "/images/Character_Official_Source/01.main_motion.004.webp",
-                                alt: "마이페이지",
+                                src: "/mako/poses/mako-curious.png",
+                                alt: "작업을 살펴보는 마코",
                                 draggable: !1,
                                 loading: "lazy",
                                 decoding: "async",
@@ -1616,13 +1616,13 @@ const QUESTION_PLACEHOLDERS = [
                                   className:
                                     "text-[14px] text-gray-700 leading-relaxed mb-4",
                                   children: [
-                                    "반려동물",
+                                    "브랜드",
                                     " ",
                                     (0, t.jsx)("span", {
                                       className: "text-blue-600 font-semibold",
-                                      children: "프로필 등록",
+                                      children: "프로필과 에셋",
                                     }),
-                                    ", 나의 활동 기록, 작성한 글과 저장한 콘텐츠까지 내 반려생활을",
+                                    ", 생성한 카드뉴스와 영상, 저장한 템플릿까지 모든 콘텐츠를",
                                     " ",
                                     (0, t.jsx)("span", {
                                       className: "text-blue-600 font-semibold",
@@ -1632,10 +1632,10 @@ const QUESTION_PLACEHOLDERS = [
                                   ],
                                 }),
                                 (0, t.jsx)("a", {
-                                  href: "https://pickcare.co.kr/mypage",
+                                  href: "https://mako.hyphen.it.com/my",
                                   className:
                                     "block w-full py-3 text-white text-center font-bold rounded-xl bg-[#2563EB] shadow-[0_3px_0_#1E4ACC] active:translate-y-[2px] active:shadow-[0_1px_0_#1E4ACC]",
-                                  children: "마이페이지 바로가기",
+                                  children: "내 작업 바로가기",
                                 }),
                               ],
                             }),
@@ -1672,9 +1672,9 @@ const QUESTION_PLACEHOLDERS = [
                               ease: [0.33, 1, 0.68, 1],
                             },
                             children: (0, t.jsx)(er, {
-                              title: "픽라운지",
-                              headline: `반려생활 콘텐츠가
-한 곳에 모이는 순간`,
+                              title: "카드뉴스",
+                              headline: `브랜드다운 카드뉴스가
+몇 분 만에 완성되는 순간`,
                               iconType: "pick",
                               bgColor: "bg-[#2563EB]",
                               badgeColor: "bg-white",
@@ -1700,9 +1700,9 @@ const QUESTION_PLACEHOLDERS = [
                               ease: [0.33, 1, 0.68, 1],
                             },
                             children: (0, t.jsx)(er, {
-                              title: "커뮤니티",
-                              headline: `반려인들의 생생한
-경험이 모이는 곳`,
+                              title: "AI 영상",
+                              headline: `스크립트와 장면이
+한 번에 영상이 되는 곳`,
                               iconType: "community",
                               bgColor: "bg-[#DBEAFE]",
                               textColor: "text-blue-900",
@@ -1729,9 +1729,9 @@ const QUESTION_PLACEHOLDERS = [
                               ease: [0.33, 1, 0.68, 1],
                             },
                             children: (0, t.jsx)(er, {
-                              title: "마이페이지",
-                              headline: `나와 반려동물의
-기록을 담는 곳`,
+                              title: "내 작업",
+                              headline: `브랜드의 모든 콘텐츠를
+한곳에 담는 곳`,
                               iconType: "mypage",
                               bgColor: "bg-[#172554]",
                               badgeColor: "bg-white",
@@ -1755,8 +1755,8 @@ const QUESTION_PLACEHOLDERS = [
                               (0, t.jsx)(
                                 s.motion.img,
                                 {
-                                  src: "/images/Character_Official_Source/01.main_motion.002.webp",
-                                  alt: "픽라운지",
+                                  src: "/mako/poses/mako-analytics.png",
+                                  alt: "카드뉴스를 분석하는 마코",
                                   draggable: !1,
                                   loading: "lazy",
                                   decoding: "async",
@@ -1776,8 +1776,8 @@ const QUESTION_PLACEHOLDERS = [
                               (0, t.jsx)(
                                 s.motion.img,
                                 {
-                                  src: "/images/Character_Official_Source/community-hero.webp",
-                                  alt: "커뮤니티",
+                                  src: "/mako/poses/mako-create.png",
+                                  alt: "영상을 만드는 마코",
                                   draggable: !1,
                                   loading: "lazy",
                                   decoding: "async",
@@ -1797,8 +1797,8 @@ const QUESTION_PLACEHOLDERS = [
                               (0, t.jsx)(
                                 s.motion.img,
                                 {
-                                  src: "/images/Character_Official_Source/01.main_motion.004.webp",
-                                  alt: "마이페이지",
+                                  src: "/mako/poses/mako-curious.png",
+                                  alt: "작업을 살펴보는 마코",
                                   draggable: !1,
                                   loading: "lazy",
                                   decoding: "async",
@@ -1850,48 +1850,48 @@ const QUESTION_PLACEHOLDERS = [
                                             className:
                                               "text-[18px] text-gray-900 leading-relaxed font-medium mb-6",
                                             children: [
-                                              "전문 에디터가 정리한",
+                                              "제품 정보와 한 줄 아이디어로",
                                               (0, t.jsx)("br", {}),
                                               (0, t.jsx)("span", {
                                                 className:
                                                   "inline-block bg-blue-50 text-blue-600 font-semibold px-1 py-0.5 rounded",
-                                                children: "반려생활 팁부터",
+                                                children: "브랜드다운 카드뉴스",
                                               }),
-                                              "부터",
+                                              "를 만들고",
                                               (0, t.jsx)("br", {}),
-                                              "반려인들이 많이 찾는 산책 코스,",
+                                              "구성, 카피, 이미지 스타일을",
                                               (0, t.jsx)("br", {}),
-                                              "여행지, 오프라인 매장 추천까지",
+                                              "채널에 맞게 한 번에 완성해요.",
                                               (0, t.jsx)("br", {}),
                                               (0, t.jsx)("span", {
                                                 className:
                                                   "inline-block bg-blue-50 text-blue-600 font-semibold px-1 py-0.5 rounded",
-                                                children: "픽라운지",
+                                                children: "MAKO",
                                               }),
-                                              "에서 모두 확인해요.",
+                                              "가 브랜드 맥락을 기억합니다.",
                                               (0, t.jsx)("br", {}),
                                               (0, t.jsx)("br", {}),
-                                              "필요한 정보만 골라보는 게 아니라",
+                                              "매번 처음부터 설명하지 않아도",
                                               (0, t.jsx)("br", {}),
                                               (0, t.jsx)("span", {
                                                 className:
                                                   "inline-block bg-blue-50 text-blue-600 font-semibold px-1 py-0.5 rounded",
                                                 children:
-                                                  "내 반려동물에게 맞는 콘텐츠",
+                                                  "우리 브랜드에 맞는 콘텐츠",
                                               }),
                                               "를",
                                               (0, t.jsx)("br", {}),
-                                              "더 쉽게 만날 수 있어요.",
+                                              "를 더 빠르게 만들 수 있어요.",
                                             ],
                                           }),
                                         }),
                                         (0, t.jsx)("a", {
-                                          href: "https://pickcare.co.kr/lounge",
+                                          href: "https://mako.hyphen.it.com/card-news",
                                           className:
                                             " w-full py-4 text-white text-lg font-bold  rounded-xl relative overflow-hidden bg-[#2563EB] transition-all duration-150 shadow-[0_4px_0_#1E4ACC] active:translate-y-[3px] active:shadow-[0_1px_0_#1E4ACC] mt-auto flex items-center justify-center no-underline ",
                                           children: (0, t.jsx)("span", {
                                             className: "relative z-10",
-                                            children: "픽라운지 둘러보기",
+                                            children: "카드뉴스 만들기",
                                           }),
                                         }),
                                       ],
@@ -1908,49 +1908,49 @@ const QUESTION_PLACEHOLDERS = [
                                               className:
                                                 "text-[18px] text-gray-900 leading-relaxed font-medium mb-6",
                                               children: [
-                                                "반려생활에 대해 궁금한 점,",
+                                                "전달하고 싶은 핵심 메시지,",
                                                 (0, t.jsx)("br", {}),
-                                                "자랑하고 싶은 순간,",
+                                                "제품 이미지와 참고 자료,",
                                                 (0, t.jsx)("br", {}),
-                                                "정보가 필요한 문제 상황까지",
+                                                "원하는 영상 분위기까지",
                                                 (0, t.jsx)("br", {}),
-                                                "다른",
+                                                "입력하면",
                                                 (0, t.jsx)("span", {
                                                   className:
                                                     "inline-block bg-blue-50 text-blue-600 font-semibold px-1 py-0.5 rounded",
                                                   children:
-                                                    "반려인들의 이야기와 경험",
+                                                    "숏폼 영상의 장면과 흐름",
                                                 }),
-                                                "을 공유할 수 있어요.",
+                                                "을 자동으로 설계해요.",
                                               ],
                                             }),
                                             (0, t.jsxs)("p", {
                                               className:
                                                 "text-[18px] text-gray-900 leading-relaxed font-medium",
                                               children: [
-                                                "사진 후기, Q&A, 공감 스토리가",
+                                                "스크립트, 이미지, 장면 전환이",
                                                 (0, t.jsx)("br", {}),
-                                                "모여",
+                                                "이어져",
                                                 (0, t.jsx)("span", {
                                                   className:
                                                     "inline-block bg-blue-50 text-blue-600 font-semibold px-1 py-0.5 rounded",
                                                   children:
-                                                    "진짜 반려생활 정보",
+                                                    "바로 게시할 수 있는 영상",
                                                 }),
                                                 "를",
                                                 (0, t.jsx)("br", {}),
-                                                "찾기 쉬운 공간입니다.",
+                                                "으로 완성됩니다.",
                                               ],
                                             }),
                                           ],
                                         }),
                                         (0, t.jsx)("a", {
-                                          href: "https://pickcare.co.kr/community",
+                                          href: "https://mako.hyphen.it.com/ai-video",
                                           className:
                                             " w-full py-4 text-white text-lg font-bold  rounded-xl relative overflow-hidden bg-[#2563EB] transition-all duration-150 shadow-[0_4px_0_#1E4ACC] active:translate-y-[3px] active:shadow-[0_1px_0_#1E4ACC] mt-auto flex items-center justify-center no-underline ",
                                           children: (0, t.jsx)("span", {
                                             className: "relative z-10",
-                                            children: "커뮤니티 구경하기",
+                                            children: "AI 영상 만들기",
                                           }),
                                         }),
                                       ],
@@ -1967,18 +1967,18 @@ const QUESTION_PLACEHOLDERS = [
                                               className:
                                                 "text-[18px] text-gray-900 leading-relaxed font-medium mb-6",
                                               children: [
-                                                "반려동물",
+                                                "브랜드",
                                                 " ",
                                                 (0, t.jsx)("span", {
                                                   className:
                                                     "inline-block bg-blue-50 text-blue-600 font-semibold px-1 py-0.5 rounded",
-                                                  children: "프로필 등록",
+                                                  children: "프로필과 에셋",
                                                 }),
                                                 ",",
                                                 (0, t.jsx)("br", {}),
-                                                "나의 활동 기록, 작성한 글과",
+                                                "생성한 카드뉴스와 영상,",
                                                 (0, t.jsx)("br", {}),
-                                                "저장한 콘텐츠까지 내 반려생활을",
+                                                "저장한 템플릿까지 모든 결과물을",
                                                 (0, t.jsx)("br", {}),
                                                 (0, t.jsx)("span", {
                                                   className:
@@ -1992,30 +1992,30 @@ const QUESTION_PLACEHOLDERS = [
                                               className:
                                                 "text-[18px] text-gray-900 leading-relaxed font-medium",
                                               children: [
-                                                "여러 마리와 반려 중이어도",
+                                                "여러 캠페인을 진행 중이어도",
                                                 (0, t.jsx)("br", {}),
-                                                "프로필을 바꿔가며",
+                                                "작업을 바꿔가며",
                                                 (0, t.jsx)("br", {}),
                                                 (0, t.jsx)("span", {
                                                   className:
                                                     "inline-block bg-blue-50 text-blue-600 font-semibold px-1 py-0.5 rounded",
                                                   children:
-                                                    "각 반려동물에게 맞는 케어",
+                                                    "캠페인별 콘텐츠와 히스토리",
                                                 }),
                                                 "를",
                                                 (0, t.jsx)("br", {}),
-                                                "받을 수 있어요.",
+                                                "를 이어서 관리할 수 있어요.",
                                               ],
                                             }),
                                           ],
                                         }),
                                         (0, t.jsx)("a", {
-                                          href: "https://pickcare.co.kr/mypage",
+                                          href: "https://mako.hyphen.it.com/my",
                                           className:
                                             " w-full py-4 text-white text-lg font-bold  rounded-xl relative overflow-hidden bg-[#2563EB] transition-all duration-150 shadow-[0_4px_0_#1E4ACC] active:translate-y-[3px] active:shadow-[0_1px_0_#1E4ACC] mt-auto flex items-center justify-center no-underline ",
                                           children: (0, t.jsx)("span", {
                                             className: "relative z-10",
-                                            children: "마이페이지 바로가기",
+                                            children: "내 작업 바로가기",
                                           }),
                                         }),
                                       ],
@@ -2036,8 +2036,8 @@ const QUESTION_PLACEHOLDERS = [
                     className:
                       "relative left-1/2 -translate-x-1/2 w-screen bg-gradient-to-b from-[#FAFAFA] to-[#F7F7F7] pointer-events-none",
                     children: (0, t.jsx)("img", {
-                      src: "/images/main/footer_3dface_picky.webp",
-                      alt: "픽키",
+                      src: "/mako/poses/mako-sleep.png",
+                      alt: "휴식하는 마코",
                       draggable: !1,
                       loading: "lazy",
                       decoding: "async",

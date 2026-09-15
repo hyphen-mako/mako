@@ -9,7 +9,7 @@ const s={motion},l={AnimatePresence},X={useRouter},q={default:(props)=>t.jsx(Ima
 const ea={default:({name,size,className})=>t.jsx('i',{className:`${name} ${className||''} inline-block`,style:{fontSize:size,display:'inline-flex',alignItems:'center',justifyContent:'center'},'aria-hidden':true})};
     function QuestionInput({
       onSubmit: e,
-      placeholder: n = "사료를 안 먹고 간식만 찾아요",
+      placeholder: n = "신제품 인스타 카드뉴스를 만들어줘",
       placeholders: a,
       inputValue: o,
       onInputChange: r,
@@ -84,7 +84,7 @@ const ea={default:({name,size,className})=>t.jsx('i',{className:`${name} ${class
                 (0, t.jsx)("input", {
                   type: "text",
                   name: "query",
-                  "aria-label": "반려동물 관련 질문 입력",
+                  "aria-label": "만들고 싶은 마케팅 콘텐츠 입력",
                   value: N,
                   onChange: (e) => {
                     var t;
@@ -117,7 +117,7 @@ const ea={default:({name,size,className})=>t.jsx('i',{className:`${name} ${class
                       "text-[14px] tablet:text-[16px] desktop:text-[18px] font-bold whitespace-nowrap",
                     animate: { opacity: +!!m, width: m ? "auto" : 0 },
                     transition: { duration: 0.3 },
-                    children: "질문하러가기",
+                    children: "MAKO로 만들기",
                   }),
                 ],
               }),
