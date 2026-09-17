@@ -153,29 +153,37 @@ export default function FaqSection() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <div className="mx-auto w-full max-w-[900px]">
-        <p className="text-center text-[14px] font-bold text-[#0f7dff]">FAQ</p>
+        <img src="/mako/mako-mascot.webp" alt="" className="mx-auto h-16 w-16 object-contain" />
+        <p className="mt-3 text-center text-[14px] font-bold text-[#0f7dff]">FAQ</p>
         <h2 id="faq-heading" className="keep-all mt-2 text-center text-[30px] font-black leading-[1.25] text-[#162033] tablet:text-[38px] desktop:text-[44px]">
           자주 묻는 질문
         </h2>
         <div className="mt-10 flex flex-col gap-4">
-          {FAQ_ITEMS.map((item) => (
+          {FAQ_ITEMS.map((item, index) => (
             <div key={item.question} className="faq-item rounded-2xl px-6 py-5 tablet:px-8 tablet:py-6">
-              <h3 className="keep-all text-[16px] font-bold text-[#162033] tablet:text-[18px]">
-                {item.question}
-              </h3>
-              <p className="keep-all mt-2 text-[14px] leading-relaxed text-[#4b5a6d] tablet:text-[15px]">
-                {item.answer}
-              </p>
+              <div className="flex items-start gap-4">
+                <span className="faq-q-chip" aria-hidden="true">Q{index + 1}</span>
+                <div className="min-w-0">
+                  <h3 className="keep-all text-[16px] font-bold leading-snug text-[#162033] tablet:text-[18px]">
+                    {item.question}
+                  </h3>
+                  <p className="keep-all mt-2 text-[14px] leading-relaxed text-[#4b5a6d] tablet:text-[15px]">
+                    {item.answer}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
-        <p className="mt-8 text-center text-[14px] text-[#7a899b]">
-          카드뉴스 제작이 처음이라면{" "}
-          <a href="/guide" className="font-bold text-[#0f7dff] underline underline-offset-2">
-            카드뉴스 만드는 방법 가이드
-          </a>
-          를 확인해보세요.
-        </p>
+        <a href="/guide" className="faq-guide-link mt-8 flex items-center justify-between gap-4 rounded-2xl px-6 py-5 tablet:px-8">
+          <div className="min-w-0">
+            <p className="text-[13px] font-bold tracking-wide text-[#0f7dff]">GUIDE</p>
+            <p className="keep-all mt-1.5 text-[15px] font-bold text-[#162033] tablet:text-[16px]">
+              카드뉴스 제작이 처음이라면? 카드뉴스 만드는 방법 가이드 보기
+            </p>
+          </div>
+          <i className="ri-arrow-right-line shrink-0 text-[22px] text-[#0f7dff]" aria-hidden="true" />
+        </a>
       </div>
     </section>
   );

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import GuideHeader from "@/components/GuideHeader";
+import GuideHero from "@/components/GuideHero";
+import GuideCta from "@/components/GuideCta";
 import GuideRelated from "@/components/GuideRelated";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "카드뉴스 카피 잘 쓰는 법: 첫 장부터 CTA까지 문구 공식",
@@ -78,23 +81,13 @@ export default function CardnewsCopyPage() {
   return (
     <main className="bg-white text-[#162033]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      <article className="mx-auto w-full max-w-[820px] px-6 py-16 tablet:px-8 tablet:py-20">
-        <nav aria-label="breadcrumb" className="text-[13px] text-[#7a899b]">
-          <Link href="/" className="font-semibold text-[#0f7dff]">MAKO</Link>
-          <span className="mx-2">/</span>
-          <Link href="/guide" className="font-semibold text-[#0f7dff]">가이드</Link>
-          <span className="mx-2">/</span>
-          <span>카피 쓰는 법</span>
-        </nav>
-
-        <h1 className="keep-all mt-6 text-[30px] font-black leading-[1.3] tablet:text-[40px]">
-          카드뉴스 카피 잘 쓰는 법: 첫 장부터 CTA까지 문구 공식
-        </h1>
-        <p className="keep-all mt-5 text-[15px] leading-relaxed text-[#4b5a6d] tablet:text-[17px]">
-          카드뉴스의 성과는 디자인보다 문구에서 갈립니다. 같은 디자인이라도 첫 장
-          제목이 약하면 넘기지 않고, 본문이 장황하면 중간에 이탈합니다. 첫 장부터
-          마지막 장까지 적용할 수 있는 문구 공식을 정리했습니다.
-        </p>
+      <GuideHeader />
+      <GuideHero
+        crumbs={[{ label: "MAKO", href: "/" }, { label: "가이드", href: "/guide" }, { label: "카피 쓰는 법" }]}
+        title="카드뉴스 카피 잘 쓰는 법: 첫 장부터 CTA까지 문구 공식"
+        intro="카드뉴스의 성과는 디자인보다 문구에서 갈립니다. 같은 디자인이라도 첫 장 제목이 약하면 넘기지 않고, 본문이 장황하면 중간에 이탈합니다. 첫 장부터 마지막 장까지 적용할 수 있는 문구 공식을 정리했습니다."
+      />
+      <article className="guide-article mx-auto w-full max-w-[820px] px-6 pb-16 pt-8 tablet:px-8 tablet:pb-20">
 
         <section className="mt-12">
           <h2 className="keep-all text-[22px] font-bold tablet:text-[26px]">첫 장 제목: 4가지 공식</h2>
@@ -144,17 +137,12 @@ export default function CardnewsCopyPage() {
             다듬는 시간만 쓰면 됩니다. 웨이트리스트에 등록하면 오픈 시
             가장 먼저 초대해드립니다.
           </p>
-          <Link
-            href="/#waitlist"
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#0f7dff] px-7 py-3.5 text-[15px] font-bold text-white shadow-lg transition hover:-translate-y-0.5"
-          >
-            웨이트리스트 등록하고 먼저 써보기
-            <i className="ri-arrow-right-line" aria-hidden="true" />
-          </Link>
+          <GuideCta buttonLabel="웨이트리스트 등록하고 먼저 써보기" />
         </section>
 
         <GuideRelated current="/guide/cardnews-copy" />
       </article>
+      <SiteFooter />
     </main>
   );
 }

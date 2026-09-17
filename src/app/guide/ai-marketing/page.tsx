@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import GuideHeader from "@/components/GuideHeader";
+import GuideHero from "@/components/GuideHero";
+import GuideCta from "@/components/GuideCta";
 import GuideRelated from "@/components/GuideRelated";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "AI로 SNS 마케팅 콘텐츠 자동화하는 방법",
@@ -87,24 +90,13 @@ export default function AiMarketingPage() {
   return (
     <main className="bg-white text-[#162033]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      <article className="mx-auto w-full max-w-[820px] px-6 py-16 tablet:px-8 tablet:py-20">
-        <nav aria-label="breadcrumb" className="text-[13px] text-[#7a899b]">
-          <Link href="/" className="font-semibold text-[#0f7dff]">MAKO</Link>
-          <span className="mx-2">/</span>
-          <Link href="/guide" className="font-semibold text-[#0f7dff]">가이드</Link>
-          <span className="mx-2">/</span>
-          <span>AI 마케팅 자동화</span>
-        </nav>
-
-        <h1 className="keep-all mt-6 text-[30px] font-black leading-[1.3] tablet:text-[40px]">
-          AI로 SNS 마케팅 콘텐츠 자동화하는 방법
-        </h1>
-        <p className="keep-all mt-5 text-[15px] leading-relaxed text-[#4b5a6d] tablet:text-[17px]">
-          SNS 마케팅에서 가장 시간을 잡아먹는 건 콘텐츠 제작입니다. 카드뉴스 한 세트를
-          만드는 데도 기획·카피·디자인이 필요한데, AI 도구를 쓰면 이 과정 상당 부분을
-          자동화할 수 있습니다. 어떤 작업을 맡길 수 있고, 도구는 무엇을 기준으로
-          고르면 되는지 정리했습니다.
-        </p>
+      <GuideHeader />
+      <GuideHero
+        crumbs={[{ label: "MAKO", href: "/" }, { label: "가이드", href: "/guide" }, { label: "AI 마케팅 자동화" }]}
+        title="AI로 SNS 마케팅 콘텐츠 자동화하는 방법"
+        intro="SNS 마케팅에서 가장 시간을 잡아먹는 건 콘텐츠 제작입니다. 카드뉴스 한 세트를 만드는 데도 기획·카피·디자인이 필요한데, AI 도구를 쓰면 이 과정 상당 부분을 자동화할 수 있습니다. 어떤 작업을 맡길 수 있고, 도구는 무엇을 기준으로 고르면 되는지 정리했습니다."
+      />
+      <article className="guide-article mx-auto w-full max-w-[820px] px-6 pb-16 pt-8 tablet:px-8 tablet:pb-20">
 
         <section className="mt-12">
           <h2 className="keep-all text-[22px] font-bold tablet:text-[26px]">AI가 대신할 수 있는 작업</h2>
@@ -139,17 +131,12 @@ export default function AiMarketingPage() {
             지금은 오픈 이벤트로 웨이트리스트 등록자에게 카드뉴스 무한 생성 혜택을
             제공하고 있습니다.
           </p>
-          <Link
-            href="/#waitlist"
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#0f7dff] px-7 py-3.5 text-[15px] font-bold text-white shadow-lg transition hover:-translate-y-0.5"
-          >
-            웨이트리스트 등록하고 먼저 써보기
-            <i className="ri-arrow-right-line" aria-hidden="true" />
-          </Link>
+          <GuideCta buttonLabel="웨이트리스트 등록하고 먼저 써보기" />
         </section>
 
         <GuideRelated current="/guide/ai-marketing" />
       </article>
+      <SiteFooter />
     </main>
   );
 }

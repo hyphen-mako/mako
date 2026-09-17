@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import GuideHeader from "@/components/GuideHeader";
+import GuideHero from "@/components/GuideHero";
+import GuideCta from "@/components/GuideCta";
 import GuideRelated from "@/components/GuideRelated";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "소상공인 SNS 마케팅 시작하기: 카드뉴스로 가볍게 시작하는 법",
@@ -79,24 +82,13 @@ export default function SmallBusinessMarketingPage() {
   return (
     <main className="bg-white text-[#162033]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      <article className="mx-auto w-full max-w-[820px] px-6 py-16 tablet:px-8 tablet:py-20">
-        <nav aria-label="breadcrumb" className="text-[13px] text-[#7a899b]">
-          <Link href="/" className="font-semibold text-[#0f7dff]">MAKO</Link>
-          <span className="mx-2">/</span>
-          <Link href="/guide" className="font-semibold text-[#0f7dff]">가이드</Link>
-          <span className="mx-2">/</span>
-          <span>소상공인 마케팅</span>
-        </nav>
-
-        <h1 className="keep-all mt-6 text-[30px] font-black leading-[1.3] tablet:text-[40px]">
-          소상공인 SNS 마케팅 시작하기: 카드뉴스로 가볍게 시작하는 법
-        </h1>
-        <p className="keep-all mt-5 text-[15px] leading-relaxed text-[#4b5a6d] tablet:text-[17px]">
-          가게를 운영하면서 SNS까지 챙기기 어려운 이유는 &quot;뭘 올릴지&quot;와
-          &quot;만드는 시간&quot; 때문입니다. 카드뉴스는 사진 촬영이나 영상 편집 없이
-          정보만 있으면 되는 가장 가벼운 포맷입니다. 소상공인에게 맞는 시작 방법을
-          정리했습니다.
-        </p>
+      <GuideHeader />
+      <GuideHero
+        crumbs={[{ label: "MAKO", href: "/" }, { label: "가이드", href: "/guide" }, { label: "소상공인 마케팅" }]}
+        title="소상공인 SNS 마케팅 시작하기: 카드뉴스로 가볍게 시작하는 법"
+        intro="가게를 운영하면서 SNS까지 챙기기 어려운 이유는 뭘 올릴지와 만드는 시간 때문입니다. 카드뉴스는 사진 촬영이나 영상 편집 없이 정보만 있으면 되는 가장 가벼운 포맷입니다. 소상공인에게 맞는 시작 방법을 정리했습니다."
+      />
+      <article className="guide-article mx-auto w-full max-w-[820px] px-6 pb-16 pt-8 tablet:px-8 tablet:pb-20">
 
         <section className="mt-12">
           <h2 className="keep-all text-[22px] font-bold tablet:text-[26px]">왜 카드뉴스로 시작하는가</h2>
@@ -140,17 +132,12 @@ export default function SmallBusinessMarketingPage() {
             제작이 30분에서 5분으로 줄면 주 1회 운영이 현실이 됩니다. 지금
             웨이트리스트에 등록하면 오픈 시 카드뉴스 무한 생성 혜택을 드립니다.
           </p>
-          <Link
-            href="/#waitlist"
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#0f7dff] px-7 py-3.5 text-[15px] font-bold text-white shadow-lg transition hover:-translate-y-0.5"
-          >
-            웨이트리스트 등록하고 무한 생성 받기
-            <i className="ri-arrow-right-line" aria-hidden="true" />
-          </Link>
+          <GuideCta />
         </section>
 
         <GuideRelated current="/guide/small-business-marketing" />
       </article>
+      <SiteFooter />
     </main>
   );
 }

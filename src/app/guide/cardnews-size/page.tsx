@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import GuideHeader from "@/components/GuideHeader";
+import GuideHero from "@/components/GuideHero";
+import GuideCta from "@/components/GuideCta";
 import GuideRelated from "@/components/GuideRelated";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "인스타그램 카드뉴스 사이즈와 템플릿 총정리",
@@ -76,23 +79,13 @@ export default function CardnewsSizePage() {
   return (
     <main className="bg-white text-[#162033]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      <article className="mx-auto w-full max-w-[820px] px-6 py-16 tablet:px-8 tablet:py-20">
-        <nav aria-label="breadcrumb" className="text-[13px] text-[#7a899b]">
-          <Link href="/" className="font-semibold text-[#0f7dff]">MAKO</Link>
-          <span className="mx-2">/</span>
-          <Link href="/guide" className="font-semibold text-[#0f7dff]">가이드</Link>
-          <span className="mx-2">/</span>
-          <span>사이즈와 템플릿</span>
-        </nav>
-
-        <h1 className="keep-all mt-6 text-[30px] font-black leading-[1.3] tablet:text-[40px]">
-          인스타그램 카드뉴스 사이즈와 템플릿 총정리
-        </h1>
-        <p className="keep-all mt-5 text-[15px] leading-relaxed text-[#4b5a6d] tablet:text-[17px]">
-          카드뉴스를 만들기 전에 정해야 할 것이 사이즈와 구성입니다. 비율에 따라 피드에서
-          보이는 면적이 달라지고, 장수와 폰트 크기에 따라 끝까지 읽히는지가 갈립니다.
-          자주 쓰이는 규격과 선택 기준을 정리했습니다.
-        </p>
+      <GuideHeader />
+      <GuideHero
+        crumbs={[{ label: "MAKO", href: "/" }, { label: "가이드", href: "/guide" }, { label: "사이즈와 템플릿" }]}
+        title="인스타그램 카드뉴스 사이즈와 템플릿 총정리"
+        intro="카드뉴스를 만들기 전에 정해야 할 것이 사이즈와 구성입니다. 비율에 따라 피드에서 보이는 면적이 달라지고, 장수와 폰트 크기에 따라 끝까지 읽히는지가 갈립니다. 자주 쓰이는 규격과 선택 기준을 정리했습니다."
+      />
+      <article className="guide-article mx-auto w-full max-w-[820px] px-6 pb-16 pt-8 tablet:px-8 tablet:pb-20">
 
         <section className="mt-12">
           <h2 className="keep-all text-[22px] font-bold tablet:text-[26px]">카드뉴스 사이즈: 어떤 비율을 쓸까?</h2>
@@ -132,17 +125,12 @@ export default function CardnewsSizePage() {
             학습해 자동으로 만들어주는 AI 도구가 시간을 크게 줄여줍니다.
             MAKO는 브랜드 정보를 반영해 카드뉴스 구성·카피·이미지를 한 번에 제작합니다.
           </p>
-          <Link
-            href="/#waitlist"
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#0f7dff] px-7 py-3.5 text-[15px] font-bold text-white shadow-lg transition hover:-translate-y-0.5"
-          >
-            MAKO 웨이트리스트 등록하기
-            <i className="ri-arrow-right-line" aria-hidden="true" />
-          </Link>
+          <GuideCta buttonLabel="MAKO 웨이트리스트 등록하기" />
         </section>
 
         <GuideRelated current="/guide/cardnews-size" />
       </article>
+      <SiteFooter />
     </main>
   );
 }

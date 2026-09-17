@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import GuideHeader from "@/components/GuideHeader";
+import GuideHero from "@/components/GuideHero";
+import GuideCta from "@/components/GuideCta";
 import GuideRelated from "@/components/GuideRelated";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "숏폼 영상 만드는 방법: 카드뉴스에서 영상까지 확장하기",
@@ -75,24 +78,13 @@ export default function ShortformPage() {
   return (
     <main className="bg-white text-[#162033]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      <article className="mx-auto w-full max-w-[820px] px-6 py-16 tablet:px-8 tablet:py-20">
-        <nav aria-label="breadcrumb" className="text-[13px] text-[#7a899b]">
-          <Link href="/" className="font-semibold text-[#0f7dff]">MAKO</Link>
-          <span className="mx-2">/</span>
-          <Link href="/guide" className="font-semibold text-[#0f7dff]">가이드</Link>
-          <span className="mx-2">/</span>
-          <span>숏폼 영상</span>
-        </nav>
-
-        <h1 className="keep-all mt-6 text-[30px] font-black leading-[1.3] tablet:text-[40px]">
-          숏폼 영상 만드는 방법: 카드뉴스에서 영상까지 확장하기
-        </h1>
-        <p className="keep-all mt-5 text-[15px] leading-relaxed text-[#4b5a6d] tablet:text-[17px]">
-          릴스, 쇼츠, 틱톡 — 숏폼은 도달 면적이 가장 큰 콘텐츠 포맷입니다. 하지만
-          영상 편집을 배우기엔 부담이 큽니다. 좋은 소식은 이미 카드뉴스를 만들 줄
-          안다면 숏폼의 80%는 알고 있다는 것입니다. 같은 구성 원리로 확장하는 방법을
-          정리했습니다.
-        </p>
+      <GuideHeader />
+      <GuideHero
+        crumbs={[{ label: "MAKO", href: "/" }, { label: "가이드", href: "/guide" }, { label: "숏폼 영상" }]}
+        title="숏폼 영상 만드는 방법: 카드뉴스에서 영상까지 확장하기"
+        intro="릴스, 쇼츠, 틱톡 — 숏폼은 도달 면적이 가장 큰 콘텐츠 포맷입니다. 하지만 영상 편집을 배우기엔 부담이 큽니다. 좋은 소식은 이미 카드뉴스를 만들 줄 안다면 숏폼의 80%는 알고 있다는 것입니다. 같은 구성 원리로 확장하는 방법을 정리했습니다."
+      />
+      <article className="guide-article mx-auto w-full max-w-[820px] px-6 pb-16 pt-8 tablet:px-8 tablet:pb-20">
 
         <section className="mt-12">
           <h2 className="keep-all text-[22px] font-bold tablet:text-[26px]">숏폼의 기본 구조: 카드뉴스와 같다</h2>
@@ -141,17 +133,12 @@ export default function ShortformPage() {
             지금 웨이트리스트에 등록하면 오픈 시 카드뉴스 무한 생성 혜택을
             가장 먼저 받아볼 수 있습니다.
           </p>
-          <Link
-            href="/#waitlist"
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#0f7dff] px-7 py-3.5 text-[15px] font-bold text-white shadow-lg transition hover:-translate-y-0.5"
-          >
-            MAKO 웨이트리스트 등록하기
-            <i className="ri-arrow-right-line" aria-hidden="true" />
-          </Link>
+          <GuideCta buttonLabel="MAKO 웨이트리스트 등록하기" />
         </section>
 
         <GuideRelated current="/guide/shortform" />
       </article>
+      <SiteFooter />
     </main>
   );
 }

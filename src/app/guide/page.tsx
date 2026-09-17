@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import GuideHeader from "@/components/GuideHeader";
+import GuideHero from "@/components/GuideHero";
+import GuideCta from "@/components/GuideCta";
 import GuideRelated from "@/components/GuideRelated";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "카드뉴스 만드는 방법: AI로 빠르게 제작하는 총정리 가이드",
@@ -109,22 +112,13 @@ export default function GuidePage() {
   return (
     <main className="bg-white text-[#162033]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      <article className="mx-auto w-full max-w-[820px] px-6 py-16 tablet:px-8 tablet:py-20">
-        <nav aria-label="breadcrumb" className="text-[13px] text-[#7a899b]">
-          <Link href="/" className="font-semibold text-[#0f7dff]">MAKO</Link>
-          <span className="mx-2">/</span>
-          <span>카드뉴스 가이드</span>
-        </nav>
-
-        <h1 className="keep-all mt-6 text-[30px] font-black leading-[1.3] tablet:text-[40px]">
-          카드뉴스 만드는 방법: AI로 빠르게 제작하는 총정리 가이드
-        </h1>
-        <p className="keep-all mt-5 text-[15px] leading-relaxed text-[#4b5a6d] tablet:text-[17px]">
-          카드뉴스는 인스타그램·스레드 같은 SNS에서 가장 널리 쓰이는 콘텐츠 형식입니다.
-          디자인 경험이 없어도 만들 수 있는 방법들이 있지만, 브랜드 톤을 유지하면서 꾸준히
-          만들기는 쉽지 않습니다. 이 가이드에서는 카드뉴스 제작 방법을 비교하고, 잘 읽히는
-          카드뉴스의 조건, 그리고 AI로 빠르게 만드는 방법까지 정리했습니다.
-        </p>
+      <GuideHeader />
+      <GuideHero
+        crumbs={[{ label: "MAKO", href: "/" }, { label: "카드뉴스 가이드" }]}
+        title="카드뉴스 만드는 방법: AI로 빠르게 제작하는 총정리 가이드"
+        intro="카드뉴스는 인스타그램·스레드 같은 SNS에서 가장 널리 쓰이는 콘텐츠 형식입니다. 디자인 경험이 없어도 만들 수 있는 방법들이 있지만, 브랜드 톤을 유지하면서 꾸준히 만들기는 쉽지 않습니다. 카드뉴스 제작 방법 비교부터 잘 읽히는 카드뉴스의 조건, AI로 빠르게 만드는 방법까지 정리했습니다."
+      />
+      <article className="guide-article mx-auto w-full max-w-[820px] px-6 pb-16 pt-8 tablet:px-8 tablet:pb-20">
 
         <section className="mt-12">
           <h2 className="keep-all text-[22px] font-bold tablet:text-[26px]">카드뉴스란?</h2>
@@ -191,17 +185,12 @@ export default function GuidePage() {
             현재 MAKO는 오픈 이벤트로 웨이트리스트 등록자에게 카드뉴스 무한 생성 혜택을
             제공하고 있습니다.
           </p>
-          <Link
-            href="/#waitlist"
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#0f7dff] px-7 py-3.5 text-[15px] font-bold text-white shadow-lg transition hover:-translate-y-0.5"
-          >
-            웨이트리스트 등록하고 무한 생성 받기
-            <i className="ri-arrow-right-line" aria-hidden="true" />
-          </Link>
+          <GuideCta />
         </section>
 
         <GuideRelated current="/guide" />
       </article>
+      <SiteFooter />
     </main>
   );
 }
