@@ -612,7 +612,7 @@ const GUIDE_CARDS = [
                   ref: F,
                   id: "waitlist",
                   className:
-                    "sticky top-0 h-[100svh] w-full flex items-center justify-center overflow-hidden z-0 relative",
+                    "sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden z-0 relative",
                   children: [
                     (0, t.jsx)("div", {
                       className:
@@ -854,18 +854,6 @@ const GUIDE_CARDS = [
                           },
                           "section1-bubbles",
                         ),
-                    }),
-                    (0, t.jsx)("div", {
-                      className: `mako-mobile-mascot ${a ? "mako-enter" : ""} desktop:hidden tablet:hidden absolute inset-x-0 bottom-[4px] w-full pointer-events-none z-[1] flex justify-center`,
-                      children: (0, t.jsx)("img", {
-                        src: "/mako/mako-mascot.webp",
-                        alt: "마코",
-                        width: 1254,
-                        height: 1254,
-                        draggable: !1,
-                        fetchPriority: "high",
-                        className: "h-[28svh] w-auto object-contain",
-                      }),
                     }),
                     (0, t.jsxs)(s.motion.div, {
                       className:
