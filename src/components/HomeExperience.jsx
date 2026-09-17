@@ -855,17 +855,9 @@ const GUIDE_CARDS = [
                           "section1-bubbles",
                         ),
                     }),
-                    (0, t.jsx)(s.motion.div, {
+                    (0, t.jsx)("div", {
                       className:
-                        "desktop:hidden tablet:hidden absolute inset-x-0 bottom-[-60px] w-full pointer-events-none z-[1] flex justify-center",
-                      style: { opacity: mobileFaceFade },
-                      initial: { opacity: 1, y: 20 },
-                      animate: a ? { opacity: 1, y: 0 } : {},
-                      transition: {
-                        duration: 0.9,
-                        ease: "easeOut",
-                        delay: 1.2,
-                      },
+                        "mako-mobile-mascot desktop:hidden tablet:hidden absolute inset-x-0 bottom-[-60px] w-full pointer-events-none z-[1] flex justify-center",
                       children: (0, t.jsx)("img", {
                         src: "/mako/mako-mascot.webp",
                         alt: "마코",

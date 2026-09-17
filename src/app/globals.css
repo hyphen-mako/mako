@@ -54,6 +54,29 @@ img { display: block; }
   background: #0f7dff;
 }
 
+.mako-mobile-mascot {
+  animation: mako-rise 0.9s ease-out 1.2s both;
+}
+
+@supports (animation-timeline: scroll()) {
+  .mako-mobile-mascot {
+    animation:
+      mako-rise 0.9s ease-out 1.2s both,
+      mako-fade linear both;
+    animation-timeline: auto, scroll(root);
+    animation-range: normal, 0vh 55vh;
+  }
+}
+
+@keyframes mako-rise {
+  from { transform: translateY(20px); }
+  to { transform: translateY(0); }
+}
+
+@keyframes mako-fade {
+  to { opacity: 0; }
+}
+
 .waitlist-section {
   background: #0b63ce;
 }

@@ -60,9 +60,9 @@ export default function SiteFooter() {
         </div>
 
         <div className="mt-10 border-t border-[#D9E3EE] pt-6">
-          <address className="flex flex-wrap gap-x-3 gap-y-1 text-[12px] not-italic leading-relaxed text-[#7A899B]">
+          <address className="flex flex-col gap-1 text-[12px] not-italic leading-relaxed text-[#7A899B] tablet:flex-row tablet:flex-wrap tablet:gap-x-3 tablet:gap-y-1">
             {BUSINESS_INFO.map((info) => (
-              <span key={info} className="whitespace-nowrap">{info}</span>
+              <span key={info}>{info}</span>
             ))}
           </address>
         </div>
