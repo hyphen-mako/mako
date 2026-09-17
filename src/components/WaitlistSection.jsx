@@ -8,12 +8,12 @@ export default function WaitlistSection() {
       <div className="mx-auto flex w-full max-w-[1180px] flex-col items-center gap-10 tablet:flex-row tablet:justify-between desktop:flex-row desktop:justify-between">
         <div className="max-w-[640px] text-center tablet:text-left desktop:text-left">
           <p className="mb-3 text-[14px] font-bold text-white">MAKO OPEN EVENT</p>
-          <h2 className="text-[34px] font-black leading-[1.2] tablet:text-[44px] desktop:text-[52px]">
+          <h2 className="keep-all text-[34px] font-black leading-[1.2] tablet:text-[44px] desktop:text-[52px]">
             카드뉴스 무한 생성,
             <br />
             오픈 이벤트로 시작하세요.
           </h2>
-          <p className="mt-5 text-[16px] leading-relaxed text-white tablet:text-[18px] desktop:text-[18px]">
+          <p className="keep-all mt-5 text-[16px] leading-relaxed text-white tablet:text-[18px] desktop:text-[18px]">
             웨잇리스트에 등록하면 카드뉴스를 제한 없이 만들 수 있는
             <br className="mobile:hidden" /> 오픈 이벤트 초대를 가장 먼저 보내드려요.
           </p>

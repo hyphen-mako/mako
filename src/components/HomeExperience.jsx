@@ -856,7 +856,7 @@ const GUIDE_CARDS = [
                         ),
                     }),
                     (0, t.jsx)("div", {
-                      className: `mako-mobile-mascot ${a ? "mako-enter" : ""} desktop:hidden tablet:hidden absolute inset-x-0 bottom-[-60px] w-full pointer-events-none z-[1] flex justify-center`,
+                      className: `mako-mobile-mascot ${a ? "mako-enter" : ""} desktop:hidden tablet:hidden absolute inset-x-0 bottom-[-30px] w-full pointer-events-none z-[1] flex justify-center`,
                       children: (0, t.jsx)("img", {
                         src: "/mako/mako-mascot.webp",
                         alt: "마코",
@@ -1031,7 +1031,7 @@ const GUIDE_CARDS = [
                             }),
                             (0, t.jsx)(s.motion.p, {
                               className:
-                                "text-[14px] tablet:text-[17px] desktop:text-[20px] text-gray-600 dark:text-gray-400 mb-8 desktop:mb-10 font-medium text-left",
+                                "keep-all text-[14px] tablet:text-[17px] desktop:text-[20px] text-gray-600 dark:text-gray-400 mb-8 desktop:mb-10 font-medium text-left",
                               initial: { opacity: 0, y: 50 },
                               animate: a ? { opacity: 1, y: 0 } : {},
                               transition: {
