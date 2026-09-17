@@ -19,6 +19,11 @@ function QuestionInput({
   const [internalValue, setInternalValue] = useState("");
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
+  const [submittedEmail, setSubmittedEmail] = useState("");
+  const [detail, setDetail] = useState({ name: "", phone: "", company: "", note: "" });
+  const [detailStatus, setDetailStatus] = useState("idle");
+  const [detailMessage, setDetailMessage] = useState("");
+  const [detailClosed, setDetailClosed] = useState(false);
   const controlled = inputValue !== undefined;
   const email = controlled ? inputValue : internalValue;
 
@@ -61,6 +66,10 @@ function QuestionInput({
 
       if (controlled && onInputChange) onInputChange("");
       else setInternalValue("");
+      setSubmittedEmail(normalizedEmail);
+      setDetailStatus("idle");
+      setDetailMessage("");
+      setDetailClosed(false);
       setStatus("success");
       setMessage(
         result.duplicate
@@ -72,6 +81,128 @@ function QuestionInput({
       setMessage(error instanceof Error ? error.message : "잠시 후 다시 시도해주세요.");
     }
   };
+
+  const updateDetail = (key) => (event) =>
+    setDetail((current) => ({ ...current, [key]: event.target.value }));
+
+  const handleDetailSubmit = async (event) => {
+    event.preventDefault();
+    if (detailStatus === "submitting") return;
+    setDetailStatus("submitting");
+    setDetailMessage("");
+    try {
+      const formData = new FormData(event.currentTarget);
+      const response = await fetch("/api/waitlist-detail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: submittedEmail,
+          ...detail,
+          website: formData.get("website"),
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.message || "전송에 실패했어요.");
+      setDetailStatus("success");
+      setDetailMessage("");
+    } catch (error) {
+      setDetailStatus("error");
+      setDetailMessage(error instanceof Error ? error.message : "잠시 후 다시 시도해주세요.");
+    }
+  };
+
+  if (status === "success") {
+    return (
+      <m.div
+        className={`waitlist-detail ${compact ? "waitlist-detail--compact" : ""}`}
+        style={{ maxWidth }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <div className="waitlist-detail-card">
+          <div className="waitlist-feedback waitlist-feedback--success" role="status">
+            <span>
+              <i className="ri-checkbox-circle-line" aria-hidden="true" />
+              {message}
+            </span>
+          </div>
+          {detailClosed ? null : detailStatus === "success" ? (
+            <p className="waitlist-detail-done">
+              <i className="ri-checkbox-circle-line" aria-hidden="true" />
+              추가 정보까지 접수됐어요. 오픈 이벤트 안내와 함께 빠르게 연락드릴게요.
+            </p>
+          ) : (
+            <form className="waitlist-detail-form" onSubmit={handleDetailSubmit}>
+              <p className="waitlist-detail-title">추가 정보를 남겨주시면 더 빠르게 안내드릴게요</p>
+              <input
+                type="email"
+                className="waitlist-detail-input"
+                value={submittedEmail}
+                readOnly
+                aria-label="신청된 이메일"
+              />
+              <div className="waitlist-detail-grid">
+                <input
+                  className="waitlist-detail-input"
+                  placeholder="이름"
+                  autoComplete="name"
+                  maxLength={60}
+                  value={detail.name}
+                  onChange={updateDetail("name")}
+                />
+                <input
+                  className="waitlist-detail-input"
+                  placeholder="연락처 (선택)"
+                  autoComplete="tel"
+                  inputMode="tel"
+                  maxLength={40}
+                  value={detail.phone}
+                  onChange={updateDetail("phone")}
+                />
+                <input
+                  className="waitlist-detail-input"
+                  placeholder="회사/브랜드명 (선택)"
+                  autoComplete="organization"
+                  maxLength={80}
+                  value={detail.company}
+                  onChange={updateDetail("company")}
+                />
+              </div>
+              <textarea
+                className="waitlist-detail-input waitlist-detail-textarea"
+                placeholder="만들고 싶은 콘텐츠나 궁금한 점 (선택)"
+                maxLength={500}
+                value={detail.note}
+                onChange={updateDetail("note")}
+              />
+              <input type="hidden" name="website" value="" />
+              <div className="waitlist-detail-actions">
+                <button type="submit" className="waitlist-submit waitlist-detail-submit" disabled={detailStatus === "submitting"}>
+                  <span>{detailStatus === "submitting" ? "전송 중" : "추가 정보 보내기"}</span>
+                  <i className={detailStatus === "submitting" ? "ri-loader-4-line waitlist-spinner" : "ri-arrow-right-line"} aria-hidden="true" />
+                </button>
+                <button type="button" className="waitlist-detail-skip" onClick={() => setDetailClosed(true)}>
+                  건너뛰기
+                </button>
+              </div>
+              {detailMessage ? (
+                <div className="waitlist-feedback" aria-live="polite">
+                  <span className="waitlist-feedback--error">
+                    <i className="ri-error-warning-line" aria-hidden="true" />
+                    {detailMessage}
+                  </span>
+                </div>
+              ) : null}
+              <p className="waitlist-detail-privacy">
+                제출 시 <a href="/privacy">개인정보처리방침</a>에 동의하게 됩니다.
+              </p>
+            </form>
+          )}
+        </div>
+      </m.div>
+    );
+  }
 
   return (
     <m.form
