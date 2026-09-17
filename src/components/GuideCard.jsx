@@ -1,11 +1,11 @@
 "use client";
 import * as t from 'react/jsx-runtime';
 import * as i from 'react';
-import {motion,AnimatePresence,useScroll} from 'framer-motion';
+import {m,AnimatePresence,useScroll} from 'framer-motion';
 import {useRouter} from 'next/navigation';
 import Image from 'next/image';
 import Lenis from 'lenis';
-const s={motion},l={AnimatePresence},X={useRouter},q={default:(props)=>t.jsx(Image,{...props,unoptimized:true})};
+const s={m},l={AnimatePresence},X={useRouter},q={default:(props)=>t.jsx(Image,{...props,unoptimized:true})};
     export const CardHoverContext = (0, i.createContext)({
       hoveredIndex: -1,
       setHoveredIndex: () => {},
@@ -42,7 +42,7 @@ const s={motion},l={AnimatePresence},X={useRouter},q={default:(props)=>t.jsx(Ima
         u = 0;
       return (
         -1 !== r && r !== l && (l < r ? (u = -30) : l > r && (u = 30)),
-        (0, t.jsxs)(s.motion.div, {
+        (0, t.jsxs)(s.m.div, {
           className: `relative w-[280px] h-[380px] mobile:w-[280px] mobile:h-[380px] tablet:w-[320px] tablet:h-[420px] desktop:w-[385px] desktop:h-[485px] ${e.bg} rounded-[24px] p-6 shadow-2xl flex flex-col cursor-pointer`,
           style: {
             marginLeft: 0 === l ? 0 : "-50px",

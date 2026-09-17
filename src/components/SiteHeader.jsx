@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const NAV_ITEMS = [
@@ -27,7 +27,7 @@ export default function SiteHeader() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <motion.header
+    <m.header
       className="fixed inset-x-0 top-0 z-[200] px-4 pt-4 tablet:px-6 desktop:px-6"
       animate={{ y: hidden ? -96 : 0 }}
       transition={{ duration: 0.28, ease: "easeOut" }}
@@ -75,7 +75,7 @@ export default function SiteHeader() {
 
       <AnimatePresence>
         {menuOpen && (
-          <motion.nav
+          <m.nav
             aria-label="모바일 메뉴"
             className="mx-auto mt-2 flex max-w-[420px] flex-col gap-1 rounded-lg border border-[#DFE8F2] bg-white p-2 shadow-xl tablet:hidden desktop:hidden"
             initial={{ opacity: 0, y: -8 }}
@@ -92,9 +92,9 @@ export default function SiteHeader() {
               이벤트 신청
               <i className="ri-arrow-right-line text-[20px]" aria-hidden="true" />
             </a>
-          </motion.nav>
+          </m.nav>
         )}
       </AnimatePresence>
-    </motion.header>
+    </m.header>
   );
 }

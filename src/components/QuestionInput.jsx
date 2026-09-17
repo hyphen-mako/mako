@@ -1,7 +1,7 @@
 "use client";
 
 import { memo, useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -74,7 +74,7 @@ function QuestionInput({
   };
 
   return (
-    <motion.form
+    <m.form
       onSubmit={handleSubmit}
       className={`waitlist-form ${compact ? "waitlist-form--compact" : ""} ${inverted ? "waitlist-form--inverted" : ""}`}
       style={{ maxWidth }}
@@ -98,7 +98,7 @@ function QuestionInput({
           className="waitlist-input"
         />
         <input type="hidden" name="website" value="" />
-        <motion.button
+        <m.button
           type="submit"
           disabled={status === "submitting"}
           className="waitlist-submit"
@@ -108,7 +108,7 @@ function QuestionInput({
         >
           <span>{status === "submitting" ? "신청 중" : "웨잇리스트"}</span>
           <i className={status === "submitting" ? "ri-loader-4-line waitlist-spinner" : "ri-arrow-right-line"} aria-hidden="true" />
-        </motion.button>
+        </m.button>
       </div>
       <div id={`${source}-waitlist-feedback`} className="waitlist-feedback" aria-live="polite">
         {message ? (
@@ -122,7 +122,7 @@ function QuestionInput({
           </span>
         ) : null}
       </div>
-    </motion.form>
+    </m.form>
   );
 }
 

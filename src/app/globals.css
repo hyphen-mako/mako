@@ -54,6 +54,10 @@ img { display: block; }
   background: #0f7dff;
 }
 
+.waitlist-section {
+  background: #0b63ce;
+}
+
 .waitlist-form {
   width: 100%;
 }

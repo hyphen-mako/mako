@@ -4,7 +4,7 @@ import QuestionInput from "./QuestionInput";
 
 export default function WaitlistSection() {
   return (
-    <section id="waitlist-bottom" className="relative z-20 overflow-hidden bg-[#0B63CE] px-6 py-16 text-white tablet:px-10 tablet:py-20 desktop:px-16 desktop:py-24">
+    <section id="waitlist-bottom" className="waitlist-section relative z-20 overflow-hidden px-6 py-16 text-white tablet:px-10 tablet:py-20 desktop:px-16 desktop:py-24">
       <div className="mx-auto flex w-full max-w-[1180px] flex-col items-center gap-10 tablet:flex-row tablet:justify-between desktop:flex-row desktop:justify-between">
         <div className="max-w-[640px] text-center tablet:text-left desktop:text-left">
           <p className="mb-3 text-[14px] font-bold text-white">MAKO OPEN EVENT</p>

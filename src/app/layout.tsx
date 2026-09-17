@@ -1,6 +1,13 @@
 import type { Metadata } from 'next';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 
 import './globals.css';
+
+const inlineCss = [
+  readFileSync(join(process.cwd(), 'public/pretendard-subset.css'), 'utf8'),
+  readFileSync(join(process.cwd(), 'public/assets/reference.css'), 'utf8'),
+].join('\n');
 export const metadata: Metadata={
   metadataBase: new URL('https://mako-landing.hyphen.it.com'),
   title:'MAKO - 오픈 이벤트로 카드뉴스 무한 생성',
@@ -23,4 +30,4 @@ export const metadata: Metadata={
   manifest:'/manifest.webmanifest',
   icons:{icon:'/mako/mako-icon-32.png',apple:'/mako/mako-icon-180.png'},
 };
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="ko" className="light"><head><link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous"/><link rel="stylesheet" href="/pretendard-subset.css"/><link rel="stylesheet" href="/assets/reference.css"/><link rel="preload" href="/mako/mako-mascot.webp" as="image" fetchPriority="high"/></head><body>{children}</body></html>}
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="ko" className="light"><head><link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous"/><link rel="preload" href="/mako/mako-mascot.webp" as="image" fetchPriority="high"/><style dangerouslySetInnerHTML={{__html:inlineCss}}/></head><body>{children}</body></html>}

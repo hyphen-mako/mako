@@ -1,6 +1,6 @@
 "use client";
 import {memo,useEffect} from 'react';
-import {animate,motion,useMotionValue,useTransform} from 'framer-motion';
+import {animate,m,useMotionValue,useTransform} from 'framer-motion';
 import QuestionInput from './QuestionInput';
 function FloatingQuestion({targetOpacity,...inputProps}) {
   const opacity=useMotionValue(0);
@@ -15,8 +15,8 @@ function FloatingQuestion({targetOpacity,...inputProps}) {
     const unsubscribe=targetOpacity.on('change',update);
     return()=>{unsubscribe();animation?.stop();};
   },[opacity,targetOpacity]);
-  return <motion.div className="fixed bottom-20 left-0 right-0 mx-auto w-full max-w-[700px] px-6 z-[100]" initial={{y:20}} animate={{y:0}} transition={{duration:0.6,ease:'easeOut'}} style={{opacity,pointerEvents}}>
+  return <m.div className="fixed bottom-20 left-0 right-0 mx-auto w-full max-w-[700px] px-6 z-[100]" initial={{y:20}} animate={{y:0}} transition={{duration:0.6,ease:'easeOut'}} style={{opacity,pointerEvents}}>
     <QuestionInput {...inputProps}/>
-  </motion.div>;
+  </m.div>;
 }
 export default memo(FloatingQuestion);

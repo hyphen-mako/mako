@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const KONAMI_CODE = [
@@ -44,7 +44,7 @@ export default function GlobalMascotEffects() {
       {showParade && (
         <div className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden">
           {MAKO_POSES.map((src, index) => (
-            <motion.img
+            <m.img
               key={src}
               src={src}
               alt="마코 캐릭터"
@@ -62,14 +62,14 @@ export default function GlobalMascotEffects() {
               }}
             />
           ))}
-          <motion.div
+          <m.div
             className="absolute top-8 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl px-6 py-3 border border-gray-100"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
           >
             <p className="text-[15px] font-bold text-gray-800">MAKO 크리에이티브 퍼레이드</p>
-          </motion.div>
+          </m.div>
         </div>
       )}
     </AnimatePresence>

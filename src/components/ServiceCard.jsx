@@ -1,11 +1,11 @@
 "use client";
 import * as t from 'react/jsx-runtime';
 import * as i from 'react';
-import {motion,AnimatePresence,useScroll} from 'framer-motion';
+import {m,AnimatePresence,useScroll} from 'framer-motion';
 import {useRouter} from 'next/navigation';
 import Image from 'next/image';
 import Lenis from 'lenis';
-const s={motion},l={AnimatePresence},X={useRouter},q={default:(props)=>t.jsx(Image,{...props,unoptimized:true})};
+const s={m},l={AnimatePresence},X={useRouter},q={default:(props)=>t.jsx(Image,{...props,unoptimized:true})};
     export default function ServiceCard({
       title: e,
       headline: i,
@@ -18,7 +18,7 @@ const s={motion},l={AnimatePresence},X={useRouter},q={default:(props)=>t.jsx(Ima
       onHover: d,
       onLeave: h,
     }) {
-      return (0, t.jsx)(s.motion.div, {
+      return (0, t.jsx)(s.m.div, {
         className: `relative rounded-[24px] overflow-hidden ${n} ${a} shadow-lg flex flex-col`,
         style: { transformOrigin: "top" },
         animate: { height: c ? 280 : 120 },
@@ -83,7 +83,7 @@ const s={motion},l={AnimatePresence},X={useRouter},q={default:(props)=>t.jsx(Ima
                 }),
               ],
             }),
-            (0, t.jsx)(s.motion.div, {
+            (0, t.jsx)(s.m.div, {
               className: "flex-1",
               initial: { opacity: 0 },
               animate: { opacity: +!!c, height: c ? "auto" : 0 },

@@ -1,11 +1,11 @@
 "use client";
 import * as t from 'react/jsx-runtime';
 import * as i from 'react';
-import {motion,AnimatePresence,useTransform,useMotionTemplate} from 'framer-motion';
+import {m,AnimatePresence,useTransform,useMotionTemplate} from 'framer-motion';
 import Image from 'next/image';
 import Lenis from 'lenis';
 import {recordHomeCommit} from './PerformanceProbe';
-const s={motion},l={AnimatePresence},q={default:(props)=>t.jsx(Image,{...props,unoptimized:true})};
+const s={motion:m},l={AnimatePresence},q={default:(props)=>t.jsx(Image,{...props,unoptimized:true})};
 import {useVisualValue,useEntranceFade} from '../lib/useVisualValue';
 import FloatingQuestion from './FloatingQuestion';
 import er from './ServiceCard';
@@ -751,6 +751,7 @@ const GUIDE_CARDS = [
                                                     width: 32,
                                                     height: 32,
                                                     draggable: !1,
+                                                    loading: "lazy",
                                                     className:
                                                       "w-8 h-8 object-contain",
                                                   },
@@ -1122,6 +1123,7 @@ const GUIDE_CARDS = [
                                 alt: "",
                                 "aria-hidden": "true",
                                 draggable: !1,
+                                loading: "lazy",
                                 className:
                                   "pointer-events-none absolute top-4 -right-16 w-[70px] h-auto object-contain",
                               }),
@@ -1143,6 +1145,7 @@ const GUIDE_CARDS = [
                                   src: "/mako/poses/mako-create.webp",
                                   alt: "마코 캐릭터",
                                   draggable: !1,
+                                  loading: "lazy",
                                   className: "w-full h-full object-contain",
                                 }),
                               }),
@@ -1385,6 +1388,7 @@ const GUIDE_CARDS = [
                                       src: "/mako/poses/mako-create.webp",
                                       alt: "마코 캐릭터",
                                       draggable: !1,
+                                      loading: "lazy",
                                       className: "w-full h-full object-contain",
                                       initial: { opacity: 0, y: 48 },
                                       animate: ea
