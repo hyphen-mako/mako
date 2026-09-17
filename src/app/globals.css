@@ -68,6 +68,19 @@ img { display: block; }
   to { opacity: 1; }
 }
 
+@keyframes mako-copy-in {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mako-hero-copy {
+  animation: mako-copy-in 0.7s ease-out 0.05s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mako-hero-copy { animation: none; }
+}
+
 .faq-section {
   background: #f7fafd;
 }
@@ -95,7 +108,7 @@ img { display: block; }
   margin-top: 1px;
   border-radius: 10px;
   background: #e8f2ff;
-  color: #0f7dff;
+  color: #0b63ce;
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.02em;
@@ -196,7 +209,7 @@ img { display: block; }
 
 .guide-related-arrow {
   background: #e8f2ff;
-  color: #0f7dff;
+  color: #0b63ce;
   transition: background 180ms ease, color 180ms ease;
 }
 
@@ -341,7 +354,7 @@ img { display: block; }
 .waitlist-mail-icon {
   flex: 0 0 auto;
   margin-right: 10px;
-  color: #0f7dff;
+  color: #0b63ce;
   font-size: 20px;
 }
 
@@ -518,7 +531,7 @@ img { display: block; }
   flex: 0 0 auto;
   padding: 8px 4px;
   font-size: 13px;
-  color: #7a899b;
+  color: #4b5a6d;
 }
 
 .waitlist-detail-skip:hover {

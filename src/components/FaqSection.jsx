@@ -154,7 +154,7 @@ export default function FaqSection() {
       />
       <div className="mx-auto w-full max-w-[900px]">
         <img src="/mako/mako-mascot.webp" alt="" className="mx-auto h-16 w-16 object-contain" />
-        <p className="mt-3 text-center text-[14px] font-bold text-[#0f7dff]">FAQ</p>
+        <p className="mt-3 text-center text-[14px] font-bold text-[#0b63ce]">FAQ</p>
         <h2 id="faq-heading" className="keep-all mt-2 text-center text-[30px] font-black leading-[1.25] text-[#162033] tablet:text-[38px] desktop:text-[44px]">
           자주 묻는 질문
         </h2>
@@ -177,12 +177,12 @@ export default function FaqSection() {
         </div>
         <a href="/guide" className="faq-guide-link mt-8 flex items-center justify-between gap-4 rounded-2xl px-6 py-5 tablet:px-8">
           <div className="min-w-0">
-            <p className="text-[13px] font-bold tracking-wide text-[#0f7dff]">GUIDE</p>
+            <p className="text-[13px] font-bold tracking-wide text-[#0b63ce]">GUIDE</p>
             <p className="keep-all mt-1.5 text-[15px] font-bold text-[#162033] tablet:text-[16px]">
               카드뉴스 제작이 처음이라면? 카드뉴스 만드는 방법 가이드 보기
             </p>
           </div>
-          <i className="ri-arrow-right-line shrink-0 text-[22px] text-[#0f7dff]" aria-hidden="true" />
+          <i className="ri-arrow-right-line shrink-0 text-[22px] text-[#0b63ce]" aria-hidden="true" />
         </a>
       </div>
     </section>

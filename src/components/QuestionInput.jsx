@@ -165,6 +165,7 @@ function QuestionInput({
                 <input
                   className="waitlist-detail-input"
                   placeholder="이름"
+                  aria-label="이름"
                   autoComplete="name"
                   maxLength={60}
                   required
@@ -174,6 +175,7 @@ function QuestionInput({
                 <input
                   className="waitlist-detail-input"
                   placeholder="연락처"
+                  aria-label="연락처"
                   autoComplete="tel"
                   inputMode="tel"
                   maxLength={40}
@@ -184,6 +186,7 @@ function QuestionInput({
                 <input
                   className="waitlist-detail-input"
                   placeholder="회사/브랜드명 (선택)"
+                  aria-label="회사 또는 브랜드명 (선택)"
                   autoComplete="organization"
                   maxLength={80}
                   value={detail.company}
@@ -193,6 +196,7 @@ function QuestionInput({
               <textarea
                 className="waitlist-detail-input waitlist-detail-textarea"
                 placeholder="만들고 싶은 콘텐츠나 궁금한 점 (선택)"
+                aria-label="만들고 싶은 콘텐츠나 궁금한 점 (선택)"
                 maxLength={500}
                 value={detail.note}
                 onChange={updateDetail("note")}

@@ -932,14 +932,7 @@ const GUIDE_CARDS = [
                             "w-full tablet:w-[55%] desktop:w-[45%] flex flex-col items-start z-20",
                           children: [
                             (0, t.jsxs)(s.motion.div, {
-                              className: "mb-3 desktop:mb-3 relative text-left",
-                              initial: { opacity: 0, y: 50 },
-                              animate: a ? { opacity: 1, y: 0 } : {},
-                              transition: {
-                                duration: 0.7,
-                                ease: "easeOut",
-                                delay: 0,
-                              },
+                              className: "mb-3 desktop:mb-3 relative text-left mako-hero-copy",
                               children: [
                                 (0, t.jsxs)("div", {
                                   className:

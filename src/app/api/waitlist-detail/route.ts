@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { clientIp, rateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -22,6 +23,13 @@ const clean = (value: unknown, max: number) =>
 
 export async function POST(request: Request) {
   try {
+    if (!rateLimit(clientIp(request), 5)) {
+      return NextResponse.json(
+        { ok: false, message: "요청이 너무 많아요. 잠시 후 다시 시도해주세요." },
+        { status: 429 },
+      );
+    }
+
     const body = (await request.json()) as DetailPayload;
 
     if (typeof body.website === "string" && body.website.length > 0) {

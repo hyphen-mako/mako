@@ -60,14 +60,14 @@ export default function SiteFooter() {
         </div>
 
         <div className="mt-10 border-t border-[#D9E3EE] pt-6">
-          <address className="flex flex-col gap-1 text-[12px] not-italic leading-relaxed text-[#7A899B] tablet:flex-row tablet:flex-wrap tablet:gap-x-3 tablet:gap-y-1">
+          <address className="flex flex-col gap-1 text-[12px] not-italic leading-relaxed text-[#4B5A6D] tablet:flex-row tablet:flex-wrap tablet:gap-x-3 tablet:gap-y-1">
             {BUSINESS_INFO.map((info) => (
               <span key={info}>{info}</span>
             ))}
           </address>
         </div>
 
-        <div className="mt-4 flex flex-col gap-2 text-[12px] text-[#7A899B] tablet:flex-row tablet:items-center tablet:justify-between desktop:flex-row desktop:items-center desktop:justify-between">
+        <div className="mt-4 flex flex-col gap-2 text-[12px] text-[#4B5A6D] tablet:flex-row tablet:items-center tablet:justify-between desktop:flex-row desktop:items-center desktop:justify-between">
           <p>© 2026 하이픈 (Hyphen). All Rights Reserved.</p>
           <p>mako-landing.hyphen.it.com</p>
         </div>
