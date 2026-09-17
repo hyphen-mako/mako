@@ -16,6 +16,13 @@ export const metadata: Metadata={
     locale:'ko_KR',
     type:'website',
   },
+  twitter:{
+    card:'summary_large_image',
+    title:'MAKO - 오픈 이벤트로 카드뉴스 무한 생성',
+    description:'MAKO 오픈 이벤트 기간 동안 브랜드다운 카드뉴스를 제한 없이 만들어보세요.',
+    images:['/mako/card-news-showcase.png'],
+  },
+  manifest:'/manifest.webmanifest',
   icons:{icon:'/mako/mako-mascot.png',apple:'/mako/mako-mascot.png'},
 };
 export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="ko" className={`light ${pretendard.variable}`}><head><link rel="stylesheet" href="/assets/reference.css"/></head><body>{children}</body></html>}

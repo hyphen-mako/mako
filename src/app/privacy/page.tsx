@@ -26,6 +26,10 @@ const POLICY_ITEMS = [
     title: "문의 및 삭제 요청",
     body: "개인정보 열람, 정정, 삭제 또는 처리 정지는 hyphendev2025@gmail.com으로 요청할 수 있습니다.",
   },
+  {
+    title: "개인정보 보호책임자",
+    body: "개인정보 처리에 관한 문의는 개인정보 보호책임자에게 연락해주세요. 책임자: 박준원 · 이메일: hyphendev2025@gmail.com · 전화: 010-9145-5226",
+  },
 ];
 
 export default function PrivacyPage() {
@@ -62,7 +66,7 @@ export default function PrivacyPage() {
         </div>
 
         <footer className="border-t border-[#D8E6F4] py-8 text-[13px] font-semibold text-[#718297]">
-          © 2026 Hyphen Inc. All Rights Reserved.
+          © 2026 하이픈 (Hyphen). All Rights Reserved.
         </footer>
       </div>
     </main>
