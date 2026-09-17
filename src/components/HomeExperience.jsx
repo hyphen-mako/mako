@@ -856,7 +856,7 @@ const GUIDE_CARDS = [
                         ),
                     }),
                     (0, t.jsx)("div", {
-                      className: `mako-mobile-mascot ${a ? "mako-enter" : ""} desktop:hidden tablet:hidden absolute inset-x-0 bottom-[-24px] w-full pointer-events-none z-[1] flex justify-center`,
+                      className: `mako-mobile-mascot ${a ? "mako-enter" : ""} desktop:hidden tablet:hidden absolute inset-x-0 bottom-[4px] w-full pointer-events-none z-[1] flex justify-center`,
                       children: (0, t.jsx)("img", {
                         src: "/mako/mako-mascot.webp",
                         alt: "마코",
