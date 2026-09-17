@@ -51,9 +51,9 @@ export default function SiteFooter() {
           </div>
 
           <nav aria-label="푸터 메뉴" className="grid grid-cols-2 gap-x-8 gap-y-4 text-[14px] font-semibold text-[#23344A] tablet:flex tablet:gap-8 desktop:flex desktop:gap-8">
-            <a href="#guide" className="transition-colors hover:text-[#0F7DFF]">사용 방법</a>
-            <a href="#services" className="transition-colors hover:text-[#0F7DFF]">제작 기능</a>
-            <a href="#waitlist-bottom" className="transition-colors hover:text-[#0F7DFF]">오픈 이벤트</a>
+            <a href="/#guide" className="transition-colors hover:text-[#0F7DFF]">사용 방법</a>
+            <a href="/#services" className="transition-colors hover:text-[#0F7DFF]">제작 기능</a>
+            <a href="/#waitlist-bottom" className="transition-colors hover:text-[#0F7DFF]">오픈 이벤트</a>
             <a href="/terms" className="transition-colors hover:text-[#0F7DFF]">이용약관</a>
             <a href="/privacy" className="transition-colors hover:text-[#0F7DFF]">개인정보처리방침</a>
           </nav>
