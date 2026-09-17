@@ -73,12 +73,33 @@ img { display: block; }
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes mako-mark-in {
+  0% { opacity: 0; transform: translateY(-40px); }
+  25% { opacity: 1; transform: translateY(-10px); }
+  45% { transform: translateY(0); }
+  70% { transform: translateY(-6px); }
+  88% { transform: translateY(3px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
 .mako-hero-copy {
-  animation: mako-copy-in 0.7s ease-out 0.05s both;
+  animation: mako-copy-in 0.7s ease-out 0.05s backwards;
+}
+
+.mako-mark-in {
+  animation: mako-mark-in 0.8s ease-out 0.9s backwards;
+}
+
+.mako-hero-subcopy {
+  animation: mako-copy-in 0.7s ease-out 0.6s backwards;
+}
+
+#waitlist .waitlist-form {
+  animation: mako-copy-in 0.6s ease-out 0.6s backwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mako-hero-copy { animation: none; }
+  .mako-hero-copy, .mako-mark-in, .mako-hero-subcopy, #waitlist .waitlist-form { animation: none; }
 }
 
 .faq-section {

@@ -629,25 +629,7 @@ const GUIDE_CARDS = [
                     }),
                     (0, t.jsx)(s.motion.div, {
                       className:
-                        "absolute inset-x-0 mobile:top-[60px] top-[120px] w-full flex justify-center pointer-events-none select-none mobile:z-[5] z-0 px-6",
-                      initial: { y: -40, opacity: 0 },
-                      animate: h
-                        ? { opacity: 1, y: [-40, -10, 0, -6, 3, 0] }
-                        : {},
-                      transition: {
-                        opacity: { duration: 0.45, ease: "easeOut" },
-                        y: {
-                          duration: 0.85,
-                          ease: "easeOut",
-                          times: [0, 0.25, 0.45, 0.7, 0.88, 1],
-                        },
-                      },
-                      onAnimationComplete: () => {
-                        h &&
-                          !tg.current &&
-                          ((tg.current = !0),
-                          window.dispatchEvent(new CustomEvent("showHeader")));
-                      },
+                        "absolute inset-x-0 mobile:top-[60px] top-[120px] w-full flex justify-center pointer-events-none select-none mobile:z-[5] z-0 px-6 mako-mark-in",
                       style: { opacity: watermarkFade },
                       children: (0, t.jsx)(s.motion.div, {
                         className: "w-full flex justify-center",
@@ -1012,14 +994,7 @@ const GUIDE_CARDS = [
                             }),
                             (0, t.jsx)(s.motion.p, {
                               className:
-                                "keep-all text-[14px] tablet:text-[17px] desktop:text-[20px] text-gray-600 dark:text-gray-400 mb-8 desktop:mb-10 font-medium text-left",
-                              initial: { opacity: 0, y: 50 },
-                              animate: a ? { opacity: 1, y: 0 } : {},
-                              transition: {
-                                duration: 0.7,
-                                ease: "easeOut",
-                                delay: 0.6,
-                              },
+                                "keep-all text-[14px] tablet:text-[17px] desktop:text-[20px] text-gray-600 dark:text-gray-400 mb-8 desktop:mb-10 font-medium text-left mako-hero-subcopy",
                               children:
                                 "오픈 이벤트 기간 동안 카드뉴스를 제한 없이 만들어보세요",
                             }),
@@ -1031,6 +1006,7 @@ const GUIDE_CARDS = [
                                 onInputChange: _,
                                 source: "hero",
                                 lockScrollOnFocus: !0,
+                                disableInitialAnimation: !0,
                                 maxWidth: "100%",
                                 borderColor: "#3B82F6",
                                 buttonColor: "#1E3A8A",
