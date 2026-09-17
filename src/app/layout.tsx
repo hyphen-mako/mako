@@ -12,6 +12,7 @@ const verification: Metadata['verification'] = {
   other: {'naver-site-verification': '3d2740c852943618ecb75ae6ed595c85530bf150'},
 };
 if (process.env.GOOGLE_SITE_VERIFICATION) verification.google = process.env.GOOGLE_SITE_VERIFICATION;
+if (process.env.BING_SITE_VERIFICATION) verification.other!['msvalidate.01'] = process.env.BING_SITE_VERIFICATION;
 
 export const viewport = {themeColor:'#0F7DFF'};
 
