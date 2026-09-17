@@ -369,7 +369,6 @@ const GUIDE_CARDS = [
             e3.current = false;
           };
         }, [eD]));
-      let tg = (0, i.useRef)(!1);
       ((0, i.useEffect)(() => {
         let e = setTimeout(() => {
             r(!0);
