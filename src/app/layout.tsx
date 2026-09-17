@@ -54,4 +54,6 @@ export const metadata: Metadata={
   manifest:'/manifest.webmanifest',
   icons:{icon:'/mako/mako-icon-32.png',apple:'/mako/mako-icon-180.png'},
 };
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="ko" className="light"><head><link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous"/><link rel="preload" href="/mako/mako-mascot.webp" as="image" fetchPriority="high"/><style dangerouslySetInnerHTML={{__html:inlineCss}}/></head><body>{children}</body></html>}
+const fontPreloads = [84, 86, 87, 89, 90, 91];
+
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="ko" className="light"><head><link rel="preload" href="/mako/mako-mascot.webp" as="image" fetchPriority="high"/>{fontPreloads.map(n=><link key={n} rel="preload" href={`/fonts/PretendardVariable.subset.${n}.woff2`} as="font" type="font/woff2" crossOrigin="anonymous"/>)}<style dangerouslySetInnerHTML={{__html:inlineCss}}/></head><body>{children}</body></html>}
