@@ -23,4 +23,4 @@ export const metadata: Metadata={
   manifest:'/manifest.webmanifest',
   icons:{icon:'/mako/mako-icon-32.png',apple:'/mako/mako-icon-180.png'},
 };
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="ko" className="light"><head><link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"/><link rel="stylesheet" href="/assets/reference.css"/></head><body>{children}</body></html>}
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="ko" className="light"><head><link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous"/><link rel="stylesheet" href="/pretendard-subset.css"/><link rel="stylesheet" href="/assets/reference.css"/><link rel="preload" href="/mako/mako-mascot.webp" as="image" fetchPriority="high"/></head><body>{children}</body></html>}

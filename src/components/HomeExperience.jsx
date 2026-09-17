@@ -858,7 +858,7 @@ const GUIDE_CARDS = [
                       className:
                         "desktop:hidden tablet:hidden absolute inset-x-0 bottom-[-60px] w-full pointer-events-none z-[1] flex justify-center",
                       style: { opacity: mobileFaceFade },
-                      initial: { opacity: 0, y: 20 },
+                      initial: { opacity: 1, y: 20 },
                       animate: a ? { opacity: 1, y: 0 } : {},
                       transition: {
                         duration: 0.9,
@@ -871,6 +871,7 @@ const GUIDE_CARDS = [
                         width: 1254,
                         height: 1254,
                         draggable: !1,
+                        fetchPriority: "high",
                         className: "w-full h-auto object-contain",
                       }),
                     }),
@@ -878,7 +879,7 @@ const GUIDE_CARDS = [
                       className:
                         "hidden desktop:block absolute left-0 bottom-0 z-20 pointer-events-none select-none",
                       style: { opacity: desktopFaceFade },
-                      initial: { opacity: 0 },
+                      initial: { opacity: 1 },
                       animate: a ? { opacity: 1 } : {},
                       transition: {
                         duration: 0.6,
