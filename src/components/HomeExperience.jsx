@@ -612,7 +612,7 @@ const GUIDE_CARDS = [
                   ref: F,
                   id: "waitlist",
                   className:
-                    "sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden z-0 relative",
+                    "sticky top-0 h-[100svh] w-full flex items-center justify-center overflow-hidden z-0 relative",
                   children: [
                     (0, t.jsx)("div", {
                       className:
@@ -864,7 +864,7 @@ const GUIDE_CARDS = [
                         height: 1254,
                         draggable: !1,
                         fetchPriority: "high",
-                        className: "h-[32vh] w-auto object-contain",
+                        className: "h-[28svh] w-auto object-contain",
                       }),
                     }),
                     (0, t.jsxs)(s.motion.div, {
