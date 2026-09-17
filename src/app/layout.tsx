@@ -8,8 +8,15 @@ const inlineCss = [
   readFileSync(join(process.cwd(), 'public/pretendard-subset.css'), 'utf8'),
   readFileSync(join(process.cwd(), 'public/assets/reference.css'), 'utf8'),
 ].join('\n');
+const verification: Metadata['verification'] = {};
+if (process.env.GOOGLE_SITE_VERIFICATION) verification.google = process.env.GOOGLE_SITE_VERIFICATION;
+if (process.env.NAVER_SITE_VERIFICATION) verification.other = {'naver-site-verification': process.env.NAVER_SITE_VERIFICATION};
+
+export const viewport = {themeColor:'#0F7DFF'};
+
 export const metadata: Metadata={
   metadataBase: new URL('https://mako-landing.hyphen.it.com'),
+  verification,
   title:{
     default:'MAKO - 브랜드를 아는 AI 마케팅 스튜디오 | 카드뉴스 무한 생성 이벤트',
     template:'%s | MAKO',
@@ -20,7 +27,8 @@ export const metadata: Metadata={
   creator:'MAKO',
   publisher:'MAKO',
   category:'technology',
-  alternates:{canonical:'/'},
+  alternates:{canonical:'/',languages:{'ko-KR':'/','x-default':'/'}},
+  other:{'geo.region':'KR','geo.placename':'Seoul','content-language':'ko'},
   robots:{
     index:true,
     follow:true,

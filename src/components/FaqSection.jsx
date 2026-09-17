@@ -79,7 +79,42 @@ const structuredData = {
       isPartOf: { "@id": `${BASE_URL}/#website` },
       about: { "@id": `${BASE_URL}/#organization` },
       inLanguage: "ko-KR",
+      datePublished: "2026-09-15",
       dateModified: "2026-09-17",
+    },
+    {
+      "@type": "HowTo",
+      "@id": `${BASE_URL}/#howto`,
+      name: "MAKO로 카드뉴스 만드는 방법",
+      description:
+        "만들고 싶은 콘텐츠를 말하면 MAKO AI가 브랜드 정보를 바탕으로 카드뉴스와 숏폼을 제작합니다.",
+      inLanguage: "ko-KR",
+      step: [
+        {
+          "@type": "HowToStep",
+          position: 1,
+          name: "만들고 싶은 콘텐츠를 한 문장으로 알려주세요",
+          text: "주제, 채널, 목적, 톤앤매너까지 말하면 바로 초안을 만들어요.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 2,
+          name: "브랜드 정보를 바탕으로 더 정확하게 제작해요",
+          text: "제품, 타깃, 말투, 핵심 메시지를 반영해 브랜드다운 결과를 만들어요.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 3,
+          name: "카드뉴스와 숏폼을 한 번에 제작하세요",
+          text: "채널에 맞는 구성과 비율로 여러 포맷을 빠르게 만들어요.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 4,
+          name: "마음에 들 때까지 수정하고 관리하세요",
+          text: "아쉬운 초안은 바로 수정하고 캠페인별로 이어서 관리해요.",
+        },
+      ],
     },
     {
       "@type": "Service",
@@ -100,6 +135,7 @@ const structuredData = {
     {
       "@type": "FAQPage",
       "@id": `${BASE_URL}/#faq`,
+      inLanguage: "ko-KR",
       mainEntity: FAQ_ITEMS.map((item) => ({
         "@type": "Question",
         name: item.question,
