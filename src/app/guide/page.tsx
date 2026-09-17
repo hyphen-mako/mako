@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import GuideRelated from "@/components/GuideRelated";
 
 export const metadata: Metadata = {
   title: "카드뉴스 만드는 방법: AI로 빠르게 제작하는 총정리 가이드",
@@ -199,16 +200,7 @@ export default function GuidePage() {
           </Link>
         </section>
 
-        <p className="mt-12 border-t border-[#e3ecf5] pt-6 text-[14px] text-[#7a899b]">
-          함께 읽기:{" "}
-          <Link href="/guide/cardnews-size" className="font-bold text-[#0f7dff] underline underline-offset-2">
-            카드뉴스 사이즈와 템플릿 총정리
-          </Link>
-          {" · "}
-          <Link href="/guide/ai-marketing" className="font-bold text-[#0f7dff] underline underline-offset-2">
-            AI로 SNS 마케팅 자동화하기
-          </Link>
-        </p>
+        <GuideRelated current="/guide" />
       </article>
     </main>
   );

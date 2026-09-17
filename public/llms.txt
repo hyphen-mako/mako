@@ -37,3 +37,12 @@
 - [랜딩 / 웨이트리스트](https://mako-landing.hyphen.it.com/): 서비스 소개와 웨이트리스트 등록
 - [개인정보처리방침](https://mako-landing.hyphen.it.com/privacy): 개인정보 수집·이용 정책
 - [이용약관](https://mako-landing.hyphen.it.com/terms): 서비스 이용약관
+
+## 가이드
+
+- [카드뉴스 만드는 방법 총정리](https://mako-landing.hyphen.it.com/guide): 제작 방법 3가지 비교와 AI 제작 가이드
+- [카드뉴스 사이즈와 템플릿](https://mako-landing.hyphen.it.com/guide/cardnews-size): 비율, 장수, 폰트 크기, 안전 영역 규격
+- [AI로 SNS 마케팅 자동화하기](https://mako-landing.hyphen.it.com/guide/ai-marketing): 자동화 가능한 작업과 도구 선택 기준
+- [숏폼 영상 만드는 방법](https://mako-landing.hyphen.it.com/guide/shortform): 카드뉴스를 숏폼으로 확장하는 공식
+- [카드뉴스 카피 잘 쓰는 법](https://mako-landing.hyphen.it.com/guide/cardnews-copy): 제목·본문·CTA 문구 공식
+- [소상공인 SNS 마케팅 시작하기](https://mako-landing.hyphen.it.com/guide/small-business-marketing): 채널 선택과 주간 운영 루틴
