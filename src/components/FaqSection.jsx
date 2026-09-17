@@ -169,6 +169,13 @@ export default function FaqSection() {
             </div>
           ))}
         </div>
+        <p className="mt-8 text-center text-[14px] text-[#7a899b]">
+          카드뉴스 제작이 처음이라면{" "}
+          <a href="/guide" className="font-bold text-[#0f7dff] underline underline-offset-2">
+            카드뉴스 만드는 방법 가이드
+          </a>
+          를 확인해보세요.
+        </p>
       </div>
     </section>
   );
