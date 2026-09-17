@@ -8,9 +8,10 @@ const inlineCss = [
   readFileSync(join(process.cwd(), 'public/pretendard-subset.css'), 'utf8'),
   readFileSync(join(process.cwd(), 'public/assets/reference.css'), 'utf8'),
 ].join('\n');
-const verification: Metadata['verification'] = {};
+const verification: Metadata['verification'] = {
+  other: {'naver-site-verification': '3d2740c852943618ecb75ae6ed595c85530bf150'},
+};
 if (process.env.GOOGLE_SITE_VERIFICATION) verification.google = process.env.GOOGLE_SITE_VERIFICATION;
-if (process.env.NAVER_SITE_VERIFICATION) verification.other = {'naver-site-verification': process.env.NAVER_SITE_VERIFICATION};
 
 export const viewport = {themeColor:'#0F7DFF'};
 
