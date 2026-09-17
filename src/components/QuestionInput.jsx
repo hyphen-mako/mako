@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import { m } from "framer-motion";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -15,6 +15,7 @@ function QuestionInput({
   compact = false,
   source = "landing",
   inverted = false,
+  lockScrollOnFocus = false,
 }) {
   const [internalValue, setInternalValue] = useState("");
   const [status, setStatus] = useState("idle");
@@ -25,6 +26,36 @@ function QuestionInput({
   const [detailMessage, setDetailMessage] = useState("");
   const controlled = inputValue !== undefined;
   const email = controlled ? inputValue : internalValue;
+  const scrollLockRef = useRef(null);
+
+  // iOS scrolls a focused input into view, but the hero is position:sticky so
+  // the page runs to the bottom of the sticky track instead. Pin scroll while
+  // any field in this form is focused; release when focus leaves the form.
+  const lockScroll = () => {
+    if (scrollLockRef.current) return;
+    const y = window.scrollY;
+    const restore = () => {
+      if (window.scrollY !== y) window.scrollTo(0, y);
+    };
+    window.addEventListener("scroll", restore, { passive: true });
+    scrollLockRef.current = restore;
+  };
+
+  const unlockScroll = (event) => {
+    if (event.currentTarget.contains(event.relatedTarget)) return;
+    if (!scrollLockRef.current) return;
+    window.removeEventListener("scroll", scrollLockRef.current);
+    scrollLockRef.current = null;
+  };
+
+  const focusGuards = lockScrollOnFocus ? { onFocus: lockScroll, onBlur: unlockScroll } : {};
+
+  useEffect(
+    () => () => {
+      if (scrollLockRef.current) window.removeEventListener("scroll", scrollLockRef.current);
+    },
+    [],
+  );
 
   const updateEmail = (value) => {
     if (controlled && onInputChange) onInputChange(value);
@@ -121,7 +152,7 @@ function QuestionInput({
       >
         <div className="waitlist-detail-card">
           {status === "detail" ? (
-            <form className="waitlist-detail-form" onSubmit={handleDetailSubmit}>
+            <form className="waitlist-detail-form" onSubmit={handleDetailSubmit} {...focusGuards}>
               <p className="waitlist-detail-title">거의 다 됐어요! 추가 정보를 입력하면 신청이 완료됩니다</p>
               <input
                 type="email"
@@ -201,6 +232,7 @@ function QuestionInput({
   return (
     <m.form
       onSubmit={handleSubmit}
+      {...focusGuards}
       className={`waitlist-form ${compact ? "waitlist-form--compact" : ""} ${inverted ? "waitlist-form--inverted" : ""}`}
       style={{ maxWidth }}
       initial={disableInitialAnimation ? { opacity: 1, y: 0 } : { opacity: 0, y: 32 }}

@@ -1049,6 +1049,7 @@ const GUIDE_CARDS = [
                                 inputValue: C,
                                 onInputChange: _,
                                 source: "hero",
+                                lockScrollOnFocus: !0,
                                 maxWidth: "100%",
                                 borderColor: "#3B82F6",
                                 buttonColor: "#1E3A8A",
