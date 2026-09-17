@@ -26,11 +26,13 @@ export default function SiteFooter() {
         <div className="flex flex-col gap-8 tablet:flex-row tablet:items-start tablet:justify-between desktop:flex-row desktop:items-start desktop:justify-between">
           <div>
             <a href="/" className="inline-flex items-center gap-3">
-              <img src="/mako/mako-mascot.png" alt="" className="h-11 w-11 object-contain" />
+              <img src="/mako/mako-mascot.webp" alt="" className="h-11 w-11 object-contain" />
               <span className="text-[24px] font-black leading-none text-[#0F7DFF]">MAKO</span>
             </a>
-            <p className="mt-4 max-w-[360px] text-[14px] leading-relaxed text-[#617083]">
-              브랜드를 이해하고 카드뉴스와 AI 영상을 함께 만드는 마케팅 스튜디오. 오픈 이벤트로 카드뉴스 무한 생성을 제공합니다.
+            <p className="mt-4 max-w-[440px] text-[14px] leading-relaxed text-[#617083]">
+              브랜드를 이해하고 카드뉴스와 AI 영상을 함께 만드는
+              <br />
+              마케팅 스튜디오. 오픈 이벤트로 카드뉴스 무한 생성을 제공합니다.
             </p>
             <div className="mt-5 inline-flex w-fit items-center gap-1.5 rounded-xl bg-black/10 p-2">
               {SOCIAL_LINKS.map((social) => (
@@ -62,14 +64,6 @@ export default function SiteFooter() {
             {BUSINESS_INFO.map((info) => (
               <span key={info} className="whitespace-nowrap">{info}</span>
             ))}
-            <a
-              href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=3253002020"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="whitespace-nowrap underline decoration-[#B9C6D4] underline-offset-2 transition-colors hover:text-[#0F7DFF]"
-            >
-              사업자정보확인
-            </a>
           </address>
         </div>
 

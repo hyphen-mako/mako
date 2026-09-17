@@ -18,24 +18,24 @@ const s={motion},l={AnimatePresence},X={useRouter},q={default:(props)=>t.jsx(Ima
       let p =
           0 === l
             ? {
-                src: "/mako/poses/mako-analytics.png",
+                src: "/mako/poses/mako-analytics.webp",
                 className:
                   "absolute -top-14 right-6 w-[220px] desktop:w-[250px] h-auto",
               }
             : 1 === l
               ? {
-                  src: "/mako/poses/mako-create.png",
+                  src: "/mako/poses/mako-create.webp",
                   className:
                     "absolute -top-8 right-5 w-[220px] desktop:w-[250px] h-auto",
                 }
               : 2 === l
                 ? {
-                    src: "/mako/poses/mako-celebrate.png",
+                    src: "/mako/poses/mako-celebrate.webp",
                     className:
                       "absolute -top-8 right-5 w-[220px] desktop:w-[250px] h-auto",
                   }
                 : {
-                    src: "/mako/poses/mako-sad.png",
+                    src: "/mako/poses/mako-sad.webp",
                     className:
                       "absolute -top-8 right-5 w-[220px] desktop:w-[250px] h-auto",
                   },

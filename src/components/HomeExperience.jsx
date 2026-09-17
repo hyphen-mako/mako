@@ -659,6 +659,8 @@ const GUIDE_CARDS = [
                             src: "/mako/mako-wordmark.svg",
                             alt: "",
                             "aria-hidden": "true",
+                            width: 1600,
+                            height: 400,
                             draggable: !1,
                             className: "w-full h-auto",
                           }),
@@ -744,7 +746,7 @@ const GUIDE_CARDS = [
                                                 children: (0, t.jsx)(
                                                   q.default,
                                                   {
-                                                    src: "/mako/poses/mako-curious.png",
+                                                    src: "/mako/poses/mako-curious.webp",
                                                     alt: "마코",
                                                     width: 32,
                                                     height: 32,
@@ -864,8 +866,10 @@ const GUIDE_CARDS = [
                         delay: 1.2,
                       },
                       children: (0, t.jsx)("img", {
-                        src: "/mako/mako-mascot.png",
+                        src: "/mako/mako-mascot.webp",
                         alt: "마코",
+                        width: 1254,
+                        height: 1254,
                         draggable: !1,
                         className: "w-full h-auto object-contain",
                       }),
@@ -884,14 +888,31 @@ const GUIDE_CARDS = [
                       children: [
                         (0, t.jsx)(s.motion.div, {
                           className: "will-change-transform",
-                          initial: { x: "-42vh", y: "42vh" },
+                          style: { transformOrigin: "bottom left" },
+                          initial: { x: "-42vh", y: "42vh", scale: 1, rotate: 0 },
                           animate: u
-                            ? { x: "-60vh", y: "60vh" }
-                            : { x: "-42vh", y: "42vh" },
-                          transition: { duration: 0.55, ease: "easeOut" },
+                            ? {
+                                x: "-42vh",
+                                y: "40vh",
+                                scale: 1.05,
+                                rotate: [0, -4, 3, -2, 0],
+                              }
+                            : { x: "-42vh", y: "42vh", scale: 1, rotate: 0 },
+                          transition: {
+                            x: { duration: 0.55, ease: "easeOut" },
+                            y: { type: "spring", stiffness: 300, damping: 16 },
+                            scale: {
+                              type: "spring",
+                              stiffness: 300,
+                              damping: 16,
+                            },
+                            rotate: { duration: 0.7, ease: "easeOut" },
+                          },
                           children: (0, t.jsx)("img", {
-                            src: "/mako/mako-mascot.png",
+                            src: "/mako/mako-mascot.webp",
                             alt: "마코 캐릭터",
+                            width: 1254,
+                            height: 1254,
                             draggable: !1,
                             className:
                               "h-[155vh] w-auto object-contain object-left-bottom",
@@ -1096,7 +1117,7 @@ const GUIDE_CARDS = [
                                 children: "마코와 함께하는",
                               }),
                               (0, t.jsx)("img", {
-                                src: "/mako/poses/mako-celebrate.png",
+                                src: "/mako/poses/mako-celebrate.webp",
                                 alt: "",
                                 "aria-hidden": "true",
                                 draggable: !1,
@@ -1118,7 +1139,7 @@ const GUIDE_CARDS = [
                                   : { opacity: 0, scale: 0.8 },
                                 transition: { duration: 0.8, ease: "easeOut" },
                                 children: (0, t.jsx)("img", {
-                                  src: "/mako/poses/mako-create.png",
+                                  src: "/mako/poses/mako-create.webp",
                                   alt: "마코 캐릭터",
                                   draggable: !1,
                                   className: "w-full h-full object-contain",
@@ -1189,7 +1210,7 @@ const GUIDE_CARDS = [
                                             titleTextClass: "text-white",
                                             descTextClass: "text-white/90",
                                             iconSrc:
-                                              "/mako/poses/mako-analytics.png",
+                                              "/mako/poses/mako-analytics.webp",
                                             iconClass:
                                               "absolute -top-8 right-3 w-[140px] h-auto",
                                           },
@@ -1203,7 +1224,7 @@ const GUIDE_CARDS = [
                                             titleTextClass: "text-white",
                                             descTextClass: "text-white/90",
                                             iconSrc:
-                                              "/mako/poses/mako-create.png",
+                                              "/mako/poses/mako-create.webp",
                                             iconClass:
                                               "absolute top-3 right-3 w-[140px] h-auto",
                                           },
@@ -1217,7 +1238,7 @@ const GUIDE_CARDS = [
                                             titleTextClass: "text-[#00316B]",
                                             descTextClass: "text-[#00316B]",
                                             iconSrc:
-                                              "/mako/poses/mako-celebrate.png",
+                                              "/mako/poses/mako-celebrate.webp",
                                             iconClass:
                                               "absolute top-3 right-3 w-[150px] h-auto",
                                           },
@@ -1231,7 +1252,7 @@ const GUIDE_CARDS = [
                                             titleTextClass: "text-white",
                                             descTextClass: "text-white/90",
                                             iconSrc:
-                                              "/mako/poses/mako-sad.png",
+                                              "/mako/poses/mako-sad.webp",
                                             iconClass:
                                               "absolute top-3 right-3 w-[150px] h-auto",
                                           },
@@ -1360,7 +1381,7 @@ const GUIDE_CARDS = [
                                     className:
                                       "relative flex-shrink-0 w-[450px] h-[450px]",
                                     children: (0, t.jsx)(s.motion.img, {
-                                      src: "/mako/poses/mako-create.png",
+                                      src: "/mako/poses/mako-create.webp",
                                       alt: "마코 캐릭터",
                                       draggable: !1,
                                       className: "w-full h-full object-contain",
@@ -1479,7 +1500,7 @@ const GUIDE_CARDS = [
                             (0, t.jsx)("div", {
                               className: "w-[180px] h-[180px]",
                               children: (0, t.jsx)("img", {
-                                src: "/mako/poses/mako-analytics.png",
+                                src: "/mako/poses/mako-analytics.webp",
                                 alt: "카드뉴스를 분석하는 마코",
                                 draggable: !1,
                                 loading: "lazy",
@@ -1542,7 +1563,7 @@ const GUIDE_CARDS = [
                             (0, t.jsx)("div", {
                               className: "w-[180px] h-[180px]",
                               children: (0, t.jsx)("img", {
-                                src: "/mako/poses/mako-create.png",
+                                src: "/mako/poses/mako-create.webp",
                                 alt: "영상을 만드는 마코",
                                 draggable: !1,
                                 loading: "lazy",
@@ -1600,7 +1621,7 @@ const GUIDE_CARDS = [
                             (0, t.jsx)("div", {
                               className: "w-[180px] h-[180px]",
                               children: (0, t.jsx)("img", {
-                                src: "/mako/poses/mako-curious.png",
+                                src: "/mako/poses/mako-curious.webp",
                                 alt: "작업을 살펴보는 마코",
                                 draggable: !1,
                                 loading: "lazy",
@@ -1755,7 +1776,7 @@ const GUIDE_CARDS = [
                               (0, t.jsx)(
                                 s.motion.img,
                                 {
-                                  src: "/mako/poses/mako-analytics.png",
+                                  src: "/mako/poses/mako-analytics.webp",
                                   alt: "카드뉴스를 분석하는 마코",
                                   draggable: !1,
                                   loading: "lazy",
@@ -1776,7 +1797,7 @@ const GUIDE_CARDS = [
                               (0, t.jsx)(
                                 s.motion.img,
                                 {
-                                  src: "/mako/poses/mako-create.png",
+                                  src: "/mako/poses/mako-create.webp",
                                   alt: "영상을 만드는 마코",
                                   draggable: !1,
                                   loading: "lazy",
@@ -1797,7 +1818,7 @@ const GUIDE_CARDS = [
                               (0, t.jsx)(
                                 s.motion.img,
                                 {
-                                  src: "/mako/poses/mako-curious.png",
+                                  src: "/mako/poses/mako-curious.webp",
                                   alt: "작업을 살펴보는 마코",
                                   draggable: !1,
                                   loading: "lazy",
@@ -2034,7 +2055,9 @@ const GUIDE_CARDS = [
                     className:
                       "relative left-1/2 -translate-x-1/2 w-screen bg-gradient-to-b from-[#FAFAFA] to-[#F7F7F7] pointer-events-none",
                     children: (0, t.jsx)("img", {
-                      src: "/mako/poses/mako-sleep.png",
+                      src: "/mako/poses/mako-sleep.webp",
+                      width: 1254,
+                      height: 1254,
                       alt: "휴식하는 마코",
                       draggable: !1,
                       loading: "lazy",

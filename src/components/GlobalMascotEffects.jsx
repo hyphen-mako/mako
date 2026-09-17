@@ -9,12 +9,12 @@ const KONAMI_CODE = [
 ];
 
 const MAKO_POSES = [
-  "/mako/poses/mako-analytics.png",
-  "/mako/poses/mako-create.png",
-  "/mako/poses/mako-sad.png",
-  "/mako/poses/mako-curious.png",
-  "/mako/poses/mako-celebrate.png",
-  "/mako/poses/mako-sleep.png",
+  "/mako/poses/mako-analytics.webp",
+  "/mako/poses/mako-create.webp",
+  "/mako/poses/mako-sad.webp",
+  "/mako/poses/mako-curious.webp",
+  "/mako/poses/mako-celebrate.webp",
+  "/mako/poses/mako-sleep.webp",
 ];
 
 export default function GlobalMascotEffects() {

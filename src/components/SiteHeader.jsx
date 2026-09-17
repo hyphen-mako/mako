@@ -38,7 +38,7 @@ export default function SiteHeader() {
           aria-label="MAKO 홈"
           className="flex h-[52px] items-center gap-2 rounded-lg bg-white/95 px-2 pr-4 shadow-md backdrop-blur-md transition-shadow hover:shadow-lg"
         >
-          <img src="/mako/mako-mascot.png" alt="" className="h-10 w-10 object-contain" />
+          <img src="/mako/mako-mascot.webp" alt="" className="h-10 w-10 object-contain" />
           <span className="text-[22px] font-black leading-none text-[#0F7DFF]">MAKO</span>
         </a>
 

@@ -20,7 +20,7 @@ body {
   overflow-x: clip;
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-pretendard-local), Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -157,7 +157,7 @@ img { display: block; }
 }
 
 .waitlist-form--inverted .waitlist-feedback {
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 1);
 }
 
 .waitlist-form--inverted .waitlist-feedback--success {
