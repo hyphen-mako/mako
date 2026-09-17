@@ -856,8 +856,7 @@ const GUIDE_CARDS = [
                         ),
                     }),
                     (0, t.jsx)("div", {
-                      className:
-                        "mako-mobile-mascot desktop:hidden tablet:hidden absolute inset-x-0 bottom-[-60px] w-full pointer-events-none z-[1] flex justify-center",
+                      className: `mako-mobile-mascot ${a ? "mako-enter" : ""} desktop:hidden tablet:hidden absolute inset-x-0 bottom-[-60px] w-full pointer-events-none z-[1] flex justify-center`,
                       children: (0, t.jsx)("img", {
                         src: "/mako/mako-mascot.webp",
                         alt: "마코",
@@ -881,7 +880,7 @@ const GUIDE_CARDS = [
                       },
                       children: [
                         (0, t.jsx)(s.motion.div, {
-                          className: "will-change-transform",
+                          className: `mako-desktop-mascot will-change-transform ${a ? "mako-enter" : ""}`,
                           style: { transformOrigin: "bottom left" },
                           initial: { x: "-42vh", y: "42vh", scale: 1, rotate: 0 },
                           animate: u
