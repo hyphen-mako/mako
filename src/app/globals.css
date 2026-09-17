@@ -68,11 +68,11 @@ img { display: block; }
 }
 
 .mako-mobile-mascot.mako-enter {
-  animation: mako-rise 1.1s cubic-bezier(0.22, 1, 0.36, 1) 1.3s both;
+  animation: mako-rise 1.1s cubic-bezier(0.22, 1, 0.36, 1) 2.6s both;
 }
 
 .mako-mobile-mascot.mako-enter img {
-  animation: mako-in 0.9s ease-out 1.3s forwards;
+  animation: mako-in 0.9s ease-out 2.6s forwards;
 }
 
 .mako-mobile-mascot:not(.mako-enter) {
@@ -92,7 +92,7 @@ img { display: block; }
 
   .mako-mobile-mascot.mako-enter {
     animation:
-      mako-rise 1.1s cubic-bezier(0.22, 1, 0.36, 1) 1.3s both,
+      mako-rise 1.1s cubic-bezier(0.22, 1, 0.36, 1) 2.6s both,
       mako-fade linear both;
     animation-timeline: auto, scroll(root);
     animation-range: normal, 0vh 55vh;
@@ -115,11 +115,11 @@ img { display: block; }
   }
 
   .mako-desktop-mascot.mako-enter {
-    animation: mako-in 0.9s ease-out 1.4s forwards;
+    animation: mako-in 0.9s ease-out 5.2s forwards;
   }
 
   .mako-desktop-mascot:not(.mako-enter) {
-    animation: mako-in 0.9s ease-out 6s forwards;
+    animation: mako-in 0.9s ease-out 8s forwards;
   }
 }
 
