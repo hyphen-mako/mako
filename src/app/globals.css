@@ -69,17 +69,17 @@ img { display: block; }
 }
 
 @keyframes mako-copy-in {
-  from { opacity: 0; transform: translateY(50px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { transform: translateY(50px); }
+  to { transform: translateY(0); }
 }
 
 @keyframes mako-mark-in {
-  0% { opacity: 0; transform: translateY(-40px); }
-  25% { opacity: 1; transform: translateY(-10px); }
+  0% { transform: translateY(-40px); }
+  25% { transform: translateY(-10px); }
   45% { transform: translateY(0); }
   70% { transform: translateY(-6px); }
   88% { transform: translateY(3px); }
-  100% { opacity: 1; transform: translateY(0); }
+  100% { transform: translateY(0); }
 }
 
 .mako-hero-copy {

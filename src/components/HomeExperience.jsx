@@ -3,7 +3,6 @@ import * as t from 'react/jsx-runtime';
 import * as i from 'react';
 import {m,AnimatePresence,useTransform,useMotionTemplate} from 'framer-motion';
 import Image from 'next/image';
-import Lenis from 'lenis';
 import {recordHomeCommit} from './PerformanceProbe';
 const s={motion:m},l={AnimatePresence},q={default:(props)=>t.jsx(Image,{...props,unoptimized:true})};
 import {useVisualValue,useEntranceFade} from '../lib/useVisualValue';
@@ -345,24 +344,27 @@ const GUIDE_CARDS = [
               window.dispatchEvent(new CustomEvent("home-scroll-unlocked")));
             return;
           }
-          let e = new Lenis({
-            duration: 1.2,
-            easing: (e) => Math.min(1, 1.001 - Math.pow(2, -10 * e)),
-            smoothWheel: !0,
-          });
-          v.current = e;
-          if (b || J || e3.current) e.stop();
-          let frame = 0, disposed = false;
-          const tick = time => {
+          let lenis = null, frame = 0, disposed = false;
+          import("lenis").then((m) => {
             if (disposed) return;
-            e.raf(time);
+            lenis = new m.default({
+              duration: 1.2,
+              easing: (e) => Math.min(1, 1.001 - Math.pow(2, -10 * e)),
+              smoothWheel: !0,
+            });
+            v.current = lenis;
+            if (b || J || e3.current) lenis.stop();
+            const tick = (time) => {
+              if (disposed) return;
+              lenis.raf(time);
+              frame = requestAnimationFrame(tick);
+            };
             frame = requestAnimationFrame(tick);
-          };
-          frame = requestAnimationFrame(tick);
+          });
           return () => {
             disposed = true;
             cancelAnimationFrame(frame);
-            e.destroy();
+            lenis && lenis.destroy();
             v.current = null;
             e3.current = false;
           };
