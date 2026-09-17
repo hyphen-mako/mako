@@ -33,10 +33,16 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: false, message: "유효한 이메일 주소를 입력해주세요." }, { status: 400 });
     }
 
+    const name = clean(body.name, 60);
+    const phone = clean(body.phone, 40);
+    if (!name || !phone) {
+      return NextResponse.json({ ok: false, message: "이름과 연락처를 입력해주세요." }, { status: 400 });
+    }
+
     const fields = [
       { name: "이메일", value: email, inline: true },
-      { name: "이름", value: clean(body.name, 60) || "-", inline: true },
-      { name: "연락처", value: clean(body.phone, 40) || "-", inline: true },
+      { name: "이름", value: name, inline: true },
+      { name: "연락처", value: phone, inline: true },
       { name: "회사/브랜드", value: clean(body.company, 80) || "-", inline: true },
       { name: "요청사항", value: clean(body.note, 500) || "-", inline: false },
     ];

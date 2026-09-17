@@ -23,7 +23,6 @@ function QuestionInput({
   const [detail, setDetail] = useState({ name: "", phone: "", company: "", note: "" });
   const [detailStatus, setDetailStatus] = useState("idle");
   const [detailMessage, setDetailMessage] = useState("");
-  const [detailClosed, setDetailClosed] = useState(false);
   const controlled = inputValue !== undefined;
   const email = controlled ? inputValue : internalValue;
 
@@ -69,13 +68,13 @@ function QuestionInput({
       setSubmittedEmail(normalizedEmail);
       setDetailStatus("idle");
       setDetailMessage("");
-      setDetailClosed(false);
-      setStatus("success");
-      setMessage(
-        result.duplicate
-          ? "이미 신청된 이메일이에요. 오픈 이벤트 초대를 기다려주세요."
-          : "신청이 완료됐어요. 카드뉴스 무한 생성 이벤트 초대를 가장 먼저 보내드릴게요.",
-      );
+      if (result.duplicate) {
+        setStatus("duplicate");
+        setMessage("이미 신청된 이메일이에요. 오픈 이벤트 초대를 기다려주세요.");
+      } else {
+        setStatus("detail");
+        setMessage("");
+      }
     } catch (error) {
       setStatus("error");
       setMessage(error instanceof Error ? error.message : "잠시 후 다시 시도해주세요.");
@@ -103,15 +102,15 @@ function QuestionInput({
       });
       const result = await response.json();
       if (!response.ok) throw new Error(result.message || "전송에 실패했어요.");
-      setDetailStatus("success");
-      setDetailMessage("");
+      setStatus("done");
+      setMessage("신청이 완료됐어요. 카드뉴스 무한 생성 이벤트 초대를 가장 먼저 보내드릴게요.");
     } catch (error) {
       setDetailStatus("error");
       setDetailMessage(error instanceof Error ? error.message : "잠시 후 다시 시도해주세요.");
     }
   };
 
-  if (status === "success") {
+  if (status === "detail" || status === "duplicate" || status === "done") {
     return (
       <m.div
         className={`waitlist-detail ${compact ? "waitlist-detail--compact" : ""}`}
@@ -121,20 +120,9 @@ function QuestionInput({
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <div className="waitlist-detail-card">
-          <div className="waitlist-feedback waitlist-feedback--success" role="status">
-            <span>
-              <i className="ri-checkbox-circle-line" aria-hidden="true" />
-              {message}
-            </span>
-          </div>
-          {detailClosed ? null : detailStatus === "success" ? (
-            <p className="waitlist-detail-done">
-              <i className="ri-checkbox-circle-line" aria-hidden="true" />
-              추가 정보까지 접수됐어요. 오픈 이벤트 안내와 함께 빠르게 연락드릴게요.
-            </p>
-          ) : (
+          {status === "detail" ? (
             <form className="waitlist-detail-form" onSubmit={handleDetailSubmit}>
-              <p className="waitlist-detail-title">추가 정보를 남겨주시면 더 빠르게 안내드릴게요</p>
+              <p className="waitlist-detail-title">거의 다 됐어요! 추가 정보를 입력하면 신청이 완료됩니다</p>
               <input
                 type="email"
                 className="waitlist-detail-input"
@@ -148,15 +136,17 @@ function QuestionInput({
                   placeholder="이름"
                   autoComplete="name"
                   maxLength={60}
+                  required
                   value={detail.name}
                   onChange={updateDetail("name")}
                 />
                 <input
                   className="waitlist-detail-input"
-                  placeholder="연락처 (선택)"
+                  placeholder="연락처"
                   autoComplete="tel"
                   inputMode="tel"
                   maxLength={40}
+                  required
                   value={detail.phone}
                   onChange={updateDetail("phone")}
                 />
@@ -179,11 +169,8 @@ function QuestionInput({
               <input type="hidden" name="website" value="" />
               <div className="waitlist-detail-actions">
                 <button type="submit" className="waitlist-submit waitlist-detail-submit" disabled={detailStatus === "submitting"}>
-                  <span>{detailStatus === "submitting" ? "전송 중" : "추가 정보 보내기"}</span>
+                  <span>{detailStatus === "submitting" ? "전송 중" : "신청 완료하기"}</span>
                   <i className={detailStatus === "submitting" ? "ri-loader-4-line waitlist-spinner" : "ri-arrow-right-line"} aria-hidden="true" />
-                </button>
-                <button type="button" className="waitlist-detail-skip" onClick={() => setDetailClosed(true)}>
-                  건너뛰기
                 </button>
               </div>
               {detailMessage ? (
@@ -198,6 +185,13 @@ function QuestionInput({
                 제출 시 <a href="/privacy">개인정보처리방침</a>에 동의하게 됩니다.
               </p>
             </form>
+          ) : (
+            <div className="waitlist-feedback waitlist-feedback--success" role="status">
+              <span>
+                <i className="ri-checkbox-circle-line" aria-hidden="true" />
+                {message}
+              </span>
+            </div>
           )}
         </div>
       </m.div>
