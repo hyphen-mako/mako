@@ -5,6 +5,7 @@ import PerformanceProbe from '@/components/PerformanceProbe';
 import GlobalMascotEffects from '@/components/GlobalMascotEffects';
 import MotionProvider from '@/components/MotionProvider';
 import WaitlistSection from '@/components/WaitlistSection';
+import FaqSection from '@/components/FaqSection';
 
 export default function Page() {
   return <MotionProvider>
@@ -12,6 +13,7 @@ export default function Page() {
     <SiteHeader />
     <main id="main-content" className="w-full"><HomeExperience /></main>
     <WaitlistSection />
+    <FaqSection />
     <SiteFooter />
     <GlobalMascotEffects />
     <PerformanceProbe />

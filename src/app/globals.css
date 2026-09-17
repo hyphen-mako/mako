@@ -68,21 +68,13 @@ img { display: block; }
   to { opacity: 1; }
 }
 
-.mako-hero-mascot {
-  opacity: 0;
+.faq-section {
+  background: #f7fafd;
 }
 
-.mako-hero-mascot.mako-enter {
-  animation: mako-pop 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.8s backwards;
-}
-
-.mako-hero-mascot:not(.mako-enter) {
-  animation: mako-pop 0.8s ease-out 6s backwards;
-}
-
-@keyframes mako-pop {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+.faq-item {
+  border: 1px solid #e3ecf5;
+  background: #fff;
 }
 
 @media (min-width: 1080px) {
