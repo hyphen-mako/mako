@@ -9,6 +9,11 @@ const NAV_ITEMS = [
   { label: "오픈 이벤트", href: "#waitlist-bottom" },
 ];
 
+const SOCIAL_LINKS = [
+  { label: "MAKO 인스타그램", name: "인스타그램", href: "https://www.instagram.com/mako_platform", icon: "ri-instagram-line" },
+  { label: "MAKO 스레드", name: "스레드", href: "https://www.threads.com/@mako_platform", icon: "ri-threads-line" },
+];
+
 export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
@@ -54,6 +59,21 @@ export default function SiteHeader() {
           ))}
         </nav>
 
+        <div className="mako-header-social" aria-label="소셜 링크">
+          {SOCIAL_LINKS.map((social) => (
+            <a
+              key={social.href}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.label}
+              className="mako-header-social-link"
+            >
+              <i className={social.icon} aria-hidden="true" />
+            </a>
+          ))}
+        </div>
+
         <a
           href="#waitlist-bottom"
           className="hidden h-[52px] items-center gap-2 rounded-lg bg-white/95 px-5 text-[15px] font-bold text-[#0B63CE] shadow-md backdrop-blur-md transition-all hover:-translate-y-0.5 hover:shadow-lg tablet:flex desktop:flex"
@@ -92,6 +112,14 @@ export default function SiteHeader() {
               이벤트 신청
               <i className="ri-arrow-right-line text-[20px]" aria-hidden="true" />
             </a>
+            <div className="mako-header-mobile-social">
+              {SOCIAL_LINKS.map((social) => (
+                <a key={social.href} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}>
+                  <i className={social.icon} aria-hidden="true" />
+                  {social.name}
+                </a>
+              ))}
+            </div>
           </m.nav>
         )}
       </AnimatePresence>
