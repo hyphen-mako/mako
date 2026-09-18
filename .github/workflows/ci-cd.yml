@@ -47,35 +47,12 @@ jobs:
       MINI_VERCEL_API_TOKEN: ${{ secrets.MINI_VERCEL_API_TOKEN }}
       PROJECT_ID: project_4bcdf7ca6fb44ad1a67c639a01b4be7d
       PUBLIC_URL: https://mako-landing.hyphen.it.com
-      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
-      IG_USER_ID: ${{ secrets.IG_USER_ID }}
     steps:
       - name: Create and verify production release
         shell: bash
         run: |
           set -euo pipefail
           api_base="https://deploy.hyphen.it.com"
-
-          if [ -n "${IG_ACCESS_TOKEN:-}" ]; then
-            echo "Syncing IG_ACCESS_TOKEN into project env_text"
-            project_json="$(curl -fsS -H "Authorization: Bearer $MINI_VERCEL_API_TOKEN" "$api_base/api/v1/projects/$PROJECT_ID" \
-              || curl -fsS -H "Authorization: Bearer $MINI_VERCEL_API_TOKEN" "$api_base/api/projects/$PROJECT_ID")"
-            env_text="$(jq -r '(.project.env_text // .env_text // "") | tostring' <<<"$project_json")"
-            merged_env="$(printf '%s\n' "$env_text" | grep -v '^IG_ACCESS_TOKEN=' || true)"
-            merged_env="$(printf '%s\nIG_ACCESS_TOKEN=%s\n' "$merged_env" "$IG_ACCESS_TOKEN")"
-            patch_body="$(jq -cn --arg e "$merged_env" '{env_text:$e}')"
-            curl -fsS -X PATCH \
-              -H "Authorization: Bearer $MINI_VERCEL_API_TOKEN" \
-              -H 'Content-Type: application/json' \
-              --data "$patch_body" \
-              "$api_base/api/v1/projects/$PROJECT_ID" \
-              || curl -fsS -X PATCH \
-                -H "Authorization: Bearer $MINI_VERCEL_API_TOKEN" \
-                -H 'Content-Type: application/json' \
-                --data "$patch_body" \
-                "$api_base/api/projects/$PROJECT_ID"
-          fi
-
           payload="$(jq -cn --arg revision "$GITHUB_SHA" --arg key "github-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" '{source_revision:$revision,idempotency_key:$key,config:{}}')"
           response="$(curl -fsS \
             -H "Authorization: Bearer $MINI_VERCEL_API_TOKEN" \
