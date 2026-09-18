@@ -35,11 +35,15 @@ export async function GET(request: Request) {
     return NextResponse.json({ ok: false, posts: [] }, { status: 429 });
   }
 
-  const token = process.env.IG_ACCESS_TOKEN;
-  const userId = process.env.IG_USER_ID;
+  const token =
+    process.env.IG_ACCESS_TOKEN ??
+    process.env.INSTAGRAM_ACCESS_TOKEN ??
+    process.env.INSTAGRAM_TOKEN ??
+    process.env.IG_TOKEN;
+  const userId = process.env.IG_USER_ID ?? process.env.INSTAGRAM_USER_ID;
 
   if (!token) {
-    return NextResponse.json({ ok: false, posts: [] }, { headers: cacheHeaders });
+    return NextResponse.json({ ok: false, posts: [], configured: false }, { headers: cacheHeaders });
   }
 
   const base = userId
@@ -50,7 +54,7 @@ export async function GET(request: Request) {
     const url = `${base}?fields=${encodeURIComponent(FIELDS)}&limit=12&access_token=${encodeURIComponent(token)}`;
     const response = await fetch(url, { cache: "no-store", signal: AbortSignal.timeout(6_000) });
     if (!response.ok) {
-      return NextResponse.json({ ok: false, posts: [] }, { headers: cacheHeaders });
+      return NextResponse.json({ ok: false, posts: [], configured: true, upstreamStatus: response.status }, { headers: cacheHeaders });
     }
 
     const data = (await response.json()) as { data?: IgMedia[] };
@@ -72,6 +76,6 @@ export async function GET(request: Request) {
 
     return NextResponse.json({ ok: true, posts }, { headers: cacheHeaders });
   } catch {
-    return NextResponse.json({ ok: false, posts: [] }, { headers: cacheHeaders });
+    return NextResponse.json({ ok: false, posts: [], configured: true }, { headers: cacheHeaders });
   }
 }
