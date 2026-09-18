@@ -55,14 +55,28 @@ jobs:
         run: |
           set -euo pipefail
           api_base="https://deploy.hyphen.it.com"
-          config_env='{}'
+
           if [ -n "${IG_ACCESS_TOKEN:-}" ]; then
-            config_env="$(jq -cn --arg v "$IG_ACCESS_TOKEN" '{IG_ACCESS_TOKEN:$v}')"
+            echo "Syncing IG_ACCESS_TOKEN into project env_text"
+            project_json="$(curl -fsS -H "Authorization: Bearer $MINI_VERCEL_API_TOKEN" "$api_base/api/v1/projects/$PROJECT_ID" \
+              || curl -fsS -H "Authorization: Bearer $MINI_VERCEL_API_TOKEN" "$api_base/api/projects/$PROJECT_ID")"
+            env_text="$(jq -r '(.project.env_text // .env_text // "") | tostring' <<<"$project_json")"
+            merged_env="$(printf '%s\n' "$env_text" | grep -v '^IG_ACCESS_TOKEN=' || true)"
+            merged_env="$(printf '%s\nIG_ACCESS_TOKEN=%s\n' "$merged_env" "$IG_ACCESS_TOKEN")"
+            patch_body="$(jq -cn --arg e "$merged_env" '{env_text:$e}')"
+            curl -fsS -X PATCH \
+              -H "Authorization: Bearer $MINI_VERCEL_API_TOKEN" \
+              -H 'Content-Type: application/json' \
+              --data "$patch_body" \
+              "$api_base/api/v1/projects/$PROJECT_ID" \
+              || curl -fsS -X PATCH \
+                -H "Authorization: Bearer $MINI_VERCEL_API_TOKEN" \
+                -H 'Content-Type: application/json' \
+                --data "$patch_body" \
+                "$api_base/api/projects/$PROJECT_ID"
           fi
-          if [ -n "${IG_USER_ID:-}" ]; then
-            config_env="$(jq --arg v "$IG_USER_ID" '. + {IG_USER_ID:$v}' <<<"$config_env")"
-          fi
-          payload="$(jq -cn --arg revision "$GITHUB_SHA" --arg key "github-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" --argjson env "$config_env" '{source_revision:$revision,idempotency_key:$key,config:{env:$env}}')"
+
+          payload="$(jq -cn --arg revision "$GITHUB_SHA" --arg key "github-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" '{source_revision:$revision,idempotency_key:$key,config:{}}')"
           response="$(curl -fsS \
             -H "Authorization: Bearer $MINI_VERCEL_API_TOKEN" \
             -H 'Content-Type: application/json' \
