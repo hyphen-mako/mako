@@ -37,16 +37,7 @@ export default function SiteHeader() {
       animate={{ y: hidden ? -96 : 0 }}
       transition={{ duration: 0.28, ease: "easeOut" }}
     >
-      <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-3">
-        <a
-          href="/"
-          aria-label="MAKO 홈"
-          className="flex h-[52px] items-center gap-2 rounded-lg bg-white/95 px-2 pr-4 shadow-md backdrop-blur-md transition-shadow hover:shadow-lg"
-        >
-          <img src="/mako/mako-mascot.webp" alt="" className="h-10 w-10 object-contain" />
-          <span className="text-[22px] font-black leading-none text-[#0F7DFF]">MAKO</span>
-        </a>
-
+      <div className="relative mx-auto flex w-full max-w-[1440px] items-center gap-3">
         <nav aria-label="주요 메뉴" className="mako-header-nav hidden items-center gap-1 rounded-lg p-1 shadow-md tablet:flex desktop:flex">
           {NAV_ITEMS.map((item) => (
             <a
@@ -59,38 +50,49 @@ export default function SiteHeader() {
           ))}
         </nav>
 
-        <div className="mako-header-social" aria-label="소셜 링크">
-          {SOCIAL_LINKS.map((social) => (
-            <a
-              key={social.href}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={social.label}
-              className="mako-header-social-link"
-            >
-              <i className={social.icon} aria-hidden="true" />
-            </a>
-          ))}
+        <div className="mako-header-right">
+          <div className="mako-header-social" aria-label="소셜 링크">
+            {SOCIAL_LINKS.map((social) => (
+              <a
+                key={social.href}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="mako-header-social-link"
+              >
+                <i className={social.icon} aria-hidden="true" />
+              </a>
+            ))}
+          </div>
+
+          <a
+            href="#waitlist-bottom"
+            className="hidden h-[52px] items-center gap-2 rounded-lg bg-white/95 px-5 text-[15px] font-bold text-[#0B63CE] shadow-md backdrop-blur-md transition-all hover:-translate-y-0.5 hover:shadow-lg tablet:flex desktop:flex"
+          >
+            이벤트 신청
+            <i className="ri-arrow-right-line text-[18px]" aria-hidden="true" />
+          </a>
+
+          <a
+            href="/"
+            aria-label="MAKO 홈"
+            className="flex h-[52px] items-center gap-2 rounded-lg bg-white/95 px-2 pr-4 shadow-md backdrop-blur-md transition-shadow hover:shadow-lg"
+          >
+            <img src="/mako/mako-mascot.webp" alt="" className="h-10 w-10 object-contain" />
+            <span className="text-[22px] font-black leading-none text-[#0F7DFF]">MAKO</span>
+          </a>
+
+          <button
+            type="button"
+            aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((open) => !open)}
+            className="mako-header-menu-button flex h-[52px] w-[52px] items-center justify-center rounded-lg bg-white/95 text-[24px] shadow-md backdrop-blur-md tablet:hidden desktop:hidden"
+          >
+            <i className={menuOpen ? "ri-close-line" : "ri-menu-line"} aria-hidden="true" />
+          </button>
         </div>
-
-        <a
-          href="#waitlist-bottom"
-          className="hidden h-[52px] items-center gap-2 rounded-lg bg-white/95 px-5 text-[15px] font-bold text-[#0B63CE] shadow-md backdrop-blur-md transition-all hover:-translate-y-0.5 hover:shadow-lg tablet:flex desktop:flex"
-        >
-          이벤트 신청
-          <i className="ri-arrow-right-line text-[18px]" aria-hidden="true" />
-        </a>
-
-        <button
-          type="button"
-          aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((open) => !open)}
-          className="mako-header-menu-button flex h-[52px] w-[52px] items-center justify-center rounded-lg bg-white/95 text-[24px] shadow-md backdrop-blur-md tablet:hidden desktop:hidden"
-        >
-          <i className={menuOpen ? "ri-close-line" : "ri-menu-line"} aria-hidden="true" />
-        </button>
       </div>
 
       <AnimatePresence>

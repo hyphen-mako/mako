@@ -37,7 +37,17 @@ select { font: inherit; }
 img { display: block; }
 
 .mako-header-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   background: #162033;
+}
+
+.mako-header-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .mako-header-menu-button,
